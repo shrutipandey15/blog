@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Search engines: welcome.
+# Everything else: also welcome, but be normal about it.
+
+Sitemap: https://shrutipandey15.github.io/blog/sitemap.xml

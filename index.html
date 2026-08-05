@@ -3,1464 +3,2366 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0f0d0a" />
-    <title>Aftertaste — a reading journal</title>
+    <title>Aftertaste — a reading blog</title>
+    <meta name="theme-color" content="#FAF6EF" />
     <meta
-      name="description"
-      content="Book reviews recorded as feeling, not rating."
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
     />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        color-scheme: dark;
-        --ink: #0f0d0a;
-        --paper: #f5f0eb;
-        --dim: rgba(245, 240, 235, 0.74);
-        --faint: rgba(245, 240, 235, 0.58);
-        --brass: #c49a6c;
-        --rule: rgba(196, 154, 108, 0.2);
+        --paper: #faf6ef;
+        --card: #ffffff;
+        --ink: #2e2722;
+        --mid: #6d6259;
+        --soft: #9b9088;
+        --line: #e6ded2;
+        --terra: #b65c3f;
+        --terra-soft: #f3e4dd;
+        --sage: #7e8f6e;
+        --sage-soft: #e9eee3;
+        --display: "Fraunces", Georgia, serif;
+        --body: "Inter", system-ui, sans-serif;
+        --shadow:
+          0 1px 2px rgba(46, 39, 34, 0.05), 0 8px 20px rgba(46, 39, 34, 0.045);
       }
       * {
         box-sizing: border-box;
       }
-      html {
-        scroll-behavior: smooth;
-      }
-      html {
-        background-color: #0f0d0a;
-      }
       body {
         margin: 0;
-        min-height: 100vh;
-        overflow-x: hidden;
-        /* colour and image kept as SEPARATE declarations on purpose:
-     if a gradient is ever rejected, the dark ground must survive */
-        background-color: #0f0d0a;
-        background-image:
-          radial-gradient(
-            ellipse 120% 80% at 15% -10%,
-            #1b1610 0%,
-            rgba(15, 13, 10, 0) 60%
-          ),
-          radial-gradient(
-            ellipse 90% 60% at 90% 5%,
-            #191410 0%,
-            rgba(15, 13, 10, 0) 55%
-          );
-        background-attachment: fixed;
-        color: var(--paper);
-        font-family: "DM Sans", system-ui, sans-serif;
-        font-weight: 300;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--body);
+        font-size: 16px;
+        line-height: 1.7;
         -webkit-font-smoothing: antialiased;
-      }
-      ::selection {
-        background: rgba(196, 154, 108, 0.28);
-      }
-      :focus-visible {
-        outline: 1px solid var(--brass);
-        outline-offset: 4px;
       }
       a {
         color: inherit;
+        text-decoration: none;
       }
-
-      #grain {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 40;
-        opacity: 0.045;
-        mix-blend-mode: overlay;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      img {
+        max-width: 100%;
+        display: block;
       }
-      .sr {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
+      ::selection {
+        background: var(--terra-soft);
+      }
+      :focus-visible {
+        outline: 2px solid var(--terra);
+        outline-offset: 2px;
       }
       .wrap {
-        max-width: 1080px;
+        max-width: 1180px;
         margin: 0 auto;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 0 22px;
       }
 
-      .label {
-        font-size: 10px;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--brass);
-        font-weight: 400;
-        margin: 0 0 14px;
+      /* ============ top strip ============ */
+      .strip {
+        background: var(--ink);
+        color: #e9e2d9;
+        font-size: 12.5px;
       }
-      .eyebrow {
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--faint);
-        margin: 0 0 20px;
-      }
-      .sep {
-        opacity: 0.4;
-        padding: 0 0.35em;
-      }
-      .h2 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(28px, 5vw, 40px);
-        margin: 0;
-        letter-spacing: -0.01em;
-      }
-      .spectrum {
-        width: 100%;
-        border-radius: 999px;
-      }
-      .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        display: inline-block;
-      }
-      .tags {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 16px;
-        margin: 0;
-        padding: 0;
-      }
-      .tags li {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--faint);
-      }
-
-      /* hero */
-      .hero {
-        padding: clamp(64px, 12vw, 140px) 24px clamp(48px, 7vw, 80px);
-        opacity: 0;
-        transform: translateY(14px);
-        transition:
-          opacity 1.1s ease,
-          transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
-      }
-      .hero.in {
-        opacity: 1;
-        transform: none;
-      }
-      .wordmark {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(56px, 15vw, 148px);
-        line-height: 0.88;
-        letter-spacing: -0.035em;
-        margin: 0 0 28px;
-      }
-      .wordmark em {
-        font-style: italic;
-        color: var(--brass);
-      }
-      .thesis {
-        max-width: 46ch;
-        font-size: clamp(16px, 2.4vw, 19px);
-        line-height: 1.75;
-        color: var(--dim);
-        margin: 0 0 clamp(48px, 8vw, 88px);
-      }
-      .weather {
-        max-width: 640px;
-      }
-      .weather .spectrum {
-        filter: saturate(0.95);
-      }
-      .weather-legend {
+      .strip .wrap {
         display: flex;
         justify-content: space-between;
-        margin-top: 10px;
-        font-size: 10px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--faint);
-      }
-
-      /* current */
-      .current {
-        padding-top: clamp(32px, 5vw, 48px);
-        padding-bottom: clamp(32px, 5vw, 48px);
-        border-top: 1px solid var(--rule);
-        border-bottom: 1px solid var(--rule);
-      }
-      .current-title {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(22px, 3.4vw, 30px);
-        margin: 0 0 4px;
-      }
-      .author-line {
-        margin: 0;
-        font-size: 13px;
-        letter-spacing: 0.04em;
-        color: var(--faint);
-        font-style: italic;
-      }
-      .current-prog {
-        height: 2px;
-        background: rgba(245, 240, 235, 0.1);
-        position: relative;
-        overflow: hidden;
-        margin: 18px 0;
-      }
-      .current-fill {
-        position: absolute;
-        inset: 0 auto 0 0;
-        display: block;
-      }
-      .current-note {
-        margin: 0;
-        font-size: 14px;
-        color: var(--dim);
-      }
-      .current-note em {
-        font-style: italic;
-      }
-
-      /* shelf */
-      .shelf {
-        padding-top: clamp(56px, 9vw, 104px);
-      }
-      .shelf-head {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-bottom: clamp(32px, 5vw, 52px);
-      }
-      .shelf-count {
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--faint);
-        margin: 0;
-      }
-      .entry {
-        position: relative;
-        display: grid;
-        grid-template-columns: 4px 1fr;
-        gap: 0 26px;
-        align-items: start;
-        padding: clamp(28px, 4vw, 38px) 0;
-        border-top: 1px solid var(--rule);
-        opacity: 0;
-        transform: translateY(18px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-      }
-      .entry.in {
-        opacity: 1;
-        transform: none;
-      }
-      .entry:last-of-type {
-        border-bottom: 1px solid var(--rule);
-      }
-      .entry-hit {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-      }
-      .entry-band {
-        width: 4px;
-        align-self: stretch;
-        border-radius: 999px;
-        opacity: 0.75;
-        transition: opacity 0.45s ease;
-      }
-      .entry:hover .entry-band {
-        opacity: 1;
-      }
-      .entry-meta {
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--faint);
-        margin-bottom: 12px;
-      }
-      .entry-title {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(26px, 4.4vw, 42px);
-        line-height: 1.08;
-        letter-spacing: -0.02em;
-        margin: 0 0 6px;
-        transition: color 0.4s ease;
-      }
-      .entry:hover .entry-title {
-        color: var(--brass);
-      }
-      .entry-opener {
-        margin: 16px 0 18px;
-        max-width: 52ch;
-        font-size: 16px;
-        line-height: 1.7;
-        color: var(--dim);
-      }
-      .entry-dom {
-        display: none;
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: 15px;
-        opacity: 0.8;
-      }
-      @media (min-width: 900px) {
-        .entry {
-          grid-template-columns: 4px 1fr 120px;
-        }
-        .entry-dom {
-          display: block;
-          text-align: right;
-          padding-top: 34px;
-        }
-      }
-
-      /* vocabulary */
-      .vocab {
-        padding-top: clamp(64px, 9vw, 110px);
-      }
-      .vocab-text {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(20px, 3vw, 27px);
-        line-height: 1.5;
-        max-width: 30ch;
-        margin: 0 0 20px;
-      }
-      .vocab-note {
-        max-width: 46ch;
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--dim);
-        margin: 0 0 30px;
-      }
-      .vocab-note a {
-        color: var(--brass);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 1px;
-      }
-      .vocab-note a:hover {
-        border-bottom-color: var(--brass);
-      }
-      .vocab-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 22px;
-      }
-      .vocab-list li {
-        display: inline-flex;
         align-items: center;
-        gap: 8px;
+        height: 38px;
+        gap: 14px;
+      }
+      .social {
+        display: flex;
+        gap: 14px;
+      }
+      .social a {
+        color: #c3b9ae;
+        transition: color 0.2s;
+      }
+      .nosocial {
+        color: #8c8177;
         font-size: 12px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--dim);
       }
-
-      /* footer */
-      .foot {
-        margin-top: clamp(72px, 10vw, 130px);
-        padding-top: 40px;
-        padding-bottom: 64px;
-        border-top: 1px solid var(--rule);
+      .social a:hover {
+        color: #fff;
       }
-      .foot-line {
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: clamp(17px, 2.6vw, 22px);
-        line-height: 1.6;
-        max-width: 34ch;
-        margin: 0 0 24px;
-        color: var(--dim);
+      .sbox {
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
-      .colophon {
-        font-size: 12px;
-        line-height: 1.8;
-        color: var(--faint);
-        margin: 0;
-        max-width: 44ch;
-      }
-      .colophon a {
-        color: var(--dim);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-      }
-      .colophon a:hover {
-        color: var(--brass);
-        border-bottom-color: var(--brass);
-      }
-
-      /* post */
-      #progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        z-index: 50;
-        background: var(--brass);
-        transform-origin: left;
-        transform: scaleX(0);
-      }
-      .back {
-        display: inline-block;
+      .sbox button {
         background: none;
         border: 0;
-        color: var(--faint);
-        cursor: pointer;
-        font-family: "DM Sans", sans-serif;
+        color: #c3b9ae;
+        font: inherit;
         font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        padding: 40px 0 0;
-        text-decoration: none;
-        transition: color 0.3s ease;
+        cursor: pointer;
       }
-      .back:hover {
-        color: var(--brass);
+      .sbox button:hover {
+        color: #fff;
       }
-      .post-head {
-        padding: clamp(40px, 7vw, 80px) 0 clamp(32px, 5vw, 52px);
-        max-width: 760px;
+      .sbox input {
+        background: rgba(255, 255, 255, 0.08);
+        border: 0;
+        border-radius: 20px;
+        padding: 5px 12px;
+        color: #fff;
+        font: inherit;
+        font-size: 12.5px;
+        width: 170px;
       }
-      .post-title {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(38px, 8vw, 76px);
-        line-height: 1.02;
-        letter-spacing: -0.03em;
-        margin: 0 0 10px;
-      }
-      .post-author {
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: clamp(15px, 2.2vw, 19px);
-        color: var(--dim);
-        margin: 0 0 34px;
-      }
-      .post-head .spectrum {
-        margin-bottom: 18px;
-      }
-      .para {
-        display: grid;
-        gap: 14px;
-        margin-bottom: 30px;
-      }
-      .para p {
-        margin: 0;
-        max-width: 62ch;
-        font-size: 17px;
-        line-height: 1.82;
-        color: rgba(245, 240, 235, 0.94);
-      }
-      .drop::first-letter {
-        font-family: "Playfair Display", Georgia, serif;
-        float: left;
-        font-size: 4.1em;
-        line-height: 0.78;
-        padding: 0.08em 0.12em 0 0;
-        color: var(--brass);
-      }
-      .note {
-        font-size: 13px;
-        line-height: 1.65;
-        color: var(--faint);
-        font-style: italic;
-        border-left: 1px solid var(--rule);
-        padding-left: 14px;
-        max-width: 40ch;
-      }
-      .note b {
-        color: var(--brass);
-        font-style: normal;
-        font-weight: 400;
-        margin-right: 8px;
-      }
-      @media (min-width: 1000px) {
-        .para {
-          grid-template-columns: minmax(0, 62ch) 1fr;
-          gap: 0 44px;
-          align-items: start;
-        }
-        .note {
-          border-left: 0;
-          padding-left: 0;
-          margin-top: 6px;
-        }
-        .note::before {
-          content: "";
-          display: block;
-          width: 22px;
-          height: 1px;
-          background: var(--rule);
-          margin-bottom: 12px;
-        }
-      }
-      .pull {
-        margin: clamp(36px, 6vw, 56px) 0;
-        padding: 0 0 0 24px;
-        position: relative;
-        font-family: "Playfair Display", Georgia, serif;
-        font-style: italic;
-        font-size: clamp(21px, 3.6vw, 31px);
-        line-height: 1.42;
-        max-width: 22ch;
-      }
-      .pull span {
-        position: absolute;
-        left: 0;
-        top: 0.28em;
-        bottom: 0.28em;
-        width: 2px;
-      }
-      .after {
-        margin-top: clamp(52px, 8vw, 88px);
-        padding-top: clamp(32px, 5vw, 48px);
-        border-top: 1px solid var(--rule);
-      }
-      .after-text {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(19px, 3vw, 26px);
-        line-height: 1.55;
-        max-width: 30ch;
-        margin: 0 0 clamp(40px, 6vw, 64px);
-      }
-      .fp {
-        max-width: 560px;
-        display: grid;
-        gap: 12px;
-      }
-      .fp-row {
-        display: grid;
-        grid-template-columns: 96px 1fr 28px;
-        align-items: center;
-        gap: 14px;
-      }
-      .fp-label {
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--dim);
-      }
-      .fp-track {
-        height: 2px;
-        background: rgba(245, 240, 235, 0.09);
-        position: relative;
-      }
-      .fp-fill {
-        position: absolute;
-        inset: 0 auto 0 0;
-        display: block;
-        width: 0;
-        transition: width 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
-      }
-      .fp-num {
-        font-size: 11px;
-        color: var(--faint);
-        text-align: right;
-        font-variant-numeric: tabular-nums;
+      .sbox input::placeholder {
+        color: #948a80;
       }
 
-      /* ── filter bar ── */
-      .filter {
+      /* ============ masthead ============ */
+      .mast {
+        text-align: center;
+        padding: 34px 0 26px;
+      }
+      .mast .name {
+        font-family: var(--display);
+        font-size: clamp(38px, 6vw, 60px);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+      .mast .name:hover {
+        color: var(--terra);
+      }
+      .mast .tag {
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--mid);
+        margin: 12px 0 0;
+      }
+      .sprig {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .sprig i {
+        display: block;
+        width: 52px;
+        height: 1px;
+        background: var(--line);
+      }
+      .sprig svg {
+        width: 16px;
+        height: 16px;
+        color: var(--sage);
+      }
+
+      /* ============ nav ============ */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .nav .wrap {
+        overflow-x: auto;
+        scrollbar-width: none;
+        justify-content: center;
+      }
+      .nav .wrap::-webkit-scrollbar {
+        display: none;
+      }
+      @media (max-width: 700px) {
+        .nav .wrap {
+          justify-content: flex-start;
+        }
+        .nav a {
+          padding: 13px 11px;
+          font-size: 11.5px;
+          letter-spacing: 0.07em;
+        }
+      }
+      .nav .wrap {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2px;
+      }
+      .nav a {
+        padding: 14px 16px;
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--mid);
+        position: relative;
+        transition: color 0.2s;
+      }
+      .nav a:hover {
+        color: var(--terra);
+      }
+      .nav a.on {
+        color: var(--ink);
+      }
+      .nav a.on::after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: -1px;
+        height: 2px;
+        background: var(--terra);
+      }
+
+      /* ============ layout ============ */
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 316px;
+        gap: 44px;
+        padding: 36px 0 60px;
+        align-items: start;
+      }
+      .side {
+        position: sticky;
+        top: 64px;
+        max-height: calc(100vh - 84px);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--line) transparent;
+      }
+      .side::-webkit-scrollbar {
+        width: 5px;
+      }
+      .side::-webkit-scrollbar-thumb {
+        background: var(--line);
+        border-radius: 3px;
+      }
+      @media (max-width: 940px) {
+        .side {
+          position: static;
+          max-height: none;
+          overflow: visible;
+        }
+      }
+      @media (max-width: 940px) {
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+      }
+
+      /* ============ post cards ============ */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: var(--shadow);
+      }
+      /* featured graphic — the title set on colour, like the blogs you sent */
+      .fi {
+        aspect-ratio: 2/1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 28px 34px;
+        position: relative;
+      }
+      .fi .kicker {
+        font-size: 10.5px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .fi h3 {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: clamp(20px, 2.5vw, 30px);
+        line-height: 1.2;
+        margin: 0;
+        max-width: 16ch;
+      }
+      .fi .curl {
+        position: absolute;
+        right: 22px;
+        bottom: 18px;
+        opacity: 0.3;
+        width: 44px;
+      }
+      .fi.c0 {
+        background: #f0e3d6;
+        color: #7a4a2e;
+      }
+      .fi.c1 {
+        background: #e4ebde;
+        color: #42553a;
+      }
+      .fi.c2 {
+        background: #efe2e4;
+        color: #77414a;
+      }
+      .fi.c3 {
+        background: #e6e6ef;
+        color: #454670;
+      }
+      .fi.c4 {
+        background: #f3ead6;
+        color: #77602c;
+      }
+
+      .card .in {
+        padding: 22px 26px 26px;
+      }
+      .meta {
+        font-size: 12px;
+        color: var(--soft);
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin: 0 0 22px;
-      }
-      .chip {
-        display: inline-flex;
         align-items: center;
+        margin-bottom: 12px;
+      }
+      .meta .cat {
+        color: var(--terra);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        font-size: 11px;
+      }
+      .meta .dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--line);
+      }
+      .card h2 {
+        font-family: var(--display);
+        font-size: clamp(21px, 2.3vw, 26px);
+        font-weight: 600;
+        line-height: 1.28;
+        margin: 0 0 10px;
+      }
+      .card h2 a:hover {
+        color: var(--terra);
+      }
+      .card p.ex {
+        margin: 0;
+        color: var(--mid);
+        font-size: 15.3px;
+      }
+      .more {
+        display: inline-block;
+        margin-top: 16px;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--terra);
+      }
+      .more:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* log strip on home */
+      .logbox {
+        background: var(--sage-soft);
+        border: 1px solid #d8e0cf;
+        border-radius: 6px;
+        padding: 20px 24px;
+        margin-bottom: 30px;
+      }
+      .logbox h4 {
+        font-family: var(--display);
+        font-size: 18px;
+        margin: 0 0 4px;
+        font-weight: 600;
+      }
+      .logbox .sub {
+        font-size: 12.5px;
+        color: var(--mid);
+        margin: 0 0 14px;
+      }
+      .logbox li {
+        list-style: none;
+        padding: 9px 0;
+        border-bottom: 1px dashed #cbd6c0;
+        display: flex;
+        gap: 12px;
+        font-size: 14.5px;
+      }
+      .logbox li:last-child {
+        border: 0;
+        padding-bottom: 0;
+      }
+      .logbox ul {
+        margin: 0;
+        padding: 0;
+      }
+      .logbox time {
+        color: var(--sage);
+        font-weight: 600;
+        font-size: 12px;
+        min-width: 56px;
+        padding-top: 3px;
+      }
+
+      /* ============ sidebar ============ */
+      .side section {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 20px 20px 22px;
+        margin-bottom: 22px;
+        box-shadow: var(--shadow);
+      }
+      .side h4 {
+        font-family: var(--display);
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0 0 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      .avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        margin: 0 auto 14px;
+        background: linear-gradient(140deg, #ebdcc9, #d8c4ac);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--display);
+        font-size: 30px;
+        color: #8a6a48;
+        font-weight: 600;
+      }
+      .side .bio {
+        font-size: 14.3px;
+        color: var(--mid);
+        margin: 0;
+      }
+      .side .bio + a {
+        display: inline-block;
+        margin-top: 12px;
+        color: var(--terra);
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .reading {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .cover {
+        width: 70px;
+        flex: 0 0 70px;
+        aspect-ratio: 2/3;
+        border-radius: 3px;
+        background: linear-gradient(160deg, #3e4a5c, #26303e);
+        color: #e8e0d2;
+        padding: 10px 8px;
+        font-family: var(--display);
+        font-size: 11px;
+        line-height: 1.25;
+        box-shadow: 2px 2px 0 rgba(46, 39, 34, 0.12);
+      }
+      .reading .t {
+        font-family: var(--display);
+        font-size: 15.5px;
+        font-weight: 600;
+        line-height: 1.3;
+        margin: 0;
+      }
+      .reading .a {
+        font-size: 13px;
+        color: var(--mid);
+        margin: 3px 0 8px;
+      }
+      .bar {
+        height: 5px;
+        background: var(--line);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--terra);
+        border-radius: 3px;
+      }
+      .reading .pct {
+        font-size: 11.5px;
+        color: var(--soft);
+        margin-top: 5px;
+      }
+
+      .emokey li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 5px 0;
+        font-size: 13.6px;
+      }
+      .emokey ul {
+        margin: 0;
+        padding: 0;
+      }
+      .emokey .sw {
+        width: 11px;
+        height: 11px;
+        border-radius: 3px;
+        flex: 0 0 11px;
+      }
+      .emokey .note {
+        font-size: 12.5px;
+        color: var(--soft);
+        margin: 12px 0 0;
+        line-height: 1.5;
+      }
+
+      .cats li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 0;
+        border-bottom: 1px solid #f1eae0;
+        font-size: 14.3px;
+      }
+      .cats li:last-child {
+        border: 0;
+      }
+      .cats ul {
+        margin: 0;
+        padding: 0;
+      }
+      .cats a:hover {
+        color: var(--terra);
+      }
+      .cats .n {
+        color: var(--soft);
+        font-size: 12.5px;
+      }
+
+      .recent li {
+        list-style: none;
+        display: flex;
+        gap: 12px;
+        padding: 11px 0;
+        border-bottom: 1px solid #f1eae0;
+      }
+      .recent li:last-child {
+        border: 0;
+      }
+      .recent ul {
+        margin: 0;
+        padding: 0;
+      }
+      .thumb {
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
+        border-radius: 4px;
+      }
+      .recent .t {
+        font-size: 14px;
+        line-height: 1.35;
+        font-weight: 500;
+      }
+      .recent .d {
+        font-size: 11.5px;
+        color: var(--soft);
+        margin-top: 3px;
+      }
+      .recent a:hover .t {
+        color: var(--terra);
+      }
+
+      .sub input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        font: inherit;
+        font-size: 14px;
+        background: var(--paper);
+        margin-bottom: 9px;
+      }
+      .btn {
+        width: 100%;
+        padding: 11px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--terra);
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #a04f35;
+      }
+      .sub .fine {
+        font-size: 12px;
+        color: var(--soft);
+        margin: 9px 0 0;
+      }
+
+      .arch li {
+        list-style: none;
+        font-size: 14px;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .arch ul {
+        margin: 0;
+        padding: 0;
+      }
+      .arch a:hover {
+        color: var(--terra);
+      }
+      .arch .n {
+        color: var(--soft);
+        font-size: 12.5px;
+      }
+
+      /* ============ post page ============ */
+      .post .fi {
+        aspect-ratio: auto;
+        min-height: 220px;
+        border-radius: 6px;
+        margin-bottom: 26px;
+      }
+      .post .body {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 32px 38px 36px;
+        box-shadow: var(--shadow);
+      }
+      @media (max-width: 600px) {
+        .post .body {
+          padding: 24px 20px 28px;
+        }
+      }
+      .post h1 {
+        font-family: var(--display);
+        font-size: clamp(26px, 3.6vw, 38px);
+        font-weight: 600;
+        line-height: 1.2;
+        margin: 0 0 14px;
+      }
+      .post .body p {
+        font-size: 17px;
+        line-height: 1.85;
+        margin: 0 0 1.35em;
+        color: #3a322c;
+      }
+      .post blockquote {
+        margin: 1.7em 0;
+        padding: 18px 22px;
+        background: var(--terra-soft);
+        border-left: 3px solid var(--terra);
+        border-radius: 0 5px 5px 0;
+        font-family: var(--display);
+        font-size: 19px;
+        line-height: 1.55;
+        font-style: italic;
+      }
+      .post blockquote p {
+        margin: 0 !important;
+        font-size: 19px !important;
+      }
+      .post .verse {
+        font-family: var(--display);
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 19px;
+        line-height: 1.8;
+      }
+
+      .emobox {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 20px 22px;
+        margin: 30px 0 24px;
+        background: var(--paper);
+      }
+      .emobox h5 {
+        font-family: var(--display);
+        font-size: 16px;
+        margin: 0 0 4px;
+        font-weight: 600;
+      }
+      .emobox .lead {
+        font-size: 13px;
+        color: var(--soft);
+        margin: 0 0 16px;
+      }
+      .erow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .erow .lbl {
+        width: 112px;
+        flex: 0 0 112px;
+        font-size: 13.5px;
+        font-weight: 500;
+      }
+      .erow .track {
+        flex: 1;
+        height: 8px;
+        background: var(--line);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .erow .track i {
+        display: block;
+        height: 100%;
+        border-radius: 4px;
+      }
+      .erow .v {
+        font-size: 12px;
+        color: var(--soft);
+        width: 34px;
+        text-align: right;
+      }
+      .verdict {
+        margin: 16px 0 0;
+        font-size: 14.5px;
+        color: var(--mid);
+        font-style: italic;
+      }
+
+      .tagline {
+        display: flex;
+        flex-wrap: wrap;
         gap: 7px;
-        font-family: "DM Sans", sans-serif;
+        align-items: center;
+        margin: 26px 0 0;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .tagline .lb {
         font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--dim);
-        background: none;
-        border: 1px solid var(--rule);
-        border-radius: 999px;
-        padding: 7px 13px;
-        cursor: pointer;
-        text-decoration: none;
-        transition:
-          border-color 0.3s,
-          color 0.3s,
-          background 0.3s;
+        color: var(--soft);
+        margin-right: 4px;
       }
-      .chip:hover {
-        color: var(--paper);
-        border-color: var(--brass);
+      .tg {
+        font-size: 12.5px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 4px 12px;
+        color: var(--mid);
       }
-      .chip.on {
-        color: #17120c;
-        background: var(--brass);
-        border-color: var(--brass);
-        font-weight: 400;
-      }
-      .chip .n {
-        opacity: 0.55;
-        letter-spacing: 0;
-      }
-      .filter-note {
-        font-size: 13px;
-        line-height: 1.6;
-        color: var(--faint);
-        margin: 0 0 clamp(28px, 4vw, 44px);
-      }
-      .filter-note a {
-        color: var(--brass);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-      }
-      .stats {
-        font-size: 12px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--faint);
-        margin: 0;
+      .tg:hover {
+        border-color: var(--terra);
+        color: var(--terra);
       }
 
-      /* ── archive ── */
-      .arch {
-        margin-top: clamp(52px, 7vw, 84px);
+      .ask {
+        background: var(--sage-soft);
+        border: 1px solid #d8e0cf;
+        border-radius: 6px;
+        padding: 20px 24px;
+        margin: 26px 0 0;
       }
-      .arch-year {
+      .ask .askmail {
+        margin: 11px 0 0;
+        font-family: var(--body);
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--mid);
+        line-height: 1.6;
+      }
+      .ask .askmail a {
+        color: var(--terra);
+        font-weight: 600;
+        border-bottom: 1px solid rgba(182, 92, 63, 0.35);
+      }
+      .ask p {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 17.5px;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .related {
+        margin-top: 30px;
+      }
+      .related h4 {
+        font-family: var(--display);
+        font-size: 20px;
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+      .rel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+      .rel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .rel .fi {
+        aspect-ratio: 2/1;
+        padding: 16px 18px;
+      }
+      .rel .fi h3 {
+        font-size: 15px;
+      }
+      .rel .rin {
+        padding: 12px 16px 16px;
+      }
+      .rel .rt {
+        font-family: var(--display);
+        font-size: 15.5px;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      .rel:hover .rt {
+        color: var(--terra);
+      }
+      .rel .rd {
+        font-size: 11.5px;
+        color: var(--soft);
+        margin-top: 5px;
+      }
+
+      /* ============ page head + pagination ============ */
+      .phead {
+        margin-bottom: 26px;
+      }
+      .phead h1 {
+        font-family: var(--display);
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 6px;
+      }
+      .phead p {
+        margin: 0;
+        color: var(--mid);
+        font-size: 15px;
+        max-width: 52ch;
+      }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .filters .tg {
+        font-weight: 500;
+        padding: 6px 15px;
+        background: var(--card);
+      }
+      .filters .tg.on {
+        background: var(--terra);
+        border-color: var(--terra);
+        color: #fff;
+      }
+      .cats .sub2 {
+        padding-left: 16px;
+        font-size: 13.4px;
+        color: var(--mid);
+        position: relative;
+      }
+      .cats .sub2::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 16px;
+        width: 6px;
+        height: 1px;
+        background: var(--line);
+      }
+      .biblio {
+        background: linear-gradient(160deg, #fff8ef, #f7ede1) !important;
+        border-color: #e4d5c2 !important;
+      }
+      .biblio .bio a {
+        color: var(--terra);
+        font-weight: 600;
+        border-bottom: 1px solid rgba(182, 92, 63, 0.3);
+      }
+      .bpill {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        background: var(--terra);
+        padding: 8px 14px;
+        border-radius: 4px;
+      }
+      .bpill:hover {
+        background: #a04f35;
+      }
+      .cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tg.on {
+        background: var(--terra);
+        border-color: var(--terra);
+        color: #fff;
+      }
+      .pager {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin: 34px 0 0;
+      }
+      .pager a,
+      .pager span {
+        min-width: 38px;
+        height: 38px;
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin: 34px 0 6px;
+        justify-content: center;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        font-size: 14px;
+        background: var(--card);
+        color: var(--mid);
       }
-      .arch-year h3 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: 19px;
-        margin: 0;
-        color: var(--dim);
+      .pager .cur {
+        background: var(--terra);
+        color: #fff;
+        border-color: var(--terra);
+        font-weight: 600;
       }
-      .arch-year i {
-        flex: 1;
-        height: 1px;
-        background: var(--rule);
-        display: block;
-      }
-      .arch-year b {
-        font-size: 10px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--faint);
-        font-weight: 400;
-      }
-      .arch-row {
-        display: grid;
-        grid-template-columns: 8px 1fr auto;
-        gap: 0 14px;
-        align-items: baseline;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(196, 154, 108, 0.09);
-        text-decoration: none;
-        color: inherit;
-      }
-      .arch-row:hover .arch-title {
-        color: var(--brass);
-      }
-      .arch-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        align-self: center;
-      }
-      .arch-title {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 17px;
-        transition: color 0.3s;
-      }
-      .arch-author {
-        font-size: 12px;
-        color: var(--faint);
-        font-style: italic;
-        margin-left: 8px;
-      }
-      .arch-date {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--faint);
-        white-space: nowrap;
+      .pager a:hover {
+        border-color: var(--terra);
+        color: var(--terra);
       }
 
-      /* ── prev / next ── */
-      .pager {
-        margin-top: clamp(52px, 7vw, 80px);
-        border-top: 1px solid var(--rule);
+      /* ============ footer ============ */
+      footer {
+        background: var(--ink);
+        color: #cfc5ba;
+        margin-top: 20px;
+        padding: 44px 0 30px;
+      }
+      .fgrid {
         display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 32px;
       }
-      @media (min-width: 700px) {
-        .pager {
-          grid-template-columns: 1fr 1fr;
-          gap: 0 40px;
-        }
+      footer h5 {
+        font-family: var(--display);
+        color: #f3ede4;
+        font-size: 16px;
+        margin: 0 0 12px;
+        font-weight: 600;
       }
-      .pager a {
-        padding: 26px 0;
-        text-decoration: none;
-        color: inherit;
-        border-bottom: 1px solid var(--rule);
-      }
-      @media (min-width: 700px) {
-        .pager a {
-          border-bottom: 0;
-        }
-        .pager .nx {
-          text-align: right;
-        }
-      }
-      .pager .k {
-        font-size: 10px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--faint);
-        display: block;
-        margin-bottom: 9px;
-      }
-      .pager .t {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 21px;
-        line-height: 1.25;
-        transition: color 0.3s;
-        display: block;
-      }
-      .pager a:hover .t {
-        color: var(--brass);
-      }
-
-      /* ── related ── */
-      .related {
-        margin-top: clamp(44px, 6vw, 68px);
-      }
-      .rel-list {
+      footer p,
+      footer li {
+        font-size: 14px;
+        color: #a79c91;
+        margin: 0 0 7px;
         list-style: none;
+      }
+      footer ul {
         margin: 0;
         padding: 0;
-        display: grid;
-        gap: 2px;
       }
-      .rel-list a {
-        display: grid;
-        grid-template-columns: 3px 1fr;
-        gap: 16px;
-        text-decoration: none;
-        color: inherit;
-        padding: 16px 0;
-        border-bottom: 1px solid rgba(196, 154, 108, 0.09);
+      footer a:hover {
+        color: #fff;
       }
-      .rel-band {
-        border-radius: 999px;
-      }
-      .rel-t {
-        font-family: "Playfair Display", Georgia, serif;
-        font-size: 19px;
-        transition: color 0.3s;
-      }
-      .rel-list a:hover .rel-t {
-        color: var(--brass);
-      }
-      .rel-why {
-        font-size: 12px;
-        color: var(--faint);
-        margin-top: 4px;
-        letter-spacing: 0.04em;
-      }
-
-      /* ── nothing found ── */
-      .nf {
-        padding: clamp(90px, 16vw, 150px) 0 90px;
-        max-width: 46ch;
-      }
-      .nf h1 {
-        font-family: "Playfair Display", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(30px, 6vw, 46px);
-        line-height: 1.1;
-        margin: 0 0 18px;
-      }
-      .nf p {
-        color: var(--dim);
-        line-height: 1.75;
-        font-size: 16px;
-        margin: 0 0 26px;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          transition-duration: 0.01ms !important;
-          animation-duration: 0.01ms !important;
-        }
-        .hero,
-        .entry {
-          opacity: 1 !important;
-          transform: none !important;
-        }
+      .fbot {
+        margin-top: 32px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12.5px;
+        color: #8c8177;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <div id="grain"></div>
-    <div id="progress"></div>
-    <main id="app"></main>
+    <div class="strip">
+      <div class="wrap">
+        <div class="social">
+          <span class="nosocial"
+            >No socials. You got here the hard way. Respect.</span
+          >
+        </div>
+        <div class="sbox">
+          <input
+            id="q"
+            type="search"
+            placeholder="Search. Good luck."
+            autocomplete="off"
+          /><button id="qgo">Go</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="mast">
+      <a class="name" href="#/">Aftertaste</a>
+      <p class="tag">opinions nobody asked for</p>
+      <div class="sprig">
+        <i></i>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        >
+          <path d="M12 22V6" />
+          <path d="M12 14c-5 0-6-4-5-7 3 0 6 3 5 7z" />
+          <path d="M12 11c5-1 6-5 5-8-3 0-6 4-5 8z" />
+        </svg>
+        <i></i>
+      </div>
+    </header>
+
+    <nav class="nav"><div class="wrap" id="nav"></div></nav>
+
+    <div class="wrap">
+      <div class="grid">
+        <main id="main"></main>
+        <aside class="side" id="side"></aside>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="fgrid">
+          <div>
+            <h5>Aftertaste</h5>
+            <p>
+              Books are where I go. What's here is one person having reactions
+              out of all proportion, in public, on purpose.
+            </p>
+          </div>
+          <div>
+            <h5>Go look at</h5>
+            <ul>
+              <li><a href="#/reviews">Reviews</a></li>
+              <li><a href="#/notebook">Notebook</a></li>
+              <li><a href="#/notebook/poem">Poems</a></li>
+              <li><a href="#/notebook/story">Short stories</a></li>
+              <li><a href="#/log">Reading Log</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>How I rate</h5>
+            <p>
+              Not in stars. In feelings, and how long they hung around
+              afterwards.
+            </p>
+            <p><a href="#/about">The whole key &rarr;</a></p>
+          </div>
+          <div>
+            <h5>Argue</h5>
+            <p>
+              <a href="mailto:shrutipandey1505@gmail.com"
+                >shrutipandey1505@gmail.com</a
+              >
+            </p>
+            <p>
+              No comments. If a post makes you want to fight me, do it by email
+              like an adult.
+            </p>
+          </div>
+          <div>
+            <h5>Elsewhere</h5>
+            <p>
+              Nowhere. No Instagram, no Goodreads shelf, no video of me holding
+              a book up next to my face.
+            </p>
+            <p>If that changes you'll be the second to know.</p>
+          </div>
+          <div>
+            <h5>The thing I built</h5>
+            <p>
+              <a href="https://bibliome.app" rel="noopener noreferrer"
+                >bibliome.app</a
+              >
+              &mdash; where all this ends up eventually.
+            </p>
+          </div>
+        </div>
+        <div class="fbot">© 2026 Aftertaste &middot; I said what I said</div>
+      </div>
+    </footer>
 
     <script>
-      /* ═══════════════════════════════════════════════════════════
-   ▼▼▼  EDIT EVERYTHING BETWEEN HERE AND "STOP EDITING"  ▼▼▼
-   This is all your content. Below it is design you can ignore.
-   ═══════════════════════════════════════════════════════════ */
-
-      const SITE = {
-        name: "Aftertaste",
-        tagline: "A reading journal",
-        author: "Shruti",
-
-        // The line under the title. Rewrite this in your own voice.
-        thesis:
-          "I stopped giving books stars. Five felt like a verdict, and I was never trying to judge them — I was trying to remember what they did to me. So this is the record instead: every book, and the exact weather it left in the room.",
-
-        // Where Bibliome lives. Used in the vocabulary note and the colophon.
-        bibliomeUrl: "https://github.com/shrutipandey15/bookDNA",
+      /* ================= data ================= */
+      const EMO = {
+        ache: "#B65C3F",
+        grief: "#6A7DA3",
+        rage: "#A8443E",
+        comfort: "#7E8F6E",
+        longing: "#9A6E9E",
+        recognition: "#B08A3E",
+        unease: "#6E7B7E",
+        tenderness: "#C08497",
       };
 
-      // What you're reading right now. Set to null to hide this section.
-      const CURRENT = {
-        title: "A Suitable Boy",
-        author: "Vikram Seth",
-        progress: 0.41, // 0 to 1
-        feeling: "comfort", // any word from the thirteen below
-      };
-
-      /* ── THE THIRTEEN ────────────────────────────────────────────
-   Your emotion vocabulary. Changing a colour here changes it
-   everywhere on the site. Add or remove words freely.
-   ──────────────────────────────────────────────────────────── */
-
-      const EMOTIONS = {
-        grief: "#8C62B2",
-        desire: "#C46FA4",
-        rage: "#CC605C",
-        dread: "#5286AD",
-        comfort: "#B68963",
-        awe: "#60A993",
-        catharsis: "#D2B37F",
-        "2am": "#4C5E9A",
-        chaos: "#85B569",
-        tenderness: "#B87A8B",
-        wit: "#BBC577",
-        longing: "#95AAC6",
-        devastation: "#7C6386",
-      };
-
-      /* ── THE REVIEWS ─────────────────────────────────────────────
-   Newest first. To publish a new one, copy any block below,
-   paste it at the top, and rewrite it.
-
-   slug     — becomes the link: yoursite.com/#piranesi
-   tags     — emotion + intensity 0-100. First one is dominant.
-   blocks   — your writing. Three kinds:
-                { p: "a paragraph" }
-                { p: "a paragraph", note: "a margin note" }
-                { quote: "a line pulled large" }
-   after    — the one thing the book left behind.
-   ──────────────────────────────────────────────────────────── */
-
-      const REVIEWS = [
+      const POSTS = [
         {
-          slug: "piranesi",
-          title: "Piranesi",
-          author: "Susanna Clarke",
-          date: "18 July 2026",
-          read: "3 days",
-          opener:
-            "A book about a man who is happy, and the slow horror of learning why.",
-          tags: [
-            { awe: 90 },
-            { longing: 62 },
-            { dread: 48 },
-            { tenderness: 35 },
+          id: "forgive",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-08-02",
+          t: "I forgave him in four seconds and I want them back",
+          ex: "Three hundred pages of him being awful. One coat. Four seconds. I need to have a word with myself.",
+          tags: ["characters", "rage", "romance", "craft"],
+          emo: [],
+          ask: "Which fictional man have you forgiven that you absolutely should not have. Don't say nobody.",
+          body: [
+            [
+              "p",
+              "Finished it at 1am on a work night, which was stupid, and then thought about it through two standups and a code review I did not read.",
+            ],
+            [
+              "p",
+              "He's awful. Three hundred pages of awful. Then on page three hundred and one he notices she's cold, gives her his coat, and I shut the book and thought — out loud, in my own kitchen, like a person — he's been through so much.",
+            ],
+            [
+              "p",
+              "He has been through NOTHING. He is ink. I had a worse Tuesday than he had an entire fictional life. Nobody gave me a coat. I got feedback.",
+            ],
+            [
+              "p",
+              "I think we practise on them. All that understanding nobody is asking us for, all that patience we're handing out for free at work and on the phone to our mothers — we take it somewhere it actually pays.",
+            ],
+            [
+              "q",
+              "And it does pay, in there. You find the wound under the awful, you hand over the grace, and within forty pages he changes.",
+            ],
+            [
+              "p",
+              "He was always going to. Somebody decided that in a Word document in 2019.",
+            ],
+            [
+              "p",
+              "Real people don't have a Word document. That's the whole thing. There's no page three hundred and one scheduled for anyone I actually know, and I keep checking.",
+            ],
+            ["p", "Anyway. I'll do it again on Thursday."],
           ],
-          blocks: [
-            {
-              p: "I went in expecting a puzzle and got a devotional. The House is the whole novel — tides in the lower halls, statues in the upper, birds that come and go like weather — and Clarke makes you love it before she lets you understand it. That order matters. If she had explained first, the book would be a thriller. Because she describes first, it's a hymn.",
-              note: "Read the first forty pages twice. Not because I was lost. Because I wanted to stay.",
-            },
-            {
-              p: "What kept catching me was the narrator's gentleness. He counts the dead. He brings them flowers. He keeps meticulous records of a world nobody asked him to record. There's a version of this character written as pitiable, and Clarke refuses it entirely — he is the most alive person in the book, and everyone who knows better than him is smaller for it.",
-            },
-            {
-              quote:
-                "The cruelty here isn't that he was trapped. It's that he was happy, and someone had to decide whether to tell him.",
-            },
-            {
-              p: "The unease crept in sideways. By the time I understood what I was reading, I had already agreed to the terms of the House, and taking them back felt like a loss rather than a rescue. That's the trick of the thing. I finished it grieving a place that never existed, which is the most reliable sign I've been properly had.",
-              note: "Finished at 2am, then sat in the dark for a while. Didn't want the next book yet.",
-            },
-            {
-              p: "I've read plenty of novels that are cleverer. I can't think of many that are kinder to their own protagonist. That's what I'll keep.",
-            },
-          ],
-          after:
-            "A tenderness toward my own record-keeping. I started writing down small things again.",
         },
 
         {
-          slug: "god-of-small-things",
-          title: "The God of Small Things",
-          author: "Arundhati Roy",
-          date: "2 July 2026",
-          read: "9 days",
-          opener:
-            "Reread. Worse this time, in the way that means the book was right.",
-          tags: [
-            { grief: 95 },
-            { rage: 70 },
-            { tenderness: 58 },
-            { dread: 44 },
+          id: "belljar",
+          cat: "Reviews",
+          date: "2026-07-28",
+          book: "The Bell Jar",
+          author: "Sylvia Plath",
+          t: "The Bell Jar got me on the metro",
+          ex: "Woman's been dead sixty years and she found me at Rajiv Chowk on a Tuesday. Rude.",
+          tags: ["sylvia plath", "classics", "loneliness", "rage"],
+          emo: [
+            ["recognition", 5],
+            ["grief", 4],
+            ["unease", 4],
+            ["ache", 3],
           ],
-          blocks: [
-            {
-              p: "At nineteen I read this for the sentences. At twenty-nine I read it for the structure — the way Roy tells you the ending immediately and then makes you walk toward it anyway, room by room, knowing. It's not suspense. It's dread with a floor plan.",
-              note: "Second read. The first one I remember mostly as weather.",
-            },
-            {
-              p: "The thing nobody warned me about is how funny it is in places. Children are funny. Roy lets them be, which is what makes the rest unbearable — you're never reading about symbols, you're reading about two kids who invent a private language and then have it taken from them by adults with reasons.",
-            },
-            {
-              quote:
-                "Love laws are the quietest violence in the book. Nobody shouts them. Everybody obeys.",
-            },
-            {
-              p: "I got angry in a way I didn't the first time, and I think that's age. At nineteen the tragedy felt like fate. Now it's obviously a set of decisions, made by people who could have decided otherwise, and were comfortable.",
-              note: "Had to put it down at the History House. Made tea. Came back.",
-            },
+          verdict:
+            "Four days. Seven months of bringing it up at people who did not ask.",
+          ask: "Has a book ever described a thing you thought was privately yours. Annoying, isn't it.",
+          body: [
+            [
+              "p",
+              "I read most of this on the Blue Line, which was a mistake, because there is nowhere to put your face when a book gets you in public.",
+            ],
+            [
+              "p",
+              "It describes something I'd assumed was mine. Privately mine. A bit special, even. And it does it better than I've managed in eleven years of trying, in 1963, by someone who is dead.",
+            ],
+            ["p", "That's not flattering. That's being robbed."],
+            [
+              "p",
+              "Everyone tells you it's about mental illness. Fine. It's also the most convenient available thing to say about it, because it lets you set it down at arm's length and feel sympathetic. What it's actually about is having too many options and no permission. Which — hello, twenty-seven. Hello, every phone call about what I'm doing with my life.",
+            ],
+            [
+              "q",
+              "I kept putting it down. Not because it was hard. Because it was right, and I needed a minute, and there was no minute available at Rajiv Chowk.",
+            ],
+            [
+              "p",
+              "It's funny, too. Nobody warns you. We've collectively decided sad books can't be funny and it's why half of you bounced off it in college.",
+            ],
+            [
+              "p",
+              "Don't read it because it's a classic. Read it because it's rude to you, and almost nothing is any more.",
+            ],
           ],
-          after:
-            "Rage, mostly. And a long call to my mother that wasn't about the book.",
         },
 
         {
-          slug: "tomb-of-sand",
-          title: "Tomb of Sand",
-          author: "Geetanjali Shree, tr. Daisy Rockwell",
-          date: "14 June 2026",
-          read: "3 weeks",
-          opener:
-            "The only novel I've read where a door gets a monologue and earns it.",
-          tags: [{ wit: 78 }, { chaos: 66 }, { grief: 52 }, { awe: 40 }],
-          blocks: [
-            {
-              p: "Three weeks, and not because it's difficult — because it refuses to be hurried. The prose wanders, doubles back, lets crows and doors and the border itself take a turn at speaking. Every time I tried to read it like a plot, it got worse. Every time I let it be a river, it got extraordinary.",
-              note: "Read a lot of this out loud. It wants a mouth.",
-            },
-            {
-              p: "Rockwell's translation is its own achievement — the wordplay survives, which should be impossible. You can feel Hindi under the English, the way you can feel a floor through a rug.",
-            },
-            {
-              quote:
-                "An eighty-year-old woman turns her face to the wall, and the novel decides that is the beginning of a life.",
-            },
-            {
-              p: "The wit surprised me. I'd expected Partition and got Partition, but the register is comic for so much of it, alive and gossipy and rude, and the grief arrives late and lands harder for the company it's kept.",
-            },
+          id: "endings",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-07-24",
+          t: "The author didn't betray you, she just didn't lie",
+          ex: "Someone on the internet is furious again. Every few months. Like clockwork.",
+          tags: ["endings", "craft", "rage"],
+          emo: [],
+          ask: "What ending are you still not over. You're allowed to still be not over it.",
+          body: [
+            [
+              "p",
+              "Every few months everyone loses it because a book ended badly, and every few months it emerges that the book ended honestly.",
+            ],
+            [
+              "p",
+              "An ending isn't a reward for finishing. You did not put in four hundred pages of emotional labour and earn a wedding like a stamp card at a coffee place.",
+            ],
+            [
+              "q",
+              "A sad ending you didn't want and a bad ending are not the same thing, and we have completely stopped telling them apart.",
+            ],
+            [
+              "p",
+              "I've loved books that flattened me. I've resented books that gave me exactly what I asked for, and I have never once reread one of those, which should tell you something about what I actually want.",
+            ],
+            [
+              "p",
+              "And look — the real reason I'm annoyed. I have had a full year of endings I did not ask for and nobody is letting me leave a review of those.",
+            ],
           ],
-          after:
-            "A wish to write in Hindi more often. I did, that week. Three pages, badly, happily.",
         },
 
         {
-          slug: "fourth-wing",
-          title: "Fourth Wing",
-          author: "Rebecca Yarros",
-          date: "29 May 2026",
-          read: "2 days",
-          opener: "I have notes. I also read it in two days. Both facts stand.",
-          tags: [{ desire: 88 }, { chaos: 60 }, { dread: 45 }, { longing: 38 }],
-          blocks: [
-            {
-              p: "Let's be honest about what this is: a propulsion engine. The chapters end where they need to end, the stakes escalate on schedule, and the whole thing is engineered to make putting it down feel like a small act of self-harm. That's a craft. I'd like more literary novels to admit it's a craft.",
-              note: "Started at 11pm 'for one chapter'. Reader, it was not one chapter.",
-            },
-            {
-              p: "Where it thins out is the sentence level. The book is doing everything at the level of scene and almost nothing at the level of the line, so the emotional beats arrive as events rather than as language. I felt the plot constantly. I felt the prose maybe four times.",
-            },
-            {
-              quote:
-                "Momentum is a real pleasure. It's just not the same pleasure as being moved.",
-            },
-            {
-              p: "But the pull it produced was genuine, and I'm suspicious of readers who pretend that doesn't count. I wanted to know what happened next more than I've wanted it from books I'd defend harder in public.",
-            },
+          id: "badly",
+          cat: "Reviews",
+          date: "2026-07-17",
+          book: "withheld",
+          author: "for my own protection",
+          t: "This is badly written and it took me apart anyway",
+          ex: "The prose is genuinely bad. I read it in one sitting and cried at a spare key. Explain that.",
+          tags: ["craft", "romance", "guilt", "comfort"],
+          emo: [
+            ["comfort", 5],
+            ["tenderness", 5],
+            ["ache", 3],
           ],
-          after:
-            "Two days gone and no regret. Then an immediate craving for something slow.",
+          verdict: "A mess. Best night I had all month. Not resolving that.",
+          ask: "What's your badly-written favourite. I've shown you mine, don't be a coward.",
+          body: [
+            [
+              "p",
+              "The sentences are bad. Not fun-bad. Bad the way a room is cold.",
+            ],
+            [
+              "p",
+              "Adverbs everywhere. People announcing their own feelings out loud like it's a status meeting. A metaphor about a storm that I would like taken behind a shed.",
+            ],
+            [
+              "p",
+              "And I read it in one sitting, on a Sunday I had specifically set aside for being a functional adult, and got completely dismantled by a scene involving a kitchen and a spare key, and I have thought about that scene maybe eleven times since. Once during sprint planning. I was not planning the sprint.",
+            ],
+            [
+              "q",
+              "Craft and effect aren't the same thing. We pretend they are because craft is the one you can argue about at a party.",
+            ],
+            [
+              "p",
+              "So: badly written, and the only thing that got through all month. Both. I'm not going to tidy that up for you.",
+            ],
+          ],
         },
 
         {
-          slug: "normal-people",
-          title: "Normal People",
-          author: "Sally Rooney",
-          date: "11 May 2026",
-          read: "4 days",
-          opener:
-            "Two people who can only be honest when the other one can't hear it.",
-          tags: [
-            { longing: 92 },
-            { desire: 74 },
-            { dread: 50 },
-            { tenderness: 48 },
+          id: "important",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-07-12",
+          t: "I stopped calling books important",
+          ex: "Important to who. On what day. In what mood. Did it for four years, would like them back.",
+          tags: ["canon", "recommendations", "rage"],
+          emo: [],
+          ask: "Best recommendation you ever got. Bet it wasn't phrased as important.",
+          body: [
+            [
+              "p",
+              "Important isn't a genre. It's what people say when they've stopped reading and started arranging themselves.",
+            ],
+            [
+              "p",
+              "I did it for four years. Every time I said it I told you nothing about the book and everything about who I wanted you to think I was, which is a horrible thing to see written down but there it is.",
+            ],
+            [
+              "q",
+              "Nobody has ever stayed up till four in the morning for a book that was merely important.",
+            ],
+            [
+              "p",
+              "Tell me it wrecked a weekend. Tell me you were angry at it in a queue at the bank. Tell me it made you briefly nicer to your mother and then it wore off. That's a recommendation. Important is a CV.",
+            ],
           ],
-          blocks: [
-            {
-              p: "The engine of this book is misunderstanding, which should be exhausting and mostly isn't, because Rooney writes the interior with such flat precision that you always know exactly what each of them meant and exactly why it didn't arrive. You're not confused. You're watching two people be confused, from above, with no way down.",
-              note: "The email chapters. Every time.",
-            },
-            {
-              p: "What I resisted: the class politics sometimes gets stated rather than dramatised. What I couldn't resist: the scenes of ordinary kindness, which are the best in the book and the ones nobody quotes.",
-            },
-            {
-              quote:
-                "It's a novel about people who are fluent in each other and illiterate in themselves.",
-            },
-            {
-              p: "I finished it slightly angry at both of them and entirely on their side, which I think is the intended result.",
-            },
+        },
+
+        {
+          id: "marginalia",
+          cat: "Notebook",
+          form: "Poem",
+          date: "2026-07-08",
+          t: "Marginalia",
+          ex: "Someone underlined this before me and I spent an hour envying a stranger's worst month.",
+          tags: ["grief", "strangers", "original"],
+          emo: [],
+          ask: "Secondhand on purpose, or only when you have to?",
+          body: [
+            [
+              "v",
+              "Someone underlined this before me\nand I have spent an hour\nbeing jealous of a stranger's grief.\n\nThey pressed hard.\nWhatever it was,\nit was not a metaphor to them.",
+            ],
           ],
-          after: "An ache that lasted about a week and made me a worse texter.",
+        },
+
+        {
+          id: "toolate",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-07-04",
+          t: "I got it at fourteen. I just had nowhere to put it.",
+          ex: "\"You'll understand it when you're older.\" People say this like they're doing you a favour.",
+          tags: ["rereading", "memory", "classics"],
+          emo: [],
+          ask: "Which book did you read at the wrong age. Or the right one, badly.",
+          body: [
+            [
+              "p",
+              "People say it like they're doing you a favour. You'll understand it when you're older. As though understanding is a queue and I stood in the wrong one.",
+            ],
+            [
+              "p",
+              "I understood it. At fourteen, in my body and not my vocabulary, which is a real kind of understanding and honestly the more expensive one.",
+            ],
+            [
+              "q",
+              "Some books aren't early. They're early to a room you haven't been let into yet.",
+            ],
+            [
+              "p",
+              "Reread it last month. Found nothing new. That was the point. Nothing in the book changed. I finally had somewhere to put it.",
+            ],
+            [
+              "p",
+              "Also everyone who said that to me at fourteen should know I'm still thinking about it, which I'm aware is not normal.",
+            ],
+          ],
+        },
+
+        {
+          id: "lending",
+          cat: "Notebook",
+          form: "Story",
+          date: "2026-07-01",
+          t: "The Woman Who Returned Books On Time",
+          ex: "A librarian who has never once been late, and the afternoon she finds out what happens if she is.",
+          tags: ["fiction", "original", "libraries"],
+          emo: [],
+          ask: "Would you keep it, or take it back?",
+          body: [
+            [
+              "p",
+              "Kamala had never returned a book late. Not once in thirty-one years. Not through her mother's illness. Not through the flood in '04, when the ground floor took four inches of water and she waded in with a canvas bag over her head.",
+            ],
+            [
+              "p",
+              "The book was nothing. A biography of a minor Mughal administrator, spine gone, somebody's chai ring on page ninety. Due Thursday.",
+            ],
+            [
+              "p",
+              "On Thursday she put it in her bag. On Thursday she took it out again.",
+            ],
+            [
+              "q",
+              "She wanted to know what sort of woman she'd be by Friday. It was the only experiment available to her and it cost eight rupees a day.",
+            ],
+            [
+              "p",
+              "By Sunday the fine was thirty-two rupees and she had read the thing twice, which she had also not done in thirty-one years, because a book you must return on Thursday is a book you read at Thursday's speed.",
+            ],
+            [
+              "p",
+              "She took it back on the fourteenth day and paid in coins, slowly, giving the girl at the desk every opportunity. The girl did not look up. Kamala understood then — and it embarrassed her later, on the bus — that nobody had ever been watching.",
+            ],
+          ],
+        },
+
+        {
+          id: "inventory",
+          cat: "Notebook",
+          form: "Poem",
+          date: "2026-06-30",
+          t: "Inventory, 3 a.m.",
+          ex: "I keep receipts for books I haven't read the way other people keep apologies they haven't made.",
+          tags: ["insomnia", "wanting", "original"],
+          emo: [],
+          ask: "How many unread books are on your shelf. Be honest. Or don't.",
+          body: [
+            [
+              "v",
+              "I keep the receipts for books\nI have not read\nthe way other people keep\napologies they have not made.\n\nBoth are promises.\nBoth are dust.\nBoth are, technically,\nstill open.",
+            ],
+          ],
+        },
+
+        {
+          id: "goodday",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-06-18",
+          t: "Every book I've finished, I bought while avoiding something",
+          ex: "Went through the shelf on Sunday for no reason. The pattern is not flattering.",
+          tags: ["wanting", "memory", "shelf"],
+          emo: [],
+          ask: "Go check your shelf. Am I wrong. I'd quite like to be wrong.",
+          body: [
+            [
+              "p",
+              "Sunday, no reason, went through the shelf. Every single book I have actually finished was bought while I was avoiding something.",
+            ],
+            [
+              "p",
+              "Not a crisis. An ordinary bad hour. A bus I didn't want to get on. A call I wasn't returning. An afternoon where going into a shop was easier than going back to the flat.",
+            ],
+            [
+              "p",
+              "The ones I buy on good days are for a woman with a free evening and a settled head, and I have never met her. I keep buying for her anyway. It's either hope or a filing error.",
+            ],
+            [
+              "q",
+              "Eleven unread books on the middle shelf, every one bought in a good mood. I keep them as evidence.",
+            ],
+            [
+              "p",
+              "The ones I finish were bought as an exit. Which is bleak, and also the most accurate thing I've worked out about myself this year, and I worked it out from a shelf.",
+            ],
+          ],
         },
       ];
 
-      /* ═══════════════════════════════════════════════════════════
-   ▲▲▲  STOP EDITING. Design and logic below.  ▲▲▲
-   ═══════════════════════════════════════════════════════════ */
+      const LOG = [
+        ["4 Aug", "Bought another book. Didn't read it."],
+        ["3 Aug", "Read twenty pages. Highlighted nineteen."],
+        ["1 Aug", "Closed it because I wasn't ready to admit it was right."],
+        [
+          "29 Jul",
+          "Reread the same paragraph four times. Not because it was hard.",
+        ],
+        ["26 Jul", "Finished at 2 a.m. Sat in the dark. No notes."],
+      ];
 
-      /* ── helpers ─────────────────────────────────────────────── */
+      /* ================= helpers ================= */
+      const M = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      const MM = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const dl = (iso) => {
+        const d = new Date(iso + "T00:00:00");
+        return MM[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+      };
       const esc = (s) =>
         String(s).replace(
           /[&<>"]/g,
           (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
         );
-      const key = (t) => Object.keys(t)[0];
-      const val = (t) => Object.values(t)[0];
-      const col = (k) => EMOTIONS[k] || "#c49a6c";
-      const LIVE = REVIEWS.filter((r) => !r.draft); // draft: true hides a post
-      const RECENT = 8; // full cards; older ones go to the archive
-      const year = (r) => (String(r.date).match(/\d{4}/) || ["—"])[0];
+      const ci = (id) => POSTS.findIndex((p) => p.id === id) % 5;
+      const rtime = (p) =>
+        Math.max(
+          1,
+          Math.round(
+            p.body.reduce((n, b) => n + b[1].split(/\s+/).length, 0) / 190,
+          ),
+        );
+      const CURL =
+        '<svg class="curl" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M2 26C14 26 18 6 30 6s16 20 28 20"/><path d="M30 6c-4-4-4 0 0 0z"/></svg>';
 
-      function spectrum(tags) {
-        const cs = (tags || []).map((t) => col(key(t)));
-        if (cs.length < 2) return cs[0] || "var(--brass)";
+      function fi(p, cls) {
         return (
-          "linear-gradient(90deg," +
-          cs
-            .map(
-              (c, i) =>
-                c + " " + ((i / (cs.length - 1)) * 100).toFixed(1) + "%",
-            )
-            .join(",") +
-          ")"
+          '<div class="fi c' +
+          ci(p.id) +
+          (cls ? " " + cls : "") +
+          '">' +
+          '<span class="kicker">' +
+          esc(p.form || p.cat) +
+          "</span><h3>" +
+          esc(p.t) +
+          "</h3>" +
+          CURL +
+          "</div>"
         );
       }
-      const tagRow = (tags) =>
-        '<ul class="tags">' +
-        tags
+      function card(p) {
+        return (
+          '<article class="card"><a href="#/post/' +
+          p.id +
+          '">' +
+          fi(p) +
+          '</a><div class="in">' +
+          '<div class="meta"><span class="cat">' +
+          esc(p.form || p.cat) +
+          '</span><span class="dot"></span>' +
+          "<span>" +
+          dl(p.date) +
+          "</span></div>" +
+          '<h2><a href="#/post/' +
+          p.id +
+          '">' +
+          esc(p.t) +
+          "</a></h2>" +
+          '<p class="ex">' +
+          esc(p.ex) +
+          "</p>" +
+          '<a class="more" href="#/post/' +
+          p.id +
+          '">Continue reading →</a></div></article>'
+        );
+      }
+
+      const ym = (i) => i.slice(0, 7);
+      const ymLabel = (k) => {
+        const m = /^(\d{4})-(\d{2})$/.exec(k || "");
+        return m && +m[2] >= 1 && +m[2] <= 12
+          ? MM[+m[2] - 1] + " " + m[1]
+          : null;
+      };
+      const tslug = (t) => encodeURIComponent(t);
+      const plural = (w) =>
+        w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s";
+      const allTags = () => {
+        const m = {};
+        POSTS.forEach((p) => p.tags.forEach((t) => (m[t] = (m[t] || 0) + 1)));
+        return m;
+      };
+      const NAV = [
+        ["#/", "Home"],
+        ["#/reviews", "Reviews"],
+        ["#/notebook", "Notebook"],
+        ["#/log", "Reading Log"],
+        ["#/index", "The Index"],
+        ["#/tags", "Tags"],
+        ["#/about", "About"],
+      ];
+
+      /* ================= sidebar ================= */
+      const W = {};
+      W.me = (
+        here,
+      ) => `<section><h4>Hi, I'm Shruti</h4><div class="avatar">S</div>
+ <p class="bio">I read a lot, mostly to get out of the room. Most of this started as something I was too annoyed to say out loud at work. No star ratings. I've tried. I can't.</p>
+ ${here === "about" ? "" : '<a href="#/about">The longer version &rarr;</a>'}</section>`;
+
+      W.reading =
+        () => `<section><h4>Currently Reading</h4><div class="reading">
+ <div class="cover">Ariel<br><br>Sylvia Plath</div>
+ <div><p class="t">Ariel</p><p class="a">Sylvia Plath</p>
+ <div class="bar"><i style="width:62%"></i></div><p class="pct">62% &middot; slowly, on purpose</p></div></div></section>`;
+
+      W.key = () => `<section class="emokey"><h4>How I Rate</h4>
+ <ul>${Object.entries(EMO)
+   .map(
+     ([k, v]) =>
+       '<li><span class="sw" style="background:' +
+       v +
+       '"></span>' +
+       k +
+       "</li>",
+   )
+   .join("")}</ul>
+ <p class="note">No stars. I can't rate a book out of five. I can't rate a Tuesday out of five. So: what showed up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p></section>`;
+
+      W.cats = () => {
+        const c = {};
+        POSTS.forEach((p) => (c[p.cat] = (c[p.cat] || 0) + 1));
+        const forms = [
+          ...new Set(
+            POSTS.filter((p) => p.cat === "Notebook").map((p) => p.form),
+          ),
+        ];
+        return `<section class="cats"><h4>Categories</h4><ul>
+  <li><a href="#/reviews">Reviews</a><span class="n">${c.Reviews || 0}</span></li>
+  <li><a href="#/notebook">Notebook</a><span class="n">${c.Notebook || 0}</span></li>
+  ${forms.map((fm) => '<li class="sub2"><a href="#/notebook/' + fm.toLowerCase() + '">' + plural(fm) + '</a><span class="n">' + POSTS.filter((p) => p.form === fm).length + "</span></li>").join("")}
+  <li><a href="#/log">Reading Log</a><span class="n">${LOG.length}</span></li></ul></section>`;
+      };
+
+      W.recent = (ex) => {
+        const l = POSTS.filter((p) => p.id !== ex).slice(0, 4);
+        return `<section class="recent"><h4>Recent Posts</h4><ul>${l
           .map(
-            (t) =>
-              '<li><span class="dot" style="background:' +
-              col(key(t)) +
-              '"></span>' +
-              esc(key(t)) +
-              "</li>",
+            (p) =>
+              '<li><a href="#/post/' +
+              p.id +
+              '" style="display:flex;gap:12px;padding:11px 0"><span class="thumb fi c' +
+              ci(p.id) +
+              '" style="padding:0;aspect-ratio:1"></span>' +
+              '<span><span class="t">' +
+              esc(p.t) +
+              '</span><span class="d">' +
+              dl(p.date) +
+              "</span></span></a></li>",
           )
-          .join("") +
-        "</ul>";
+          .join("")}</ul></section>`;
+      };
 
-      function observe(sel) {
-        const els = document.querySelectorAll(sel);
-        if (!("IntersectionObserver" in window)) {
-          els.forEach((el) => el.classList.add("in"));
-          return;
-        }
-        const io = new IntersectionObserver(
-          (es) =>
-            es.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("in");
-                io.unobserve(e.target);
-              }
-            }),
-          { threshold: 0.12 },
-        );
-        els.forEach((el) => io.observe(el));
-      }
+      W.sub = () => `<section class="sub"><h4>Subscribe</h4>
+ <input type="email" placeholder="your@email.com"><button class="btn">Email me the posts</button>
+ <p class="fine">An email when I post &mdash; that's the whole offer. No newsletter voice, no hey friends, no funnel. I'm not building anything.</p></section>`;
 
-      function meta(name, content, attr) {
-        attr = attr || "name";
-        let el = document.head.querySelector(
-          "meta[" + attr + '="' + name + '"]',
-        );
-        if (!el) {
-          el = document.createElement("meta");
-          el.setAttribute(attr, name);
-          document.head.appendChild(el);
-        }
-        el.setAttribute("content", content);
-      }
-      function setMeta(title, desc) {
-        document.title = title;
-        meta("description", desc);
-        meta("og:title", title, "property");
-        meta("og:description", desc, "property");
-        meta("og:url", location.href, "property");
-        meta("og:type", "article", "property");
-        meta("twitter:card", "summary");
-      }
-
-      /* ── shared fragments ────────────────────────────────────── */
-      function card(r) {
-        return `
-  <article class="entry">
-    <a class="entry-hit" href="#${esc(r.slug)}"><span class="sr">Read the review of ${esc(r.title)}</span></a>
-    <div class="entry-band" style="background:${spectrum(r.tags)}"></div>
-    <div>
-      <p class="entry-meta">${esc(r.date)}<span class="sep">·</span>${esc(r.read)} with it</p>
-      <h3 class="entry-title">${esc(r.title)}</h3>
-      <p class="author-line">${esc(r.author)}</p>
-      <p class="entry-opener">${esc(r.opener)}</p>
-      ${tagRow(r.tags)}
-    </div>
-    <div class="entry-dom" style="color:${col(key(r.tags[0]))}">${esc(key(r.tags[0]))}</div>
-  </article>`;
-      }
-
-      function archiveRows(list) {
-        const years = [...new Set(list.map(year))];
-        return years
-          .map((y) => {
-            const inYear = list.filter((r) => year(r) === y);
-            return `
-    <div class="arch-year"><h3>${esc(y)}</h3><i></i><b>${inYear.length} ${inYear.length === 1 ? "book" : "books"}</b></div>
-    ${inYear
-      .map(
-        (r) => `
-      <a class="arch-row" href="#${esc(r.slug)}">
-        <span class="arch-dot" style="background:${col(key(r.tags[0]))}"></span>
-        <span><span class="arch-title">${esc(r.title)}</span><span class="arch-author">${esc(r.author)}</span></span>
-        <span class="arch-date">${esc(String(r.date).replace(/\s*\d{4}$/, ""))}</span>
-      </a>`,
-      )
-      .join("")}`;
-          })
-          .join("");
-      }
-
-      /* ── the shelf ───────────────────────────────────────────── */
-      function renderIndex(opts) {
-        opts = opts || {};
-        const filter = opts.emotion || null;
-        const list = filter
-          ? LIVE.filter((r) => r.tags.some((t) => key(t) === filter))
-          : LIVE;
-
-        // how many times each emotion appears, so the filter can show counts
-        const counts = {};
-        LIVE.forEach((r) =>
-          r.tags.forEach((t) => (counts[key(t)] = (counts[key(t)] || 0) + 1)),
-        );
-        const chips = Object.keys(EMOTIONS)
-          .filter((k) => counts[k])
+      W.arch = () => {
+        const m = {};
+        POSTS.forEach((p) => (m[ym(p.date)] = (m[ym(p.date)] || 0) + 1));
+        return `<section class="arch"><h4>Archives</h4><ul>${Object.keys(m)
+          .sort()
+          .reverse()
           .map(
             (k) =>
-              `<a class="chip ${filter === k ? "on" : ""}" href="${filter === k ? "#" : "#e/" + encodeURIComponent(k)}">
-       <span class="dot" style="background:${col(k)}"></span>${esc(k)} <span class="n">${counts[k]}</span></a>`,
+              '<li><a href="#/archive/' +
+              k +
+              '">' +
+              ymLabel(k) +
+              '</a><span class="n">' +
+              m[k] +
+              "</span></li>",
           )
-          .join("");
+          .join("")}</ul></section>`;
+      };
 
-        const season = LIVE.slice()
-          .reverse()
-          .flatMap((r) => r.tags.slice(0, 2));
-        const half = Math.ceil(SITE.name.length / 2);
-        const mark =
-          esc(SITE.name.slice(0, half)) +
-          "<em>" +
-          esc(SITE.name.slice(half)) +
-          "</em>";
+      W.here = (p) =>
+        `<section><h4>Tagged here</h4><div class="cloud">${p.tags
+          .map(
+            (t) =>
+              '<a class="tg" href="#/tag/' + tslug(t) + '">' + esc(t) + "</a>",
+          )
+          .join("")}</div></section>`;
 
-        let html = `
-  <header class="hero wrap">
-    <p class="eyebrow">${esc(SITE.tagline)}</p>
-    <h1 class="wordmark"><a href="#" style="text-decoration:none;color:inherit">${mark}</a></h1>
-    <p class="thesis">${esc(SITE.thesis)}</p>
-    <div class="weather">
-      <p class="label">This season, in feeling</p>
-      <div class="spectrum" style="height:10px;background:${spectrum(season)}"></div>
-      <div class="weather-legend"><span>Earliest</span><span>Latest</span></div>
-    </div>
-  </header>`;
-
-        if (typeof CURRENT !== "undefined" && CURRENT && !filter) {
-          html += `
-    <section class="current wrap">
-      <p class="label">In my hands right now</p>
-      <h2 class="current-title">${esc(CURRENT.title)}</h2>
-      <p class="author-line">${esc(CURRENT.author)}</p>
-      <div class="current-prog"><span class="current-fill" style="width:${CURRENT.progress * 100}%;background:${col(CURRENT.feeling)}"></span></div>
-      <p class="current-note">${Math.round(CURRENT.progress * 100)}% in, and so far it's mostly <em style="color:${col(CURRENT.feeling)}">${esc(CURRENT.feeling)}</em>.</p>
-    </section>`;
-        }
-
-        const shown = list.slice(0, RECENT);
-        const rest = list.slice(RECENT);
-
-        html += `
-  <section class="shelf wrap">
-    <div class="shelf-head">
-      <h2 class="h2">${filter ? esc(filter) : "The shelf"}</h2>
-      <p class="stats">${list.length} ${list.length === 1 ? "book" : "books"}${filter ? "" : ", written up"}</p>
-    </div>
-    <div class="filter">${chips}</div>
-    ${
-      filter
-        ? `<p class="filter-note">Books that left some ${esc(filter)} behind. <a href="#">Show everything</a></p>`
-        : `<p class="filter-note">Tap an emotion to see only the books that left it behind.</p>`
-    }
-    ${
-      list.length
-        ? shown.map(card).join("")
-        : `<p class="filter-note" style="font-size:16px">Nothing tagged ${esc(filter)} yet. <a href="#">Back to the shelf</a></p>`
-    }
-    ${rest.length ? `<div class="arch"><p class="label">Earlier</p>${archiveRows(rest)}</div>` : ""}
-  </section>
-
-  <section class="vocab wrap">
-    <p class="label">The vocabulary</p>
-    <p class="vocab-text">Thirteen words, and every review is built from them. No book gets a number.</p>
-    <p class="vocab-note">The list isn't arbitrary — it comes from <a href="${esc(SITE.bibliomeUrl)}">Bibliome</a>, a reading tool I'm building that tracks what books do to you instead of what you'd rate them. This journal is where I use it in longhand.</p>
-    <ul class="vocab-list">
-      ${Object.keys(EMOTIONS)
-        .map(
-          (k) =>
-            `<li><span class="dot" style="background:${EMOTIONS[k]}"></span>${esc(k)}</li>`,
-        )
-        .join("")}
-    </ul>
-  </section>
-
-  <footer class="foot wrap">
-    <p class="foot-line">If you've read one of these too, leave a note in my margins.</p>
-    <p class="colophon">${esc(SITE.author)} · set in Playfair Display and DM Sans · built alongside <a href="${esc(SITE.bibliomeUrl)}">Bibliome</a></p>
-  </footer>`;
-
-        document.getElementById("app").innerHTML = html;
-        requestAnimationFrame(() => {
-          const h = document.querySelector(".hero");
-          if (h) h.classList.add("in");
-        });
-        observe(".entry");
-        setMeta(
-          SITE.name + (filter ? " — " + filter : ""),
-          SITE.thesis.slice(0, 155),
-        );
-      }
-
-      /* ── one review ──────────────────────────────────────────── */
-      function renderPost(r) {
-        const i = LIVE.indexOf(r);
-        const newer = LIVE[i - 1],
-          older = LIVE[i + 1];
-        const mine = new Set(r.tags.map(key));
-        const related = LIVE.filter((x) => x !== r)
-          .map((x) => ({
-            x,
-            shared: x.tags.map(key).filter((k) => mine.has(k)),
-          }))
-          .filter((o) => o.shared.length)
-          .sort((a, b) => b.shared.length - a.shared.length)
-          .slice(0, 2);
-
-        const words = r.blocks.reduce(
-          (n, b) => n + String(b.p || b.quote || "").split(/\s+/).length,
+      W.moreIn = (p) => {
+        const sib = POSTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(
           0,
+          3,
         );
-        const mins = Math.max(1, Math.round(words / 220));
+        if (!sib.length) return "";
+        return `<section class="recent"><h4>More ${p.cat === "Reviews" ? "reviews" : "from the notebook"}</h4><ul>${sib
+          .map(
+            (x) =>
+              '<li><a href="#/post/' +
+              x.id +
+              '" style="display:flex;gap:12px;padding:11px 0"><span class="thumb fi c' +
+              ci(x.id) +
+              '" style="padding:0;aspect-ratio:1"></span>' +
+              '<span><span class="t">' +
+              esc(x.t) +
+              '</span><span class="d">' +
+              dl(x.date) +
+              "</span></span></a></li>",
+          )
+          .join("")}</ul></section>`;
+      };
 
-        const body = r.blocks
-          .map((b, i) =>
-            b.quote
-              ? `<blockquote class="pull"><span style="background:${col(key(r.tags[0]))}"></span>${esc(b.quote)}</blockquote>`
-              : `<div class="para">
-         <p class="${i === 0 ? "drop" : ""}">${esc(b.p)}</p>
-         ${b.note ? `<aside class="note"><b>✳</b>${esc(b.note)}</aside>` : ""}
-       </div>`,
+      W.biblio = () => `<section class="biblio"><h4>I built a thing</h4>
+ <p class="bio">The numbers on these reviews aren't decoration. They come out of <a href="https://bibliome.app" rel="noopener noreferrer">Bibliome</a>, which I built because I could not make five stars mean anything.</p>
+ <p class="bio" style="margin-top:10px">Yes, I built software about my feelings. It was that or therapy and this one has a changelog.</p>
+ <a class="bpill" href="https://bibliome.app" rel="noopener noreferrer">bibliome.app &rarr;</a></section>`;
+
+      W.cloud = () => {
+        const m = allTags();
+        return `<section><h4>Every tag</h4><div class="cloud">${Object.keys(m)
+          .sort()
+          .map(
+            (t) =>
+              '<a class="tg" href="#/tag/' +
+              tslug(t) +
+              '">' +
+              esc(t) +
+              ' <span style="opacity:.5">' +
+              m[t] +
+              "</span></a>",
+          )
+          .join("")}</div></section>`;
+      };
+
+      /* the sidebar changes with the route — that was the whole complaint */
+      function sidebar(route, ctx) {
+        if (route === "post")
+          return (
+            W.here(ctx) +
+            (ctx.cat === "Reviews" ? W.key() + W.biblio() : "") +
+            W.moreIn(ctx) +
+            W.reading() +
+            W.sub()
+          );
+        if (route === "tags" || route === "tag" || route === "search")
+          return W.cloud() + W.cats() + W.recent() + W.sub();
+        if (route === "about") return W.reading() + W.sub();
+        if (route === "reviews" || route === "index")
+          return W.key() + W.biblio() + W.reading() + W.cats() + W.sub();
+        if (route === "log") return W.reading() + W.me() + W.recent() + W.sub();
+        return (
+          W.me() +
+          W.reading() +
+          W.cats() +
+          W.recent() +
+          W.biblio() +
+          W.sub() +
+          W.arch()
+        );
+      }
+
+      /* ================= views ================= */
+      function home() {
+        return (
+          `<div class="logbox">
+    <h4>The Reading Log</h4>
+    <p class="sub">The parts too small to be a post and too honest to say out loud.</p>
+    <ul>${LOG.map((l) => "<li><time>" + l[0] + "</time><span>" + esc(l[1]) + "</span></li>").join("")}</ul>
+  </div>` +
+          POSTS.map(card).join("") +
+          ""
+        );
+      }
+
+      function cat(name, blurb) {
+        const list = POSTS.filter((p) => p.cat === name);
+        return (
+          '<div class="phead"><h1>' +
+          name +
+          "</h1><p>" +
+          blurb +
+          "</p></div>" +
+          (list.length
+            ? list.map(card).join("")
+            : '<div class="card"><div class="in"><p class="ex">Nothing here yet. I\'m still deciding whether the book deserved me.</p></div></div>')
+        );
+      }
+
+      function notebook(form) {
+        const all = POSTS.filter((p) => p.cat === "Notebook");
+        const forms = [...new Set(all.map((p) => p.form))];
+        const list = form
+          ? all.filter((p) => p.form.toLowerCase() === form)
+          : all;
+        const chip = (lbl, href, on) =>
+          '<a class="tg' +
+          (on ? " on" : "") +
+          '" href="' +
+          href +
+          '">' +
+          lbl +
+          "</a>";
+        return (
+          '<div class="phead"><h1>Notebook</h1>' +
+          "<p>Everything that isn't about someone else's book. Arguments I lost with nobody at eleven at night, poems I should have deleted, the occasional short story. It's a drawer. I open it and things fall out.</p>" +
+          '<div class="filters">' +
+          chip("All " + all.length, "#/notebook", !form) +
+          forms
+            .map((fm) =>
+              chip(
+                plural(fm) + " " + all.filter((p) => p.form === fm).length,
+                "#/notebook/" + fm.toLowerCase(),
+                form === fm.toLowerCase(),
+              ),
+            )
+            .join("") +
+          "</div></div>" +
+          (list.length
+            ? list.map(card).join("")
+            : '<div class="card"><div class="in"><p class="ex">Nothing in this drawer yet.</p></div></div>')
+        );
+      }
+
+      function logPage() {
+        return (
+          '<div class="phead"><h1>Reading Log</h1><p>Kept mostly so I can\'t lie to myself later about how the year actually went.</p></div>' +
+          '<div class="logbox"><ul>' +
+          LOG.concat([
+            [
+              "22 Jul",
+              "Started it. Stopped. Not the book's fault. Not entirely mine either.",
+            ],
+            ["19 Jul", "Lent it out. Regretted it before the door closed."],
+          ])
+            .map(
+              (l) =>
+                "<li><time>" +
+                l[0] +
+                "</time><span>" +
+                esc(l[1]) +
+                "</span></li>",
+            )
+            .join("") +
+          "</ul></div>"
+        );
+      }
+
+      function indexPage() {
+        const rows = POSTS.filter((p) => p.cat === "Reviews");
+        return (
+          '<div class="phead"><h1>The Index</h1><p>Every book, with what it did. Height is how loud, colour is which feeling. It is, unfortunately, also a chart of the year I was having.</p></div>' +
+          '<div class="card"><div class="in">' +
+          rows
+            .map(
+              (p) =>
+                '<a href="#/post/' +
+                p.id +
+                '" style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #F1EAE0">' +
+                '<div><span style="font-family:var(--display);font-size:17px;font-weight:600">' +
+                esc(p.book || p.t) +
+                "</span>" +
+                '<div style="font-size:13px;color:var(--mid)">' +
+                esc(p.author || "") +
+                "</div></div>" +
+                '<div style="display:flex;gap:5px;align-items:flex-start;padding-top:5px">' +
+                p.emo
+                  .map(
+                    ([e, v]) =>
+                      '<span title="' +
+                      e +
+                      " " +
+                      v +
+                      '/5" style="width:9px;height:' +
+                      v * 5 +
+                      "px;border-radius:2px;background:" +
+                      EMO[e] +
+                      '"></span>',
+                  )
+                  .join("") +
+                "</div></a>",
+            )
+            .join("") +
+          "</div></div>"
+        );
+      }
+
+      function about() {
+        return `<div class="card"><div class="in" style="padding:32px 34px">
+  <h1 style="font-family:var(--display);font-size:32px;font-weight:600;margin:0 0 18px">About, briefly</h1>
+  <p class="ex" style="font-size:17.5px;line-height:1.85;color:#3A322C">This isn't a book review blog. Books are just where I go.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">I read the way other people drink, or run, or reorganise a cupboard at two in the morning. Something in the day is unbearable, and there's a book, and for a while I'm not here.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">Then something in the book says a thing, and I have a reaction completely out of proportion to what just happened, and it turns out the reaction was already in the room. It had been waiting. The book only opened a door.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">So: reviews, which aren't objective and have no plot section. A notebook &mdash; thoughts, poems, the odd short story, all in one drawer, because sorting them felt like work and I already have a job. And a log, for the things too small and too honest to be posts.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">I'm going to be wrong about books you love, and I'm not doing it to be difficult. I just don't have any diplomacy left over for fiction at the end of a day.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">One thing I hold myself to: if a post is only clever, it doesn't go up. Clever is easy. Clever is what I do all day.</p>
+
+  <h2 style="font-family:var(--display);font-size:22px;font-weight:600;margin:32px 0 10px">The rating thing</h2>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C">Stars don't work and I've stopped pretending. Three stars can mean bored, or it can mean wrecked and annoyed about being wrecked, and those are not the same afternoon.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">So every review gets scored on what actually turned up and how loud it was. A book can be a five on rage and still be the best thing that happened that month. The <a href="#/index" style="color:var(--terra);font-weight:600">Index</a> plots all of them together, which is useful and also a bit much to look at.</p>
+
+  <h2 style="font-family:var(--display);font-size:22px;font-weight:600;margin:32px 0 10px">The thing I built</h2>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C">At some point I got annoyed enough at star ratings to go and build an alternative, which is an unhinged response to a small problem and I stand by it. It's called <a href="https://bibliome.app" rel="noopener noreferrer" style="color:var(--terra);font-weight:600">Bibliome</a>. You log what a book did to you instead of scoring it, and after a while it draws you a picture of your own reading that you may not enjoy.</p>
+  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">You don't have to use it. I'd notice. I wouldn't say anything.</p>
+
+  <div class="ask" style="margin-top:28px"><p>No comment box. That's deliberate.</p>
+  <p class="askmail">If you want to argue, <a href="mailto:shrutipandey1505@gmail.com">email me</a>. One person who actually types something out beats fifty who don't. I read all of them. I answer most.</p></div>
+ </div></div>`;
+      }
+
+      function post(id) {
+        const p = POSTS.find((x) => x.id === id);
+        if (!p) return home();
+        const i = POSTS.indexOf(p);
+        const rel = [
+          POSTS[(i + 1) % POSTS.length],
+          POSTS[(i + 2) % POSTS.length],
+          POSTS[(i + 3) % POSTS.length],
+        ];
+        const body = p.body
+          .map(([t, v]) =>
+            t === "q"
+              ? "<blockquote><p>" + esc(v) + "</p></blockquote>"
+              : t === "v"
+                ? '<p class="verse">' + esc(v) + "</p>"
+                : "<p>" + esc(v) + "</p>",
           )
           .join("");
 
-        document.getElementById("app").innerHTML = `
-  <div class="wrap">
-    <a class="back" href="#">← the shelf</a>
-    <header class="post-head">
-      <p class="eyebrow">${esc(r.date)}<span class="sep">·</span>${esc(r.read)} with it<span class="sep">·</span>${mins} min read</p>
-      <h1 class="post-title">${esc(r.title)}</h1>
-      <p class="post-author">${esc(r.author)}</p>
-      <div class="spectrum" style="height:5px;background:${spectrum(r.tags)}"></div>
-      ${r.tags.map((t) => `<a class="chip" href="#e/${encodeURIComponent(key(t))}" style="margin:4px 6px 0 0"><span class="dot" style="background:${col(key(t))}"></span>${esc(key(t))}</a>`).join("")}
-    </header>
-    <div>${body}</div>
-    <section class="after">
-      <p class="label">What it left behind</p>
-      <p class="after-text">${esc(r.after)}</p>
-      <p class="label">Emotional footprint</p>
-      <div class="fp">
-        ${r.tags
-          .map(
-            (t) => `
-          <div class="fp-row">
-            <span class="fp-label">${esc(key(t))}</span>
-            <span class="fp-track"><span class="fp-fill" data-w="${val(t)}" style="background:${col(key(t))}"></span></span>
-            <span class="fp-num">${val(t)}</span>
-          </div>`,
-          )
-          .join("")}
-      </div>
-    </section>
-
-    ${
-      related.length
-        ? `
-    <section class="related">
-      <p class="label">If this one did it for you</p>
-      <ul class="rel-list">
-        ${related
-          .map(
-            (o) => `
-          <li><a href="#${esc(o.x.slug)}">
-            <span class="rel-band" style="background:${spectrum(o.x.tags)}"></span>
-            <span>
-              <span class="rel-t">${esc(o.x.title)}</span>
-              <span class="rel-why">also ${o.shared.length > 2 ? o.shared.slice(0, -1).map(esc).join(", ") + " and " + esc(o.shared[o.shared.length - 1]) : o.shared.map(esc).join(" and ")}</span>
-            </span>
-          </a></li>`,
-          )
-          .join("")}
-      </ul>
-    </section>`
-        : ""
-    }
-
-    <nav class="pager">
-      ${newer ? `<a class="pv" href="#${esc(newer.slug)}"><span class="k">Newer</span><span class="t">${esc(newer.title)}</span></a>` : "<span></span>"}
-      ${older ? `<a class="nx" href="#${esc(older.slug)}"><span class="k">Older</span><span class="t">${esc(older.title)}</span></a>` : ""}
-    </nav>
-
-    <a class="back" href="#">← back to the shelf</a>
-  </div>`;
-
-        setMeta(r.title + " — " + SITE.name, r.opener);
-        setTimeout(
-          () =>
-            document.querySelectorAll(".fp-fill").forEach((el, i) => {
-              setTimeout(() => (el.style.width = el.dataset.w + "%"), i * 90);
-            }),
-          350,
+        return (
+          '<article class="post">' +
+          fi(p) +
+          '<div class="body">' +
+          '<div class="meta"><span class="cat">' +
+          esc(p.form || p.cat) +
+          '</span><span class="dot"></span><span>' +
+          dl(p.date) +
+          "</span>" +
+          '<span class="dot"></span><span>' +
+          rtime(p) +
+          " min read</span></div>" +
+          "<h1>" +
+          esc(p.t) +
+          "</h1>" +
+          (p.book
+            ? '<p style="font-size:14.5px;color:var(--mid);margin:0 0 22px"><strong>' +
+              esc(p.book) +
+              "</strong> by " +
+              esc(p.author) +
+              "</p>"
+            : "") +
+          body +
+          (p.cat === "Reviews" && p.emo.length
+            ? '<div class="emobox"><h5>What it did to me</h5><p class="lead">Not out of five. Out of whatever this is.</p>' +
+              p.emo
+                .map(
+                  ([e, v]) =>
+                    '<div class="erow"><span class="lbl">' +
+                    e +
+                    '</span><span class="track"><i style="width:' +
+                    v * 20 +
+                    "%;background:" +
+                    EMO[e] +
+                    '"></i></span><span class="v">' +
+                    v +
+                    "/5</span></div>",
+                )
+                .join("") +
+              (p.verdict
+                ? '<p class="verdict">' + esc(p.verdict) + "</p>"
+                : "") +
+              "</div>"
+            : "") +
+          '<div class="tagline"><span class="lb">Tagged</span>' +
+          p.tags
+            .map(
+              (t) =>
+                '<a class="tg" href="#/tag/' +
+                encodeURIComponent(t) +
+                '">' +
+                esc(t) +
+                "</a>",
+            )
+            .join("") +
+          "</div>" +
+          '<div class="ask"><p>' +
+          esc(p.ask) +
+          "</p>" +
+          '<p class="askmail">Tell me if you like &mdash; <a href="mailto:shrutipandey1505@gmail.com?subject=' +
+          encodeURIComponent("Re: " + p.t) +
+          "\">shrutipandey1505@gmail.com</a>. Or don't, it's fine either way.</p></div>" +
+          "</div>" +
+          '<div class="related"><h4>You might also like</h4><div class="rel-grid">' +
+          rel
+            .map(
+              (r) =>
+                '<a class="rel" href="#/post/' +
+                r.id +
+                '">' +
+                fi(r) +
+                '<div class="rin"><div class="rt">' +
+                esc(r.t) +
+                '</div><div class="rd">' +
+                dl(r.date) +
+                "</div></div></a>",
+            )
+            .join("") +
+          "</div></div></article>"
         );
       }
 
-      /* ── not found ───────────────────────────────────────────── */
-      function renderMissing(slug) {
-        document.getElementById("app").innerHTML = `
-  <div class="wrap nf">
-    <p class="label">Nothing here</p>
-    <h1>That review doesn't exist.</h1>
-    <p>There's no book at <em>${esc(slug)}</em> — the link may be old, or the review may still be a draft.</p>
-    <a class="chip" href="#">← back to the shelf</a>
-  </div>`;
-        setMeta("Not found — " + SITE.name, "That review does not exist.");
+      function tagsPage() {
+        const m = allTags();
+        return (
+          '<div class="phead"><h1>Tags</h1><p>' +
+          Object.keys(m).length +
+          "  tags across " +
+          POSTS.length +
+          " posts. Technically a navigation aid. Functionally a diagnosis.</p></div>" +
+          '<div class="card"><div class="in"><div class="cloud">' +
+          Object.entries(m)
+            .sort((a, b) => b[1] - a[1])
+            .map(
+              ([t, n]) =>
+                '<a class="tg" href="#/tag/' +
+                tslug(t) +
+                '" style="font-size:' +
+                (12 + n * 1.6) +
+                'px">' +
+                esc(t) +
+                ' <span style="opacity:.5">' +
+                n +
+                "</span></a>",
+            )
+            .join("") +
+          "</div></div></div>"
+        );
+      }
+      function tagPage(t) {
+        const tag = decodeURIComponent(t || "");
+        const list = POSTS.filter((p) => p.tags.includes(tag));
+        return (
+          '<div class="phead"><h1>' +
+          esc(tag) +
+          "</h1><p>" +
+          list.length +
+          (list.length === 1 ? " post" : " posts") +
+          ' tagged this. <a href="#/tags" style="color:var(--terra)">All tags &rarr;</a></p></div>' +
+          (list.length
+            ? list.map(card).join("")
+            : empty(
+                "Nothing tagged that. Which either means I haven't got round to it or I'm avoiding it.",
+              ))
+        );
+      }
+      function archivePage(k) {
+        const label = ymLabel(k);
+        if (!label) return notFound();
+        const list = POSTS.filter((p) => ym(p.date) === k);
+        return (
+          '<div class="phead"><h1>' +
+          esc(label) +
+          "</h1><p>" +
+          list.length +
+          (list.length === 1 ? " post" : " posts") +
+          " that month.</p></div>" +
+          (list.length
+            ? list.map(card).join("")
+            : empty("Nothing that month. Some months you just get through."))
+        );
+      }
+      function searchPage(term) {
+        const q = decodeURIComponent(term || "")
+          .toLowerCase()
+          .trim();
+        const list = q
+          ? POSTS.filter((p) =>
+              (
+                p.t +
+                " " +
+                p.ex +
+                " " +
+                p.tags.join(" ") +
+                " " +
+                (p.book || "") +
+                " " +
+                (p.author || "") +
+                " " +
+                p.body.map((b) => b[1]).join(" ")
+              )
+                .toLowerCase()
+                .includes(q),
+            )
+          : [];
+        return (
+          '<div class="phead"><h1>' +
+          (q ? "&ldquo;" + esc(q) + "&rdquo;" : "Search") +
+          "</h1><p>" +
+          (q
+            ? list.length + (list.length === 1 ? " match" : " matches")
+            : "Type something in the box up top.") +
+          "</p></div>" +
+          (q
+            ? list.length
+              ? list.map(card).join("")
+              : empty(
+                  "Nothing. Either I haven't written it or I wrote it and came to my senses.",
+                )
+            : "")
+        );
+      }
+      function notFound() {
+        return (
+          '<div class="phead"><h1>Not here</h1><p>Wrong link, or I deleted it, or I never wrote it. All three have happened and I\'m not going to tell you which.</p></div>' +
+          empty(
+            'Try <a href="#/" style="color:var(--terra)">the front page</a> or <a href="#/tags" style="color:var(--terra)">the tags</a>.',
+          )
+        );
+      }
+      function empty(msg) {
+        return (
+          '<div class="card"><div class="in"><p class="ex">' +
+          msg +
+          "</p></div></div>"
+        );
       }
 
-      /* ── routing ─────────────────────────────────────────────── */
-      let view = "index",
-        shelfScroll = 0;
+      function navHTML(active, cls) {
+        return NAV.map(
+          ([h, l]) =>
+            '<a href="' +
+            h +
+            '"' +
+            (h === active ? ' class="' + cls + '"' : "") +
+            ">" +
+            l +
+            "</a>",
+        ).join("");
+      }
 
-      function route() {
-        const h = decodeURIComponent(location.hash.replace(/^#/, ""));
-        const wasShelf = view === "index";
-        if (wasShelf) shelfScroll = window.scrollY;
-
-        if (!h) {
-          view = "index";
-          renderIndex();
-          window.scrollTo(0, shelfScroll || 0);
-        } else if (h.indexOf("e/") === 0) {
-          view = "index";
-          renderIndex({ emotion: h.slice(2) });
-          window.scrollTo(0, 0);
-        } else {
-          const r = LIVE.find((x) => x.slug === h);
-          view = "post";
-          r ? renderPost(r) : renderMissing(h);
-          window.scrollTo(0, 0);
+      const SITE = "https://shrutipandey15.github.io/blog";
+      function setHead(o) {
+        document.title = o.title;
+        const set = (sel, attr, val) => {
+          const el = document.head.querySelector(sel);
+          if (el) el.setAttribute(attr, val);
+        };
+        set('meta[name="description"]', "content", o.desc);
+        set('link[rel="canonical"]', "href", o.url);
+        set('meta[property="og:title"]', "content", o.title);
+        set('meta[property="og:description"]', "content", o.desc);
+        set('meta[property="og:url"]', "href", o.url);
+        set('meta[property="og:type"]', "content", o.type || "website");
+        let ld = document.getElementById("ld");
+        if (!ld) {
+          ld = document.createElement("script");
+          ld.type = "application/ld+json";
+          ld.id = "ld";
+          document.head.appendChild(ld);
         }
+        ld.textContent = JSON.stringify(o.ld);
+      }
+      const clip = (t, n = 52) =>
+        t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n)) + "\u2026";
+      const PERSON = {
+        "@type": "Person",
+        name: "Shruti Pandey",
+        url: SITE + "/#/about",
+      };
+      function ldPost(p) {
+        return {
+          "@context": "https://schema.org",
+          "@type": p.cat === "Reviews" ? "Review" : "BlogPosting",
+          headline: p.t,
+          description: p.ex,
+          datePublished: p.date,
+          dateModified: p.date,
+          author: PERSON,
+          publisher: { "@type": "Organization", name: "Aftertaste" },
+          keywords: p.tags.join(", "),
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": SITE + "/#/post/" + p.id,
+          },
+          ...(p.cat === "Reviews" && p.book
+            ? {
+                itemReviewed: {
+                  "@type": "Book",
+                  name: p.book,
+                  author: { "@type": "Person", name: p.author },
+                },
+              }
+            : {}),
+        };
+      }
+      const ldBlog = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "Aftertaste",
+        description: "Book reviews scored on feeling instead of stars.",
+        url: SITE + "/",
+        author: PERSON,
+        blogPost: POSTS.slice(0, 10).map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.t,
+          datePublished: p.date,
+          url: SITE + "/#/post/" + p.id,
+        })),
+      };
+
+      /* ================= router ================= */
+      function render() {
+        const h = (location.hash.replace(/^#/, "") || "/")
+          .split("/")
+          .filter(Boolean);
+        let out,
+          key = "#/",
+          route = "home",
+          ctx = null;
+
+        if (!h.length) {
+          out = home();
+        } else if (h[0] === "reviews") {
+          out = cat(
+            "Reviews",
+            "No pros and cons. No plot section. I'm not here to tell you whether to buy it, I'm here because something happened and the book was holding the door.",
+          );
+          key = "#/reviews";
+          route = "reviews";
+        } else if (h[0] === "notebook") {
+          out = notebook(h[1] || null);
+          key = "#/notebook";
+          route = "notebook";
+        } else if (h[0] === "log") {
+          out = logPage();
+          key = "#/log";
+          route = "log";
+        } else if (h[0] === "index") {
+          out = indexPage();
+          key = "#/index";
+          route = "index";
+        } else if (h[0] === "tags") {
+          out = tagsPage();
+          key = "#/tags";
+          route = "tags";
+        } else if (h[0] === "tag") {
+          out = tagPage(h[1]);
+          key = "#/tags";
+          route = "tag";
+        } else if (h[0] === "archive") {
+          out = archivePage(h[1]);
+          route = "archive";
+        } else if (h[0] === "search") {
+          out = searchPage(h[1]);
+          route = "search";
+        } else if (h[0] === "about") {
+          out = about();
+          key = "#/about";
+          route = "about";
+        } else if (h[0] === "post") {
+          const p = POSTS.find((x) => x.id === h[1]);
+          if (p) {
+            out = post(h[1]);
+            route = "post";
+            ctx = p;
+            key = p.cat === "Reviews" ? "#/reviews" : "#/notebook";
+          } else out = notFound();
+        } else out = notFound();
+
+        const HEADS = {
+          home: {
+            title: "Aftertaste — a book blog about what books do to you",
+            desc: "Book reviews scored on feeling instead of stars, plus thoughts, poems and short stories.",
+            url: SITE + "/",
+            ld: ldBlog,
+          },
+          reviews: {
+            title: "Book reviews without star ratings — Aftertaste",
+            desc: "Reviews that record what a book actually did to you: recognition, rage, grief, comfort. No pros and cons, no plot summary.",
+            url: SITE + "/#/reviews",
+            ld: ldBlog,
+          },
+          notebook: {
+            title: "Notebook — essays, poems and short stories about reading",
+            desc: "Arguments about books, poems written too late at night, and the occasional short story.",
+            url: SITE + "/#/notebook",
+            ld: ldBlog,
+          },
+          log: {
+            title: "Reading log — Aftertaste",
+            desc: "Short, honest daily entries about what I'm reading and failing to read.",
+            url: SITE + "/#/log",
+            ld: ldBlog,
+          },
+          index: {
+            title: "Every book, scored by feeling — Aftertaste",
+            desc: "The full index of reviewed books plotted by emotional response rather than star rating.",
+            url: SITE + "/#/index",
+            ld: ldBlog,
+          },
+          tags: {
+            title: "Browse by tag — Aftertaste",
+            desc: "Every tag across the blog: authors, moods, themes and the occasional grudge.",
+            url: SITE + "/#/tags",
+            ld: ldBlog,
+          },
+          about: {
+            title: "About — Aftertaste",
+            desc: "Why this blog exists, how the emotion-based rating works, and how to argue with me.",
+            url: SITE + "/#/about",
+            ld: {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              mainEntity: PERSON,
+            },
+          },
+        };
+        if (route === "post" && ctx)
+          setHead({
+            title: clip(ctx.t) + " — Aftertaste",
+            desc: ctx.ex,
+            url: SITE + "/#/post/" + ctx.id,
+            type: "article",
+            ld: ldPost(ctx),
+          });
+        else if (route === "tag")
+          setHead({
+            title:
+              'Books tagged "' +
+              decodeURIComponent(h[1] || "") +
+              '" — Aftertaste',
+            desc:
+              "Every post tagged " +
+              decodeURIComponent(h[1] || "") +
+              " on Aftertaste.",
+            url: SITE + "/#/tag/" + (h[1] || ""),
+            ld: ldBlog,
+          });
+        else setHead(HEADS[route] || HEADS.home);
+
+        document.getElementById("main").innerHTML = out;
+        document.getElementById("side").innerHTML = sidebar(route, ctx);
+        document.getElementById("nav").innerHTML = navHTML(key, "on");
+        window.scrollTo(0, 0);
       }
 
-      function safeRoute() {
-        try {
-          route();
-        } catch (err) {
-          document.getElementById("app").innerHTML =
-            '<div class="wrap" style="padding:96px 24px;max-width:640px">' +
-            '<p class="label">This page could not be built</p>' +
-            '<p style="font-family:Playfair Display,serif;font-size:24px;line-height:1.5;margin:0 0 20px">' +
-            "Something in the reviews list is malformed.</p>" +
-            '<p style="color:var(--dim);line-height:1.7;font-size:15px">' +
-            esc(err.message) +
-            "</p>" +
-            '<p style="color:var(--faint);line-height:1.7;font-size:14px;margin-top:24px">' +
-            "Usually a missing comma or an unclosed quote in the block you last edited.</p></div>";
-          console.error(err);
-        }
+      function runSearch() {
+        const v = document.getElementById("q").value.trim();
+        location.hash = v ? "#/search/" + encodeURIComponent(v) : "#/tags";
       }
-      addEventListener("hashchange", safeRoute);
-      addEventListener(
-        "scroll",
-        () => {
-          const d = document.documentElement,
-            max = d.scrollHeight - d.clientHeight;
-          document.getElementById("progress").style.transform =
-            "scaleX(" +
-            (max > 0 && view === "post" ? d.scrollTop / max : 0) +
-            ")";
-        },
-        { passive: true },
-      );
-      safeRoute();
+      document.getElementById("qgo").addEventListener("click", runSearch);
+      document.getElementById("q").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") runSearch();
+      });
+
+      addEventListener("hashchange", render);
+      render();
     </script>
   </body>
 </html>
