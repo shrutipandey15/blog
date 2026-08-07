@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -347,6 +347,24 @@
         bottom: 18px;
         opacity: 0.3;
         width: 44px;
+      }
+      .fi .ti {
+        position: absolute;
+        right: 6%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42%;
+        max-width: 150px;
+        height: auto;
+        opacity: 0.16;
+        pointer-events: none;
+      }
+      .rel .fi .ti {
+        width: 48%;
+        max-width: 80px;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
       }
       .fi.c0 {
         background: #f0e3d6;
@@ -829,6 +847,20 @@
         }
       }
 
+      .postback {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: var(--mid);
+        margin-bottom: 16px;
+        transition: color 0.2s;
+      }
+      .postback:hover {
+        color: var(--terra);
+      }
       .post .fi {
         aspect-ratio: auto;
         min-height: 220px;
@@ -881,6 +913,11 @@
         white-space: pre-line;
         font-size: 19px;
         line-height: 1.8;
+      }
+      .post .verse-hi {
+        font-style: normal;
+        font-family: "Noto Serif Devanagari", var(--display), serif;
+        line-height: 2;
       }
 
       .emobox {
@@ -1117,6 +1154,19 @@
         flex-wrap: wrap;
         gap: 6px;
       }
+      .onceRow {
+        font-size: 12.5px;
+        line-height: 1.9;
+        color: var(--soft);
+      }
+      .onceRow a {
+        color: var(--soft);
+        border-bottom: 1px solid var(--line);
+      }
+      .onceRow a:hover {
+        color: var(--terra);
+        border-color: var(--terra);
+      }
       .tg.on {
         background: var(--terra);
         border-color: var(--terra);
@@ -1147,9 +1197,16 @@
         border-color: var(--terra);
         font-weight: 600;
       }
+      .pager .dis {
+        opacity: 0.35;
+        cursor: default;
+      }
       .pager a:hover {
         border-color: var(--terra);
         color: var(--terra);
+      }
+      .side-close {
+        display: none;
       }
 
       /* ============ footer ============ */
@@ -1161,8 +1218,8 @@
       }
       .fgrid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 32px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 24px;
       }
       footer h5 {
         font-family: var(--display);
@@ -1477,7 +1534,8 @@
         .card .fi .kicker,
         .card .fi .curl,
         .card .fi h3,
-        .card .fi .fi-book {
+        .card .fi .fi-book,
+        .card .fi .ti {
           display: none;
         }
         .card .in {
@@ -1863,14 +1921,6 @@
             </p>
           </div>
           <div>
-            <h5>Elsewhere</h5>
-            <p>
-              Nowhere. No Instagram, no Goodreads shelf, no video of me holding
-              a book up next to my face.
-            </p>
-            <p>If that changes you'll be the second to know.</p>
-          </div>
-          <div>
             <h5>The thing I built</h5>
             <p>
               <a href="https://bibliome.app" rel="noopener noreferrer"
@@ -1899,6 +1949,97 @@
 
       const POSTS = [
         {
+          id: "what-are-you-even-doing-for-us",
+          cat: "Notebook",
+          form: "Thought",
+          date: "2026-08-06",
+          t: "What Are You Even Doing for Us?",
+          ex: "No one asks how are you. Everyone asks what are you even doing for us.",
+          tags: ["family", "expectations", "worth"],
+          emo: [],
+          ask: "",
+          body: [
+            [
+              "v",
+              "No one asks,\n\u201cHow are you?\u201d\n\u201cHave you eaten?\u201d\n\u201cDid you get something for yourself?\u201d\nThe questions are always different.\n\u201cCan you do this?\u201d\n\u201cCan you pay for that?\u201d\n\u201cWhen will you get this done?\u201d\nAnd if I do, the answer is still the same.\n\u201cWhat are you even doing for us?\u201d",
+            ],
+            [
+              "v",
+              "I stopped buying things I needed.\nSlipper?\n\u201cKaam toh chal hi jaa raha hai.\u201d\nThe books I quietly put back.\nThe dress that stayed on the hanger.\nThe little dreams I kept postponing until they forgot my name.\nThey could wait. Everyone else couldn't.",
+            ],
+            [
+              "v",
+              "Then one day, my medicine cost three hundred rupees.\nThree hundred.\nCash on delivery.\nI stood counting notes before opening the door.\nThe same hands that didn't hesitate to spend thirty thousand on an air conditioner.",
+            ],
+            [
+              "q",
+              "That's when I understood. It was never about money. It was about whose need mattered.",
+            ],
+            ["v", "And still\n\u201cWhat are you even doing for us?\u201d"],
+            [
+              "v",
+              "Then came another lesson.\nSave.\nNot to feel secure. Not to breathe easier.\nSave for your wedding.\nBecause you're a strong, independent woman.\nStrong enough to earn.\nStrong enough to give.\nStrong enough to never need anything back.",
+            ],
+            [
+              "v",
+              "Until one day I finally say,\n\u201cI'm tired.\u201d\n\u201cPlease sometimes just call to ask me how am I doing????\u201d",
+            ],
+            [
+              "v",
+              "Suddenly,\nI'm selfish. I'm disrespectful. I'm the villain.\nMy pain disappears, their pain begins.\nMy years of sacrifice are forgotten,\nbut my one moment of honesty becomes unforgettable.",
+            ],
+            [
+              "q",
+              "Maybe that's what hurts. Not that I kept giving. But that after everything my worth could still be questioned.",
+            ],
+            [
+              "v",
+              "And after all these years,\nafter every sacrifice,\nevery postponed dream,\nevery swallowed need,\nI'm still left with the same sentence echoing in my ears\n\u201cWhat are you even doing for us?\u201d",
+            ],
+          ],
+        },
+
+        {
+          id: "i-want-your-last",
+          cat: "Notebook",
+          form: "Poem",
+          date: "2026-08-05",
+          t: "I Want Your Last",
+          ex: "he's your first love, I intend to be your last. I don't want first. I want your last.",
+          tags: ["love", "original"],
+          emo: [],
+          ask: "",
+          body: [
+            [
+              "v",
+              "I know I'm not the easiest to hold,\nmy temper quick, my patience cold,\nI overthink, I feel too fast,\nmake small things heavy, built to last.\n\nbut loving you is never hard\nyou make it simple, safe, unscarred,\nwhere I see storms, you make it clear,\nthe world feels softer when you're near.\n\nI know sometimes I overreact,\nturn moments sharp, distort the fact,\nbut if it takes me changing too\nI'll learn, I'll grow, I'll meet you.\n\nnot losing me, just choosing right,\nto love you better, softer, light.\n\nand like Klaus Mikaelson said to Caroline Forbes\n\u201che's your first love, I intend to be your last,\u201d\n\nI don't want fleeting, don't want past,\nI don't want almost, don't want fast\nI need you steady, need you vast,\nI don't want first,\nI want your last.",
+            ],
+          ],
+        },
+
+        {
+          id: "zinda-ya-maujood",
+          cat: "Notebook",
+          form: "Poem",
+          date: "2026-08-04",
+          t: "\u091c\u093c\u093f\u0902\u0926\u093e \u092f\u093e \u092e\u094c\u091c\u0942\u0926",
+          ex: "sab kuch apni jagah par hai, kuch toota nahi, kuch khoya nahi \u2014 toh phir ye jo khaali-khaali hai, ye kisne dhoya?",
+          tags: ["hindi", "memory", "identity", "original"],
+          emo: [],
+          ask: "",
+          body: [
+            [
+              "vh",
+              "घर वही है, कमरा वही, वही किताबें, वही बिस्तर है,\nवही मैं हूँ, वही मेरी आदतें, वही मेरा भीतर है।\n\nपर भीतर अब उस घर में कोई और रहता है,\nमेरे नाम से जीता है, मेरी आवाज़ में कहता है।\n\nखिड़की वही है, धूप वही, वही परदे का हिलना है,\nवही चाय की प्याली में, वही सुबह का खिलना है।\n\nचाय वही, मगर ज़बान को अब स्वाद नहीं आता,\nहर घूँट याद है मुझे, मैं किसी को याद नहीं आता।\n\nसब कुछ अपनी जगह पर है, कुछ टूटा नहीं, कुछ खोया नहीं,\nतो फिर ये जो खाली-खाली है, ये किसने ढोया, मैंने ढोया नहीं?\n\nशायद यही फ़र्क़ है ज़िंदा रहने और मौजूद होने में,\nमैं मौजूद हूँ हर चीज़ में, मगर ज़िंदा किस कोने में?",
+            ],
+            [
+              "v",
+              "ghar wahi hai, kamra wahi, wahi kitabe, wahi bistar hai,\nwahi main hoon, wahi meri aadatein, wahi mera bheetar hai.\n\npar bheetar ab us ghar mein koi aur rehta hai,\nmere naam se jeeta hai, meri awaaz mein kehta hai.\n\nkhidki wahi hai, dhoop wahi, wahi parde ka hilna hai,\nwahi chai ki pyaali mein, wahi subah ka khilna hai.\n\nchai wahi, magar zabaan ko ab swaad nahi aata,\nhar ghoont yaad hai mujhe, main kisi ko yaad nahi aata.\n\nsab kuch apni jagah par hai, kuch toota nahi, kuch khoya nahi,\ntoh phir ye jo khaali-khaali hai, ye kisne dhoya, maine dhoya nahi?\n\nshaayad yahi fark hai zinda rehne aur maujood hone mein,\nmain maujood hoon har cheez mein, magar zinda kis kone mein?",
+            ],
+          ],
+        },
+
+        {
           id: "belljar",
           cat: "Reviews",
           date: "2026-07-28",
@@ -1906,13 +2047,7 @@
           author: "Sylvia Plath",
           t: "You don't enjoy The Bell Jar. You survive it.",
           ex: "Not every book exists to comfort you. If a book about depression leaves you feeling heavy, maybe it did exactly what it meant to.",
-          tags: [
-            "sylvia plath",
-            "classics",
-            "mental health",
-            "mortality",
-            "craft",
-          ],
+          tags: ["classics", "mental health", "mortality", "craft"],
           emo: [
             ["unease", 5],
             ["grief", 4],
@@ -2116,7 +2251,7 @@
           author: "Franz Kafka",
           t: "I hated reading this. I can't stop thinking about it.",
           ex: "Nothing seems to happen. Then everything happens. Then somehow nothing has still happened. Kafka invented bureaucracy as psychological horror.",
-          tags: ["kafka", "absurdism", "bureaucracy", "classics"],
+          tags: ["absurdism", "bureaucracy", "classics"],
           emo: [
             ["unease", 5],
             ["rage", 3],
@@ -2256,7 +2391,7 @@
           ex: "Three hundred pages of him being awful. One coat. Four seconds. I need to have a word with myself.",
           tags: ["characters", "rage", "romance", "craft"],
           emo: [],
-          ask: "Which fictional man have you forgiven that you absolutely should not have. Don't say nobody.",
+          ask: "",
           body: [
             [
               "p",
@@ -2299,7 +2434,7 @@
           ex: "Someone on the internet is furious again. Every few months. Like clockwork.",
           tags: ["endings", "craft", "rage"],
           emo: [],
-          ask: "What ending are you still not over. You're allowed to still be not over it.",
+          ask: "",
           body: [
             [
               "p",
@@ -2333,7 +2468,7 @@
           ex: "Important to who. On what day. In what mood. Did it for four years, would like them back.",
           tags: ["canon", "recommendations", "rage"],
           emo: [],
-          ask: "Best recommendation you ever got. Bet it wasn't phrased as important.",
+          ask: "",
           body: [
             [
               "p",
@@ -2363,7 +2498,7 @@
           ex: "Someone underlined this before me and I spent an hour envying a stranger's worst month.",
           tags: ["grief", "strangers", "original"],
           emo: [],
-          ask: "Secondhand on purpose, or only when you have to?",
+          ask: "",
           body: [
             [
               "v",
@@ -2381,7 +2516,7 @@
           ex: "\"You'll understand it when you're older.\" People say this like they're doing you a favour.",
           tags: ["rereading", "memory", "classics"],
           emo: [],
-          ask: "Which book did you read at the wrong age. Or the right one, badly.",
+          ask: "",
           body: [
             [
               "p",
@@ -2415,7 +2550,7 @@
           ex: "A librarian who has never once been late, and the afternoon she finds out what happens if she is.",
           tags: ["fiction", "original", "libraries"],
           emo: [],
-          ask: "Would you keep it, or take it back?",
+          ask: "",
           body: [
             [
               "p",
@@ -2453,7 +2588,7 @@
           ex: "I keep receipts for books I haven't read the way other people keep apologies they haven't made.",
           tags: ["insomnia", "wanting", "original"],
           emo: [],
-          ask: "How many unread books are on your shelf. Be honest. Or don't.",
+          ask: "",
           body: [
             [
               "v",
@@ -2471,7 +2606,7 @@
           ex: "Went through the shelf on Sunday for no reason. The pattern is not flattering.",
           tags: ["wanting", "memory", "shelf"],
           emo: [],
-          ask: "Go check your shelf. Am I wrong. I'd quite like to be wrong.",
+          ask: "",
           body: [
             [
               "p",
@@ -2509,9 +2644,34 @@
         ],
         ["3 Aug", "Read twenty pages. Highlighted nineteen."],
         ["1 Aug", "Closed it because I wasn't ready to admit it was right."],
+        [
+          "29 Jul",
+          "Reread the same paragraph four times. Not because it was hard.",
+        ],
+        [
+          "27 Jul",
+          "I really hope grass tastes like cheesecake to horses and goats. That's the whole thought. There's no more to it.",
+        ],
+        ["26 Jul", "Finished at 2 a.m. Sat in the dark. No notes."],
+        [
+          "23 Jul",
+          "what if we're in a video game and god is just playing us, badly, on a delay",
+        ],
+        [
+          "22 Jul",
+          "Started it. Stopped. Not the book's fault. Not entirely mine either.",
+        ],
+        ["19 Jul", "Lent it out. Regretted it before the door closed."],
+        ["16 Jul", "I want to go home. I am already home."],
+        [
+          "14 Jul",
+          "Bought it twice. Forgot I owned it. Found the first copy under the bed.",
+        ],
+        [
+          "9 Jul",
+          "Argued with a stranger on the internet about a book neither of us finished.",
+        ],
       ];
-
-      /* ================= helpers ================= */
       const M = [
         "Jan",
         "Feb",
@@ -2560,6 +2720,19 @@
       const CURL =
         '<svg class="curl" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M2 26C14 26 18 6 30 6s16 20 28 20"/><path d="M30 6c-4-4-4 0 0 0z"/></svg>';
 
+      // large, faint, single-stroke — one per post type, filling the empty
+      // colour panel instead of leaving it blank. currentColor so it always
+      // matches each card's own text colour.
+      const TYPE_ICON = {
+        Reviews:
+          '<svg class="ti" viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12c12-6 30-6 40 2v44c-10-8-28-8-40-2z"/><path d="M92 12c-12-6-30-6-40 2v44c10-8 28-8 40-2z"/></svg>',
+        Thought:
+          '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="52" cy="34" rx="36" ry="25"/><circle cx="22" cy="66" r="5.5"/><circle cx="12" cy="80" r="3"/></svg>',
+        Poem: '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M15 12L82 12M15 29L48 29M15 46L70 46M15 63L38 63M15 80L58 80"/></svg>',
+        Story:
+          '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="64" height="70" rx="3"/><path d="M50 10v70"/><path d="M62 10v20l-7-6-7 6V10"/></svg>',
+      };
+
       function fi(p, cls) {
         return (
           '<div class="fi c' +
@@ -2573,7 +2746,7 @@
           "<h3>" +
           esc(p.t) +
           "</h3>" +
-          CURL +
+          (TYPE_ICON[p.form || p.cat] || CURL) +
           "</div>"
         );
       }
@@ -2615,6 +2788,46 @@
           : null;
       };
       const tslug = (t) => encodeURIComponent(t);
+      const PAGE_SIZE = 8;
+      function paginate(list, page) {
+        const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+        const p = Math.min(Math.max(1, page || 1), totalPages);
+        return {
+          items: list.slice((p - 1) * PAGE_SIZE, p * PAGE_SIZE),
+          page: p,
+          totalPages,
+        };
+      }
+      function pager(base, page, totalPages) {
+        if (totalPages <= 1) return "";
+        const link = (n) => base + (n > 1 ? "/page/" + n : "");
+        let out = '<div class="pager">';
+        out +=
+          page > 1
+            ? '<a href="' + link(page - 1) + '">Prev</a>'
+            : '<span class="dis">Prev</span>';
+        const nums = [];
+        for (let i = 1; i <= totalPages; i++) {
+          if (i === 1 || i === totalPages || Math.abs(i - page) <= 1)
+            nums.push(i);
+          else if (nums[nums.length - 1] !== "…") nums.push("…");
+        }
+        nums.forEach((n) => {
+          out +=
+            n === "…"
+              ? '<span class="dis">&hellip;</span>'
+              : n === page
+                ? '<span class="cur">' + n + "</span>"
+                : '<a href="' + link(n) + '">' + n + "</a>";
+        });
+        out +=
+          page < totalPages
+            ? '<a href="' + link(page + 1) + '">Next</a>'
+            : '<span class="dis">Next</span>';
+        return out + "</div>";
+      }
+      const sortDate = (arr) =>
+        [...arr].sort((a, b) => b.date.localeCompare(a.date));
       const plural = (w) =>
         w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s";
       const allTags = () => {
@@ -2836,38 +3049,48 @@
       }
 
       /* ================= views ================= */
-      function home() {
+      function home(page) {
+        const { items, page: p, totalPages } = paginate(sortDate(POSTS), page);
         return (
           `<div class="logbox">
     <h4>The Reading Log</h4>
     <p class="sub">The parts too small to be a post and too honest to say out loud.</p>
-    <ul>${LOG.map((l) => "<li><time>" + l[0] + "</time><span>" + esc(l[1]) + "</span></li>").join("")}</ul>
+    <ul>${LOG.slice(0, 5)
+      .map(
+        (l) =>
+          "<li><time>" + l[0] + "</time><span>" + esc(l[1]) + "</span></li>",
+      )
+      .join("")}</ul>
   </div>` +
-          POSTS.map(card).join("") +
-          ""
+          items.map(card).join("") +
+          pager("#/", p, totalPages)
         );
       }
 
-      function cat(name, blurb) {
-        const list = POSTS.filter((p) => p.cat === name);
+      function cat(name, blurb, page) {
+        const full = sortDate(POSTS.filter((p) => p.cat === name));
+        const { items, page: p, totalPages } = paginate(full, page);
+        const base = name === "Reviews" ? "#/reviews" : "#/notebook";
         return (
           '<div class="phead"><h1>' +
           name +
           "</h1><p>" +
           blurb +
           "</p></div>" +
-          (list.length
-            ? list.map(card).join("")
+          (full.length
+            ? items.map(card).join("") + pager(base, p, totalPages)
             : '<div class="card"><div class="in"><p class="ex">Nothing here yet. I\'m still deciding whether the book deserved me.</p></div></div>')
         );
       }
 
-      function notebook(form) {
-        const all = POSTS.filter((p) => p.cat === "Notebook");
+      function notebook(form, page) {
+        const all = sortDate(POSTS.filter((p) => p.cat === "Notebook"));
         const forms = [...new Set(all.map((p) => p.form))];
         const list = form
           ? all.filter((p) => p.form.toLowerCase() === form)
           : all;
+        const { items, page: p, totalPages } = paginate(list, page);
+        const base = form ? "#/notebook/" + form : "#/notebook";
         const chip = (lbl, href, on) =>
           '<a class="tg' +
           (on ? " on" : "") +
@@ -2892,40 +3115,12 @@
             .join("") +
           "</div></div>" +
           (list.length
-            ? list.map(card).join("")
+            ? items.map(card).join("") + pager(base, p, totalPages)
             : '<div class="card"><div class="in"><p class="ex">Nothing in this drawer yet.</p></div></div>')
         );
       }
 
-      const FULL_LOG = LOG.concat([
-        [
-          "29 Jul",
-          "Reread the same paragraph four times. Not because it was hard.",
-        ],
-        [
-          "27 Jul",
-          "I really hope grass tastes like cheesecake to horses and goats. That's the whole thought. There's no more to it.",
-        ],
-        ["26 Jul", "Finished at 2 a.m. Sat in the dark. No notes."],
-        [
-          "23 Jul",
-          "what if we're in a video game and god is just playing us, badly, on a delay",
-        ],
-        [
-          "22 Jul",
-          "Started it. Stopped. Not the book's fault. Not entirely mine either.",
-        ],
-        ["19 Jul", "Lent it out. Regretted it before the door closed."],
-        ["16 Jul", "I want to go home. I am already home."],
-        [
-          "14 Jul",
-          "Bought it twice. Forgot I owned it. Found the first copy under the bed.",
-        ],
-        [
-          "9 Jul",
-          "Argued with a stranger on the internet about a book neither of us finished.",
-        ],
-      ]);
+      const FULL_LOG = LOG; // single source of truth — scripts append only to LOG
 
       function logPage() {
         return (
@@ -2951,7 +3146,7 @@
       }
 
       function indexPage() {
-        const rows = POSTS.filter((p) => p.cat === "Reviews");
+        const rows = sortDate(POSTS.filter((p) => p.cat === "Reviews"));
         return (
           '<div class="phead"><h1>The Index</h1><p>Every book, with what it did. Height is how loud, colour is which feeling. It is, unfortunately, also a chart of the year I was having.</p></div>' +
           '<div class="card"><div class="in">' +
@@ -3038,12 +3233,19 @@
               ? "<blockquote><p>" + esc(v) + "</p></blockquote>"
               : t === "v"
                 ? '<p class="verse">' + esc(v) + "</p>"
-                : "<p>" + esc(v) + "</p>",
+                : t === "vh"
+                  ? '<p class="verse verse-hi">' + esc(v) + "</p>"
+                  : "<p>" + esc(v) + "</p>",
           )
           .join("");
 
         return (
           '<article class="post">' +
+          '<a class="postback" href="#/' +
+          (p.cat === "Reviews" ? "reviews" : "notebook") +
+          '">&larr; ' +
+          (p.cat === "Reviews" ? "Reviews" : "Notebook") +
+          "</a>" +
           fi(p) +
           '<div class="body">' +
           '<div class="meta"><span class="cat">' +
@@ -3098,12 +3300,14 @@
             )
             .join("") +
           "</div>" +
-          '<div class="ask"><p>' +
-          esc(p.ask) +
-          "</p>" +
-          '<p class="askmail">Tell me if you like &mdash; <a href="mailto:shrutipandey1505@gmail.com?subject=' +
-          encodeURIComponent("Re: " + p.t) +
-          "\">shrutipandey1505@gmail.com</a>. Or don't, it's fine either way.</p></div>" +
+          (p.cat === "Reviews" && p.ask
+            ? '<div class="ask"><p>' +
+              esc(p.ask) +
+              "</p>" +
+              '<p class="askmail">Tell me if you like &mdash; <a href="mailto:shrutipandey1505@gmail.com?subject=' +
+              encodeURIComponent("Re: " + p.t) +
+              "\">shrutipandey1505@gmail.com</a>. Or don't, it's fine either way.</p></div>"
+            : "") +
           "</div>" +
           '<div class="related"><h4>You might also like</h4><div class="rel-grid">' +
           rel
@@ -3126,15 +3330,17 @@
 
       function tagsPage() {
         const m = allTags();
+        const entries = Object.entries(m).sort((a, b) => b[1] - a[1]);
+        const themes = entries.filter(([, n]) => n >= 2);
+        const singles = entries.filter(([, n]) => n === 1);
         return (
           '<div class="phead"><h1>Tags</h1><p>' +
-          Object.keys(m).length +
-          "  tags across " +
-          POSTS.length +
-          " posts. Technically a navigation aid. Functionally a diagnosis.</p></div>" +
+          themes.length +
+          " actually connect more than one post. " +
+          singles.length +
+          " are a second name for a single post \u2014 those still work if you click through from a post itself, they just aren't worth a whole cloud.</p></div>" +
           '<div class="card"><div class="in"><div class="cloud">' +
-          Object.entries(m)
-            .sort((a, b) => b[1] - a[1])
+          themes
             .map(
               ([t, n]) =>
                 '<a class="tg" href="#/tag/' +
@@ -3148,12 +3354,24 @@
                 "</span></a>",
             )
             .join("") +
-          "</div></div></div>"
+          "</div>" +
+          (singles.length
+            ? '<p class="eyebrow" style="margin-top:24px">Used once</p><p class="onceRow">' +
+              singles
+                .map(
+                  ([t]) =>
+                    '<a href="#/tag/' + tslug(t) + '">' + esc(t) + "</a>",
+                )
+                .join(", ") +
+              "</p>"
+            : "") +
+          "</div></div>"
         );
       }
-      function tagPage(t) {
+      function tagPage(t, page) {
         const tag = decodeURIComponent(t || "");
-        const list = POSTS.filter((p) => p.tags.includes(tag));
+        const list = sortDate(POSTS.filter((p) => p.tags.includes(tag)));
+        const { items, page: p, totalPages } = paginate(list, page);
         return (
           '<div class="phead"><h1>' +
           esc(tag) +
@@ -3162,16 +3380,17 @@
           (list.length === 1 ? " post" : " posts") +
           ' tagged this. <a href="#/tags" style="color:var(--terra)">All tags &rarr;</a></p></div>' +
           (list.length
-            ? list.map(card).join("")
+            ? items.map(card).join("") + pager("#/tag/" + t, p, totalPages)
             : empty(
                 "Nothing tagged that. Which either means I haven't got round to it or I'm avoiding it.",
               ))
         );
       }
-      function archivePage(k) {
+      function archivePage(k, page) {
         const label = ymLabel(k);
         if (!label) return notFound();
-        const list = POSTS.filter((p) => ym(p.date) === k);
+        const list = sortDate(POSTS.filter((p) => ym(p.date) === k));
+        const { items, page: p, totalPages } = paginate(list, page);
         return (
           '<div class="phead"><h1>' +
           esc(label) +
@@ -3180,33 +3399,36 @@
           (list.length === 1 ? " post" : " posts") +
           " that month.</p></div>" +
           (list.length
-            ? list.map(card).join("")
+            ? items.map(card).join("") + pager("#/archive/" + k, p, totalPages)
             : empty("Nothing that month. Some months you just get through."))
         );
       }
-      function searchPage(term) {
+      function searchPage(term, page) {
         const q = decodeURIComponent(term || "")
           .toLowerCase()
           .trim();
         const list = q
-          ? POSTS.filter((p) =>
-              (
-                p.t +
-                " " +
-                p.ex +
-                " " +
-                p.tags.join(" ") +
-                " " +
-                (p.book || "") +
-                " " +
-                (p.author || "") +
-                " " +
-                p.body.map((b) => b[1]).join(" ")
-              )
-                .toLowerCase()
-                .includes(q),
+          ? sortDate(
+              POSTS.filter((p) =>
+                (
+                  p.t +
+                  " " +
+                  p.ex +
+                  " " +
+                  p.tags.join(" ") +
+                  " " +
+                  (p.book || "") +
+                  " " +
+                  (p.author || "") +
+                  " " +
+                  p.body.map((b) => b[1]).join(" ")
+                )
+                  .toLowerCase()
+                  .includes(q),
+              ),
             )
           : [];
+        const { items, page: p, totalPages } = paginate(list, page);
         return (
           '<div class="phead"><h1>' +
           (q ? "&ldquo;" + esc(q) + "&rdquo;" : "Search") +
@@ -3217,7 +3439,8 @@
           "</p></div>" +
           (q
             ? list.length
-              ? list.map(card).join("")
+              ? items.map(card).join("") +
+                pager("#/search/" + term, p, totalPages)
               : empty(
                   "Nothing. Either I haven't written it or I wrote it and came to my senses.",
                 )
@@ -3325,25 +3548,35 @@
 
       /* ================= router ================= */
       function render() {
-        const h = (location.hash.replace(/^#/, "") || "/")
+        let h = (location.hash.replace(/^#/, "") || "/")
           .split("/")
           .filter(Boolean);
+        let page = 1;
+        if (
+          h.length >= 2 &&
+          h[h.length - 2] === "page" &&
+          /^\d+$/.test(h[h.length - 1])
+        ) {
+          page = +h[h.length - 1];
+          h = h.slice(0, -2);
+        }
         let out,
           key = "#/",
           route = "home",
           ctx = null;
 
         if (!h.length) {
-          out = home();
+          out = home(page);
         } else if (h[0] === "reviews") {
           out = cat(
             "Reviews",
             "No pros and cons. No plot section. I'm not here to tell you whether to buy it, I'm here because something happened and the book was holding the door.",
+            page,
           );
           key = "#/reviews";
           route = "reviews";
         } else if (h[0] === "notebook") {
-          out = notebook(h[1] || null);
+          out = notebook(h[1] || null, page);
           key = "#/notebook";
           route = "notebook";
         } else if (h[0] === "log") {
@@ -3359,14 +3592,14 @@
           key = "#/tags";
           route = "tags";
         } else if (h[0] === "tag") {
-          out = tagPage(h[1]);
+          out = tagPage(h[1], page);
           key = "#/tags";
           route = "tag";
         } else if (h[0] === "archive") {
-          out = archivePage(h[1]);
+          out = archivePage(h[1], page);
           route = "archive";
         } else if (h[0] === "search") {
-          out = searchPage(h[1]);
+          out = searchPage(h[1], page);
           route = "search";
         } else if (h[0] === "about") {
           out = about();
