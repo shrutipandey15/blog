@@ -1,0 +1,10 @@
+---
+import Squiggle from "./Squiggle.astro";
+const { text, note, tag = "h2" } = Astro.props;
+const Tag = tag;
+---
+<div class="hd">
+  <Tag class="hand">{text}</Tag>
+  <Squiggle />
+  {note && <p class="note">{note}</p>}
+</div>

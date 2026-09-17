@@ -1,0 +1,33 @@
+---
+import Band from "./Band.astro";
+import { EMO, coverBg } from "../lib/posts";
+import { TILT, fmt } from "../lib/site";
+
+const { post, i = 0 } = Astro.props;
+// Every third card goes without a ribbon, so the shelf doesn't look printed.
+const ribbon = i % 3 !== 2 ? (i % 2 ? "var(--gold)" : "var(--accent)") : null;
+const minis = post.emo.slice(0, 2).filter((e: any) => EMO[e.feeling]);
+---
+<a
+  class="rcard lift rise"
+  href={post.href}
+  style={`--tilt:${TILT[i % TILT.length]}deg;animation-delay:${Math.min(i, 8) * 90}ms`}
+>
+  <span class="cover" style={`background:${coverBg(post)}`}>
+    {ribbon && <span class="ribbon" style={`background:${ribbon}`}></span>}
+    <span class="frame">
+      <span class:list={["ct", { sm: (post.book || "").length > 14 }]}>{post.book}</span>
+      <span class="ca">{post.author}</span>
+    </span>
+    <Band post={post} />
+  </span>
+  <span class="rbody">
+    <span class="rt">{post.t}</span>
+    <span class="rm">{fmt(post.date)} · {post.minutes} min read</span>
+    <span class="minis">
+      {minis.map((e: any) => (
+        <span class="mini"><i class="dot" style={`background:${EMO[e.feeling]}`}></i>{e.feeling}</span>
+      ))}
+    </span>
+  </span>
+</a>

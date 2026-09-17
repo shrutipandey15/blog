@@ -1,0 +1,14 @@
+---
+import PullQuote from "./PullQuote.astro";
+import Verse from "./Verse.astro";
+import { tint } from "../lib/posts";
+const { post } = Astro.props;
+---
+<div class="prose" style={`--tint:${tint(post)}`}>
+  {post.body.map(([type, text]: [string, string]) => {
+    if (type === "q") return <PullQuote text={text} />;
+    if (type === "v") return <Verse text={text} />;
+    if (type === "vh") return <Verse text={text} hindi />;
+    return <p class="reveal">{text}</p>;
+  })}
+</div>

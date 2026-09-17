@@ -1,0 +1,19 @@
+---
+import { EMO } from "../lib/posts";
+import { u } from "../lib/site";
+const { feels, counts, active = null, withCounts = false, small = false } = Astro.props;
+---
+{feels.map((e: string) => {
+  const on = e === active;
+  return (
+    <a
+      class:list={["chip", { small }]}
+      style={`--c:${EMO[e]}`}
+      href={on ? u("reviews") : u(`reviews/feel/${e}`)}
+      aria-current={on ? "true" : undefined}
+    >
+      <i class="dot" style={`background:${EMO[e]}`}></i>{e}
+      {withCounts && <> <span class="n">{counts[e]}</span></>}
+    </a>
+  );
+})}

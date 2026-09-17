@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import Heading from "../../components/Heading.astro";
+import { loadPosts, tagCounts } from "../../lib/posts";
+import { u } from "../../lib/site";
+
+const { LIVE } = await loadPosts();
+const { counts, tags } = tagCounts(LIVE);
+---
+<Base title="Tags — Aftertaste" description="Every tag across the blog: authors, moods, themes and the occasional grudge.">
+  <div class="page rise">
+    <div class="phead">
+      <Heading text="Tags" note="authors, moods, themes and the occasional grudge" tag="h1" />
+    </div>
+    <div class="chips tagcloud">
+      {tags.map((t) => (
+        <a class="chip small" href={u(`tags/${t}`)}>#{t} <span class="n">{counts[t]}</span></a>
+      ))}
+    </div>
+  </div>
+</Base>

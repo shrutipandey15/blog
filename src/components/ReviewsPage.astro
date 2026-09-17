@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import Heading from "./Heading.astro";
+import ReviewCard from "./ReviewCard.astro";
+import FeelingChips from "./FeelingChips.astro";
+import { loadPosts, feelingCounts } from "../lib/posts";
+import { u } from "../lib/site";
+
+const { feel = null } = Astro.props;
+const { REVIEWS } = await loadPosts();
+const { counts, feels } = feelingCounts(REVIEWS);
+const list = feel ? REVIEWS.filter((p) => p.emo.some((e) => e.feeling === feel)) : REVIEWS;
+
+const title = (feel ? `Books that left ${feel} — ` : "Book reviews without star ratings — ") + "Aftertaste";
+const description =
+  "Reviews that record what a book actually did to you: recognition, rage, grief, comfort. No pros and cons, no plot summary.";
+---
+<Base title={title} description={description} section="reviews">
+  <div class="page rise">
+    <div class="phead">
+      <Heading text="Reviews" tag="h1" />
+      <p>No pros and cons. No plot section. I'm not here to tell you whether to buy it, I'm here because something happened and the book was holding the door.</p>
+    </div>
+    <div class="chips center" role="group" aria-label="Filter by feeling">
+      <a class="chip small" href={u("reviews")} aria-current={feel ? undefined : "true"}>all</a>
+      <FeelingChips feels={feels} counts={counts} active={feel} small />
+    </div>
+    {feel && (
+      <p class="note l center" style="margin:0">
+        {list.length} {list.length === 1 ? "book" : "books"} that left behind {feel}
+      </p>
+    )}
+    {list.length ? (
+      <div class="grid">{list.map((p, i) => <ReviewCard post={p} i={i} />)}</div>
+    ) : (
+      <p class="empty">Nothing has left that behind yet.</p>
+    )}
+  </div>
+</Base>

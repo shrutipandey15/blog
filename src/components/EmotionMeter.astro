@@ -1,0 +1,24 @@
+---
+import { EMO } from "../lib/posts";
+import { u } from "../lib/site";
+const { post } = Astro.props;
+const rows = post.emo.filter((e: any) => EMO[e.feeling]);
+---
+{rows.length > 0 && (
+  <div class="box meter">
+    <h2 class="hand">what showed up, and how loud</h2>
+    {rows.map((e: any, k: number) => (
+      <a
+        class="mrow"
+        href={u(`reviews/feel/${e.feeling}`)}
+        aria-label={`${e.feeling}, ${e.level} out of 5. More books that left ${e.feeling}`}
+      >
+        <span class="mn">{e.feeling}</span>
+        <span class="track">
+          <i style={`width:${e.level * 20}%;background:${EMO[e.feeling]};animation-delay:${450 + k * 150}ms`}></i>
+        </span>
+        <span class="mv">{e.level}/5</span>
+      </a>
+    ))}
+  </div>
+)}

@@ -1,0 +1,7 @@
+---
+const { newer, older } = Astro.props;
+---
+<nav class="pn" aria-label="More posts">
+  {newer && <a href={newer.href}><small>newer</small><b>{newer.label}</b></a>}
+  {older && <a class="older" href={older.href}><small>older</small><b>{older.label}</b></a>}
+</nav>

@@ -1,0 +1,9 @@
+---
+import { MAIL } from "../lib/site";
+const { text, subject } = Astro.props;
+---
+<div class="ask reveal">
+  <h2 class="hand">over to you</h2>
+  <p>{text}</p>
+  <a href={`mailto:${MAIL}?subject=${encodeURIComponent("Re: " + subject)}`}>No comment box. Email me.</a>
+</div>

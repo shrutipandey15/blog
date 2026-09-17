@@ -1,0 +1,7 @@
+---
+import { squigglePath } from "../lib/posts";
+const { width = 150, style } = Astro.props;
+---
+<svg class="squig" aria-hidden="true" width={width} height="12" viewBox={`0 0 ${width} 12`} style={style}>
+  <path d={squigglePath(width)} />
+</svg>

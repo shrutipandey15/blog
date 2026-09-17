@@ -1,0 +1,71 @@
+---
+import Squiggle from "./Squiggle.astro";
+import { MAIL, u } from "../lib/site";
+
+const { big = false } = Astro.props;
+
+const SCRAPS: [string, string, number, string, string][] = [
+  ["s-hand", "var(--paper)", -3, "opinions nobody asked for", "left:14px;background:rgba(184,85,46,.7);rotate:-8deg"],
+  ["s-small", "var(--kraft)", 2, "I said what I said", "right:10px;background:rgba(143,154,120,.8);rotate:10deg"],
+  ["s-serif", "var(--rose)", -1, "no stars. I've tried. I can't.", ""],
+  ["s-hand", "var(--sage)", 1.5, "sleeping with a light on", ""],
+  ["s-serif", "var(--paper)", -2, "clever is easy", "left:30%;background:rgba(216,180,166,.85);rotate:4deg"],
+  ["s-hand", "var(--kraft)", 3, "a five on rage, still the best", ""],
+  ["s-serif", "var(--rose)", -2.5, "books are just where I go", "right:18px;background:rgba(184,85,46,.7);rotate:6deg"],
+  ["s-hand", "var(--paper)", 1, "no comment box. deliberate.", ""],
+  ["s-small", "var(--sage)", -1.5, "rereads, regrettably", ""],
+];
+
+const STAR = "M12 1 C13 8 16 11 23 12 C16 13 13 16 12 23 C11 16 8 13 1 12 C8 11 11 8 12 1 Z";
+
+// A torn paper edge under the collage.
+let scallop = "M0 0 H1200 V4";
+for (let x = 1190; x >= 0; x -= 10) scallop += " Q" + (x + 5) + " 16 " + x + " 4";
+scallop += " Z";
+---
+{big ? (
+  <>
+    <div class="collage" aria-hidden="true">
+      {SCRAPS.map(([cls, bg, rot, text, tape]) => (
+        <div class={`scrap ${cls}`} style={`background:${bg};rotate:${rot}deg`}>
+          {text}
+          {tape && <span class="tape" style={tape}></span>}
+        </div>
+      ))}
+    </div>
+    <svg class="scallop" aria-hidden="true" viewBox="0 0 1200 16" preserveAspectRatio="none">
+      <path d={scallop} fill="#2a1d15" />
+    </svg>
+    <div class="brand">
+      <div class="mono">
+        <svg class="bob" viewBox="0 0 24 24" style="left:-34px;top:18px;width:26px;height:26px" aria-hidden="true">
+          <path d="M15 3a9 9 0 1 0 6 13A7 7 0 0 1 15 3z" fill="#e8b26a" />
+        </svg>
+        <svg class="twinkle" viewBox="0 0 24 24" style="right:-26px;top:6px;width:16px;height:16px;fill:#f3e7d3" aria-hidden="true"><path d={STAR} /></svg>
+        <svg class="twinkle-slow" viewBox="0 0 24 24" style="right:-36px;top:40px;width:10px;height:10px;fill:#e8b26a" aria-hidden="true"><path d={STAR} /></svg>
+        <div class="ring"><span aria-hidden="true">a</span></div>
+      </div>
+      <div>
+        <h1 class="wordmark shimmer">aftertaste</h1>
+        <Squiggle width={200} style="margin:2px auto 0" />
+      </div>
+      <p class="tagline">opinions nobody asked for</p>
+      <div class="icons">
+        <a href={`mailto:${MAIL}`} aria-label="Email Shruti">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3e7d3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+        </a>
+        <a href="https://bibliome.app" rel="noopener noreferrer" aria-label="Bibliome, the reading app I built">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3e7d3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-0.5V19c-2.5-1-5.5-1-8 0.5-2.5-1.5-5.5-1.5-8-0.5z" /><path d="M12 6v13.5" /></svg>
+        </a>
+      </div>
+    </div>
+  </>
+) : (
+  <div class="mini-brand">
+    <a href={u("/")} aria-label="Aftertaste home">
+      <span class="m" aria-hidden="true">a</span>
+      <span class="w" aria-hidden="true">aftertaste</span>
+      <svg class="twinkle" viewBox="0 0 24 24" style="width:12px;height:12px;fill:#e8b26a" aria-hidden="true"><path d={STAR} /></svg>
+    </a>
+  </div>
+)}

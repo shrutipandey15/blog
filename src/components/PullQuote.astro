@@ -1,0 +1,9 @@
+---
+import Squiggle from "./Squiggle.astro";
+const { text } = Astro.props;
+---
+<figure class="pull reveal">
+  <span class="qm" aria-hidden="true">“</span>
+  <blockquote>{text}</blockquote>
+  <Squiggle width={90} />
+</figure>

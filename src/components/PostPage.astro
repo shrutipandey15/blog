@@ -1,0 +1,95 @@
+---
+import Base from "../layouts/Base.astro";
+import Band from "./Band.astro";
+import EmotionMeter from "./EmotionMeter.astro";
+import PostBody from "./PostBody.astro";
+import Verdict from "./Verdict.astro";
+import Ask from "./Ask.astro";
+import Related from "./Related.astro";
+import PrevNext from "./PrevNext.astro";
+import { coverBg, related, neighbours, EMO } from "../lib/posts";
+import { u, fmtFull } from "../lib/site";
+
+const { post, list } = Astro.props;
+const isR = post.cat === "Reviews";
+const { newer, older } = neighbours(post, list);
+const rel = related(post, list);
+const kind = isR ? "review" : String(post.form || "").toLowerCase();
+
+const title = (isR ? `${post.book} by ${post.author} — ${post.t}` : post.t) + " — Aftertaste";
+const description = post.ex || post.t;
+
+// Review + Book, so a search engine knows this is a review and of what.
+const jsonLd = isR
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      name: post.t,
+      url: new URL(post.href, Astro.site).href,
+      datePublished: post.date,
+      author: { "@type": "Person", name: "Shruti Pandey" },
+      reviewBody: post.body.filter(([t]: [string]) => t === "p").map(([, x]: [string, string]) => x).join("\n\n"),
+      itemReviewed: { "@type": "Book", name: post.book, author: { "@type": "Person", name: post.author } },
+      ...(post.emo.length
+        ? {
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: post.emo[0].level,
+              bestRating: 5,
+              worstRating: 1,
+              alternateName: `${post.emo[0].feeling}, ${post.emo[0].level} out of 5`,
+            },
+          }
+        : {}),
+    }
+  : null;
+---
+<Base
+  title={title}
+  description={description}
+  section={isR ? "reviews" : "notebook"}
+  ogType="article"
+  ogImage={u(`og/${post.id}.png`)}
+>
+  {jsonLd && <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+  <article class="post" data-pagefind-body>
+    <a class="back" href={isR ? u("reviews") : u("notebook")}>
+      back to {isR ? "reviews" : "the notebook"}
+    </a>
+
+    {isR && (
+      <div class="bigcover" style={`background:${coverBg(post)}`} aria-hidden="true">
+        <span class="ribbon"></span>
+        <span class="frame">
+          <span class="ct">{post.book}</span>
+          <span class="ca">{post.author}</span>
+        </span>
+        <Band post={post} />
+      </div>
+    )}
+
+    <header class="ptitle rise" style="animation-delay:250ms">
+      <p class="note">{kind} · {fmtFull(post.date)} · {post.minutes} min read</p>
+      <h1>{post.t}</h1>
+      {isR && <p class="byline">{post.book} by {post.author}</p>}
+      {post.ex && <p class="dek">{post.ex}</p>}
+    </header>
+
+    {isR && <EmotionMeter post={post} />}
+
+    <PostBody post={post} />
+
+    {isR && post.verdict && <Verdict text={post.verdict} />}
+    {post.ask && <Ask text={post.ask} subject={post.label} />}
+
+    {post.tags.length > 0 && (
+      <div class="ptags">
+        {post.tags.map((t: string) => <a class="ptag" href={u(`tags/${t}`)}>#{t}</a>)}
+      </div>
+    )}
+
+    <Related post={post} items={rel} />
+    <PrevNext newer={newer} older={older} />
+  </article>
+</Base>
