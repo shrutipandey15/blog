@@ -4,10 +4,11 @@
   "description": "Aftertaste \u2014 a book blog about what books do to you",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro build && node scripts/subset-fonts.mjs && pagefind --site dist",
     "preview": "astro preview",
     "migrate": "node scripts/migrate.mjs",
-    "test": "playwright test"
+    "test": "playwright test",
+    "fonts": "node scripts/fonts.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,12 @@
     "astro": "^5.18.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@resvg/resvg-js": "^2.6.2",
+    "lighthouse": "^12.8.2",
     "pagefind": "^1.5.2",
-    "satori": "^0.33.4"
+    "satori": "^0.33.4",
+    "subset-font": "^2.7.0"
   },
   "private": true,
   "type": "module"
