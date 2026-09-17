@@ -1,0 +1,22 @@
+---
+import { u } from "../lib/site";
+const { hideSearch = false } = Astro.props;
+---
+<footer>
+  {!hideSearch && (
+    <form class="searchbox" role="search" action={u("search")} method="get">
+      <label for="q">looking for something?</label>
+      <input id="q" name="q" type="search" placeholder="A book, an author, a feeling" autocomplete="off" enterkeyhint="search" />
+      <button class="sr-btn" type="submit">Search</button>
+    </form>
+  )}
+  <div class="sign">
+    <svg aria-hidden="true" width="28" height="44" viewBox="0 0 28 44" fill="none">
+      <path class="flicker" d="M14 2 C18 8 18 12 14 15 C10 12 10 8 14 2 Z" fill="#e8b26a" />
+      <rect x="8" y="17" width="12" height="20" rx="2" fill="#efe3cc" />
+      <path d="M3 38 H25 Q25 42 21 42 H7 Q3 42 3 38 Z" fill="#b8552e" />
+    </svg>
+    <span class="w">aftertaste</span>
+    <span class="c">© 2026 · I said what I said</span>
+  </div>
+</footer>

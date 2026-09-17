@@ -1,0 +1,21 @@
+---
+import { coverBg, tint } from "../lib/posts";
+import { PAPER } from "../lib/site";
+const { post, items } = Astro.props;
+const isR = post.cat === "Reviews";
+---
+<div class="rel">
+  <h2 class="hand">{isR ? "if this one did it for you" : "more from the notebook"}</h2>
+  {items.map(({ post: x, why }: any) => (
+    <a class="relcard lift" href={x.href}>
+      <span class="rc" aria-hidden="true" style={`background:${isR ? coverBg(x) : PAPER[x.form] || "var(--paper)"}`}>
+        <i style={`background:${tint(x)}`}></i>
+      </span>
+      <span>
+        <span class="k">{isR ? x.author : x.form}</span>
+        <span class="tt">{isR ? x.book : x.t}</span>
+        <span class="why">{why}</span>
+      </span>
+    </a>
+  ))}
+</div>

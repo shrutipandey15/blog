@@ -1,0 +1,7 @@
+---
+const { text, hindi = false } = Astro.props;
+---
+<div class:list={["verse", "reveal", { hi: hindi }]}>
+  <span class="tape" aria-hidden="true"></span>
+  <p lang={hindi ? "hi" : undefined}>{text}</p>
+</div>

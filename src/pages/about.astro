@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import { u, MAIL } from "../lib/site";
+---
+<Base
+  title="About — Aftertaste"
+  description="Books are just where I go. Why this blog scores feelings instead of stars."
+  section="about"
+>
+  <div class="rise" style="padding-top:28px">
+    <article class="box about">
+      <span class="tape" aria-hidden="true"></span>
+      <p class="note center" style="rotate:0deg;margin:0">about, briefly</p>
+      <h1>Books are just where I go.</h1>
+      <p class="lede">This isn't a book review blog.</p>
+      <p>I read the way other people drink, or run, or reorganise a cupboard at two in the morning. Something in the day is unbearable, and there's a book, and for a while I'm not here.</p>
+      <p>Then something in the book says a thing, and I have a reaction completely out of proportion to what just happened, and it turns out the reaction was already in the room. It had been waiting. The book only opened a door.</p>
+      <div class="two">
+        <a class="lift" href={u("reviews")}><span class="hand">Reviews</span><span>No plot section, no pros and cons.</span></a>
+        <a class="lift" href={u("notebook")}><span class="hand">Notebook</span><span>Thoughts, poems, the odd story.</span></a>
+      </div>
+      <p>I'm going to be wrong about books you love, and I'm not doing it to be difficult. I just don't have any diplomacy left over for fiction at the end of a day.</p>
+      <p class="pullq">If a post is only clever, it doesn't go up. Clever is easy. Clever is what I do all day.</p>
+      <h2 class="hand">The rating thing</h2>
+      <p>Stars don't work and I've stopped pretending. Three stars can mean bored, or it can mean wrecked and annoyed about being wrecked, and those are not the same afternoon.</p>
+      <p>So every review gets scored on what actually turned up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p>
+      <h2 class="hand">The thing I built</h2>
+      <p>At some point I got annoyed enough at star ratings to go and build an alternative, which is an unhinged response to a small problem and I stand by it. It's called <a class="inl" href="https://bibliome.app" rel="noopener noreferrer">Bibliome</a>. You log what a book did to you instead of scoring it, and after a while it draws you a picture of your own reading that you may not enjoy.</p>
+      <p>You don't have to use it. I'd notice. I wouldn't say anything.</p>
+      <div class="ask">
+        <h2 class="hand">No comment box. That's deliberate.</h2>
+        <p style="font-size:14px">If you want to argue, <a class="inl" href={`mailto:${MAIL}`}>email me</a>. One person who actually types something out beats fifty who don't. I read all of them. I answer most.</p>
+      </div>
+    </article>
+  </div>
+</Base>

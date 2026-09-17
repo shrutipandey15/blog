@@ -1,0 +1,14 @@
+---
+import { NTILT, TAPES, PAPER, fmt } from "../lib/site";
+const { post, i = 0, animate = true } = Astro.props;
+---
+<a
+  class:list={["slip", "lift", { rise: animate }]}
+  href={post.href}
+  style={`--tilt:${NTILT[i % NTILT.length]}deg;background:${PAPER[post.form] || "var(--paper)"};animation-delay:${Math.min(i, 8) * 110}ms`}
+>
+  <span class="tape" style={`left:${12 + ((i * 29) % 60)}%;background:${TAPES[i % TAPES.length]}`}></span>
+  <span class="sf">{post.form} · {fmt(post.date)}</span>
+  <span class="st">{post.t}</span>
+  <span class="sx">{post.ex}</span>
+</a>

@@ -1,0 +1,17 @@
+---
+import { u } from "../lib/site";
+const { section } = Astro.props;
+const TABS = [
+  [u("/"), "Home", "home"],
+  [u("reviews"), "Reviews", "reviews"],
+  [u("notebook"), "Notebook", "notebook"],
+  [u("about"), "About", "about"],
+];
+---
+<nav class="tabs" aria-label="Sections">
+  <ul>
+    {TABS.map(([href, label, key]) => (
+      <li><a href={href} aria-current={key === section ? "page" : undefined}>{label}</a></li>
+    ))}
+  </ul>
+</nav>

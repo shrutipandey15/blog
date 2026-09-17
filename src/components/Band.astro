@@ -1,0 +1,8 @@
+---
+import { EMO } from "../lib/posts";
+const { post } = Astro.props;
+const bars = post.emo.filter((e: any) => EMO[e.feeling]);
+---
+<span class="band" aria-hidden="true">
+  {bars.map((e: any) => <i style={`flex-grow:${e.level};background:${EMO[e.feeling]}`}></i>)}
+</span>

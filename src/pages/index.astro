@@ -1,0 +1,115 @@
+---
+import Base from "../layouts/Base.astro";
+import Heading from "../components/Heading.astro";
+import ReviewCard from "../components/ReviewCard.astro";
+import NotebookSlip from "../components/NotebookSlip.astro";
+import FeelingChips from "../components/FeelingChips.astro";
+import { loadPosts, feelingCounts, EMO } from "../lib/posts";
+import { u, MAIL } from "../lib/site";
+import CURRENT from "../data/current.json";
+
+const { LIVE, REVIEWS, NOTES } = await loadPosts();
+const { counts, feels } = feelingCounts(REVIEWS);
+
+// Where every old #/… link should land now.
+const REDIRECTS = Object.fromEntries(LIVE.map((p) => [p.id, p.href]));
+---
+<Base big section="home">
+  <script slot="head" is:inline define:vars={{ POSTS: REDIRECTS, BASE: u("/") }}>
+    /* The old site was a hash router. Anything still linking to #/… lands here;
+       send it to the real URL before the page paints. */
+    (function () {
+      var raw = location.hash.replace(/^#/, "");
+      if (!raw) return;
+      var h = raw.split("/").filter(Boolean).map(function (s) {
+        try { return decodeURIComponent(s); } catch (e) { return s; }
+      });
+      if (h.length >= 2 && h[h.length - 2] === "page") h = h.slice(0, -2);
+      var seg = function (parts) { return BASE + parts.join("/") + "/"; };
+      var to = null;
+      if (h[0] === "post" && POSTS[h[1]]) to = POSTS[h[1]];
+      else if (h[0] === "log") to = BASE;
+      else if (h[0] === "index" || h[0] === "archive") to = seg(["reviews"]);
+      else if (h[0] === "reviews") to = h[1] === "feel" && h[2] ? seg(["reviews", "feel", h[2]]) : seg(["reviews"]);
+      else if (h[0] === "notebook") to = h[1] ? seg(["notebook", h[1]]) : seg(["notebook"]);
+      else if (h[0] === "tag" && h[1]) to = seg(["tags", h[1]]);
+      else if (h[0] === "tags") to = seg(["tags"]);
+      else if (h[0] === "about") to = seg(["about"]);
+      else if (h[0] === "search") to = BASE + "search/?q=" + encodeURIComponent(h.slice(1).join("/"));
+      if (to) location.replace(to);
+    })();
+  </script>
+
+  <div class="home">
+    <section class="box letter">
+      <span class="tape" aria-hidden="true"></span>
+      <h2 class="hand">Hi, I'm Shruti</h2>
+      <p>I read a lot, mostly to get out of the room. Most of this started as something I was too annoyed to say out loud at work. No star ratings. I've tried. I can't.</p>
+      <div class="row">
+        <a class="handlink" href={u("about")}>the longer version</a>
+        <span class="seal" aria-hidden="true">a</span>
+      </div>
+    </section>
+
+    <section>
+      <Heading text="Freshly reviewed" note="tap one. it won't be gentle." />
+      <div class="grid">
+        {REVIEWS.slice(0, 4).map((p, i) => <ReviewCard post={p} i={i} />)}
+      </div>
+      <a class="btn" href={u("reviews")}>All {REVIEWS.length} reviews</a>
+    </section>
+
+    {NOTES.length > 0 && (
+      <section>
+        <Heading text="From the notebook" note="(written too late at night)" />
+        <div class="slips">
+          {NOTES.slice(0, 3).map((p, i) => <NotebookSlip post={p} i={i} animate={false} />)}
+        </div>
+        <a class="btn" href={u("notebook")}>Open the notebook</a>
+      </section>
+    )}
+
+    <div class="pair">
+      {CURRENT && (
+        <section>
+          <Heading text="On the nightstand" />
+          <div class="box night">
+            <span class="label">shh, still reading</span>
+            <div class="mini-cover" aria-hidden="true"><span>{CURRENT.cover || CURRENT.book}</span></div>
+            <div class="info">
+              <span class="b">{CURRENT.book}</span>
+              <span class="a">{CURRENT.author}</span>
+              <div class="bar" role="img" aria-label={`${CURRENT.pct} percent read`}><i style={`width:${CURRENT.pct}%`}></i></div>
+              <span class="p">{CURRENT.pct}% · {CURRENT.note}</span>
+            </div>
+          </div>
+        </section>
+      )}
+      <section>
+        <Heading text="Pick a feeling" note="what do you want to be left with?" />
+        <div class="box chips feelbox">
+          <FeelingChips feels={feels} counts={counts} withCounts />
+        </div>
+      </section>
+    </div>
+
+    <div class="pair">
+      <section>
+        <Heading text="How I rate" />
+        <div class="box rate">
+          <p>No stars. I can't rate a book out of five. I can't rate a Tuesday out of five. So: what showed up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p>
+          <ul class="key">
+            {Object.keys(EMO).map((k) => <li><span class="sw" style={`background:${EMO[k]}`}></span>{k}</li>)}
+          </ul>
+        </div>
+      </section>
+      <section class="quote">
+        <span class="tape t1" aria-hidden="true"></span>
+        <span class="tape t2" aria-hidden="true"></span>
+        <span class="qm" aria-hidden="true">“</span>
+        <blockquote>If a post is only clever, it doesn't go up. Clever is easy. Clever is what I do all day.</blockquote>
+        <cite>house rule</cite>
+      </section>
+    </div>
+  </div>
+</Base>

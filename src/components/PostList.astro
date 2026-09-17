@@ -1,0 +1,11 @@
+---
+/* A tag or search result set: reviews on the shelf, notebook pieces below. */
+import ReviewCard from "./ReviewCard.astro";
+import NotebookSlip from "./NotebookSlip.astro";
+const { posts } = Astro.props;
+const reviews = posts.filter((p: any) => p.cat === "Reviews");
+const notes = posts.filter((p: any) => p.cat !== "Reviews");
+---
+{reviews.length > 0 && <div class="grid">{reviews.map((p: any, i: number) => <ReviewCard post={p} i={i} />)}</div>}
+{notes.length > 0 && <div class="slips">{notes.map((p: any, i: number) => <NotebookSlip post={p} i={i} />)}</div>}
+{posts.length === 0 && <p class="empty">Nothing here yet.</p>}

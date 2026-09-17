@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import Heading from "../components/Heading.astro";
+import { u } from "../lib/site";
+---
+<Base title="Not here — Aftertaste" description="That page doesn't exist on Aftertaste.">
+  <div class="page rise">
+    <div class="phead">
+      <Heading text="Not here" tag="h1" />
+      <p>Wrong link, or I deleted it, or I never wrote it. All three have happened and I'm not going to tell you which.</p>
+    </div>
+    <a class="btn" href={u("/")} style="align-self:center">Go to the front page</a>
+  </div>
+</Base>

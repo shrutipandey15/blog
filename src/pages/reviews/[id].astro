@@ -1,0 +1,12 @@
+---
+import PostPage from "../../components/PostPage.astro";
+import { loadPosts } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  const { REVIEWS } = await loadPosts();
+  return REVIEWS.map((post) => ({ params: { id: post.id }, props: { post, list: REVIEWS } }));
+}
+
+const { post, list } = Astro.props;
+---
+<PostPage post={post} list={list} />

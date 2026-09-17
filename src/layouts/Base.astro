@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+import Hero from "../components/Hero.astro";
+import Tabs from "../components/Tabs.astro";
+import Footer from "../components/Footer.astro";
+import { TITLE, DESC, u } from "../lib/site";
+
+const {
+  title = TITLE,
+  description = DESC,
+  section = null,
+  big = false,
+  ogImage = null,
+  ogType = "website",
+  hideSearch = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const image = ogImage ? new URL(ogImage, Astro.site).href : new URL(u("og/default.png"), Astro.site).href;
+
+const FAVICON =
+  "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2247%22%20fill%3D%22%235b2219%22%20stroke%3D%22%23f3e7d3%22%20stroke-width%3D%225%22/%3E%3Ctext%20x%3D%2250%22%20y%3D%2268%22%20font-family%3D%22Georgia%2Cserif%22%20font-style%3D%22italic%22%20font-size%3D%2258%22%20fill%3D%22%23f3e7d3%22%20text-anchor%3D%22middle%22%3Ea%3C/text%3E%3C/svg%3E";
+const APPLE =
+  "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%231b140f%22/%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2238%22%20fill%3D%22%235b2219%22%20stroke%3D%22%23f3e7d3%22%20stroke-width%3D%224%22/%3E%3Ctext%20x%3D%2250%22%20y%3D%2266%22%20font-family%3D%22Georgia%2Cserif%22%20font-style%3D%22italic%22%20font-size%3D%2248%22%20fill%3D%22%23f3e7d3%22%20text-anchor%3D%22middle%22%3Ea%3C/text%3E%3C/svg%3E";
+
+/* 'wasm-unsafe-eval' and connect-src are for Pagefind on /search/;
+   form-action 'self' is for the footer search form. */
+const CSP =
+  "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+  "font-src https://fonts.gstatic.com; img-src 'self' data:; " +
+  "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; connect-src 'self'; " +
+  "base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="Aftertaste" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="theme-color" content="#1b140f" />
+    <link rel="icon" type="image/svg+xml" href={FAVICON} />
+    <link rel="apple-touch-icon" href={APPLE} />
+    <meta http-equiv="Content-Security-Policy" content={CSP} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="alternate" type="application/rss+xml" title="Aftertaste" href={u("rss.xml")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip" href="#app">Skip to the writing</a>
+    <div class="sky" aria-hidden="true">
+      <span class="firefly ff1"></span><span class="firefly ff2"></span><span class="firefly ff3"></span><span class="firefly ff4"></span><span class="firefly ff5"></span>
+      <svg class="leaf lf1" viewBox="0 0 40 60"><path d="M20 2 C4 18 4 42 20 58 C36 42 36 18 20 2 Z" fill="#a0522d" /><path d="M20 6 V56" stroke="#4a2410" stroke-width="1.5" /></svg>
+      <svg class="leaf lf2" viewBox="0 0 40 60"><path d="M20 2 C4 18 4 42 20 58 C36 42 36 18 20 2 Z" fill="#c07a3a" /><path d="M20 6 V56" stroke="#4a2410" stroke-width="1.5" /></svg>
+    </div>
+
+    <header id="top"><Hero big={big} /></header>
+    <Tabs section={section} />
+    <main id="app" class="wrap" tabindex="-1">
+      <slot />
+    </main>
+    <Footer hideSearch={hideSearch} />
+  </body>
+</html>

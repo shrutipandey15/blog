@@ -1,0 +1,14 @@
+---
+import ReviewsPage from "../../../components/ReviewsPage.astro";
+import { loadPosts, feelingCounts } from "../../../lib/posts";
+
+export async function getStaticPaths() {
+  const { REVIEWS } = await loadPosts();
+  // Only feelings that at least one review actually left behind.
+  const { feels } = feelingCounts(REVIEWS);
+  return feels.map((feeling) => ({ params: { feeling } }));
+}
+
+const { feeling } = Astro.params;
+---
+<ReviewsPage feel={feeling} />

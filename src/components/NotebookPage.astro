@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import Heading from "./Heading.astro";
+import NotebookSlip from "./NotebookSlip.astro";
+import { loadPosts, forms } from "../lib/posts";
+import { u } from "../lib/site";
+
+const { form = null } = Astro.props;
+const { NOTES } = await loadPosts();
+const FORMS = forms(NOTES);
+const active = FORMS.find((x) => x.toLowerCase() === form) ?? null;
+const list = active ? NOTES.filter((p) => p.form === active) : NOTES;
+---
+<Base
+  title="Notebook — essays, poems and short stories about reading"
+  description="Arguments about books, poems written too late at night, and the occasional short story."
+  section="notebook"
+>
+  <div class="page rise">
+    <div class="phead">
+      <Heading text="Notebook" tag="h1" />
+      <p>Arguments about books, poems written too late at night, and the occasional short story.</p>
+    </div>
+    <div class="chips center" role="group" aria-label="Filter by kind">
+      <a class="chip small" href={u("notebook")} aria-current={active ? undefined : "true"}>
+        all <span class="n">{NOTES.length}</span>
+      </a>
+      {FORMS.map((x) => (
+        <a class="chip small" href={u(`notebook/${x.toLowerCase()}`)} aria-current={x === active ? "true" : undefined}>
+          {x.toLowerCase()}s <span class="n">{NOTES.filter((p) => p.form === x).length}</span>
+        </a>
+      ))}
+    </div>
+    <div class="slips">{list.map((p, i) => <NotebookSlip post={p} i={i} />)}</div>
+  </div>
+</Base>

@@ -1,0 +1,23 @@
+---
+/* One route for two things: the kind filters (/notebook/poem/) and the
+   pieces themselves (/notebook/marginalia/). Ids and kinds never collide. */
+import NotebookPage from "../../components/NotebookPage.astro";
+import PostPage from "../../components/PostPage.astro";
+import { loadPosts, forms } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  const { NOTES } = await loadPosts();
+  const kinds = forms(NOTES).map((f) => f.toLowerCase());
+  const clash = NOTES.find((p) => kinds.includes(p.id));
+  if (clash) throw new Error(`Notebook piece "${clash.id}" has the same id as a kind filter. Rename it.`);
+
+  return [
+    ...kinds.map((slug) => ({ params: { slug }, props: { kind: "form" } })),
+    ...NOTES.map((post) => ({ params: { slug: post.id }, props: { kind: "post", post, list: NOTES } })),
+  ];
+}
+
+const { kind, post, list } = Astro.props;
+const { slug } = Astro.params;
+---
+{kind === "form" ? <NotebookPage form={slug} /> : <PostPage post={post} list={list} />}

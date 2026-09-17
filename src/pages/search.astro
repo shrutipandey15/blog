@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import Heading from "../components/Heading.astro";
+import { u } from "../lib/site";
+---
+<Base title="Search — Aftertaste" description="Search the reviews and the notebook." hideSearch>
+  <link slot="head" rel="stylesheet" href={u("pagefind") + "pagefind-ui.css"} />
+
+  <div class="page rise">
+    <div class="phead">
+      <Heading text="Search" note="every review, every notebook piece, full text" tag="h1" />
+    </div>
+
+    <div id="search" class="pf">
+      <noscript>
+        <p class="empty">Search needs JavaScript. The <a class="handlink" href={u("tags")}>tags</a> work without it.</p>
+      </noscript>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ UI: u("pagefind") + "pagefind-ui.js" }}>
+    /* Pagefind indexes the built HTML, so its bundle only exists after a build.
+       Loading it here keeps every other page free of client JavaScript. */
+    import(UI).then(({ PagefindUI }) => {
+      const ui = new PagefindUI({ element: "#search", showImages: false, showSubResults: true });
+      const q = new URLSearchParams(location.search).get("q");
+      if (q) ui.triggerSearch(q);
+    });
+  </script>
+</Base>
