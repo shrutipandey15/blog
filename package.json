@@ -1,18 +1,18 @@
 {
-  "name": "blog",
+  "name": "aftertaste",
   "version": "1.0.0",
-  "description": "<div align=\"center\">",
-  "main": "index.js",
+  "description": "Aftertaste \u2014 a book blog about what books do to you",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "migrate": "node scripts/migrate.mjs",
+    "test": "playwright test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shrutipandey15/blog.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/shrutipandey15/blog/issues"
   },
@@ -22,6 +22,10 @@
     "astro": "^5.18.2"
   },
   "devDependencies": {
-    "pagefind": "^1.5.2"
-  }
+    "@resvg/resvg-js": "^2.6.2",
+    "pagefind": "^1.5.2",
+    "satori": "^0.33.4"
+  },
+  "private": true,
+  "type": "module"
 }
