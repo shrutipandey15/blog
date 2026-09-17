@@ -2,1949 +2,450 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aftertaste — a reading blog</title>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%23B65C3F%22/%3E%0A%3Ctext%20x%3D%2250%22%20y%3D%2271%22%20font-family%3D%22Georgia%2C%20%27Times%20New%20Roman%27%2C%20serif%22%20font-size%3D%2260%22%20font-weight%3D%22700%22%20fill%3D%22%23FAF6EF%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%0A%3C/svg%3E"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%23B65C3F%22/%3E%0A%3Ctext%20x%3D%2250%22%20y%3D%2271%22%20font-family%3D%22Georgia%2C%20%27Times%20New%20Roman%27%2C%20serif%22%20font-size%3D%2260%22%20font-weight%3D%22700%22%20fill%3D%22%23FAF6EF%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%0A%3C/svg%3E"
-    />
-    <meta name="theme-color" content="#FAF6EF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Aftertaste — a book blog about what books do to you</title>
+    <meta name="description" content="Book reviews scored on feeling instead of stars, plus thoughts, poems and short stories." />
+    <link rel="canonical" href="https://shrutipandey15.github.io/blog/" />
+    <meta property="og:site_name" content="Aftertaste" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aftertaste — a book blog about what books do to you" />
+    <meta property="og:description" content="Book reviews scored on feeling instead of stars, plus thoughts, poems and short stories." />
+    <meta property="og:url" content="https://shrutipandey15.github.io/blog/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#1b140f" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2247%22%20fill%3D%22%235b2219%22%20stroke%3D%22%23f3e7d3%22%20stroke-width%3D%225%22/%3E%3Ctext%20x%3D%2250%22%20y%3D%2268%22%20font-family%3D%22Georgia%2Cserif%22%20font-style%3D%22italic%22%20font-size%3D%2258%22%20fill%3D%22%23f3e7d3%22%20text-anchor%3D%22middle%22%3Ea%3C/text%3E%3C/svg%3E" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%231b140f%22/%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2238%22%20fill%3D%22%235b2219%22%20stroke%3D%22%23f3e7d3%22%20stroke-width%3D%224%22/%3E%3Ctext%20x%3D%2250%22%20y%3D%2266%22%20font-family%3D%22Georgia%2Cserif%22%20font-style%3D%22italic%22%20font-size%3D%2248%22%20fill%3D%22%23f3e7d3%22%20text-anchor%3D%22middle%22%3Ea%3C/text%3E%3C/svg%3E" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
     />
     <style>
       :root {
-        --paper: #faf6ef;
-        --card: #ffffff;
-        --ink: #2e2722;
-        --mid: #6d6259;
-        --soft: #9b9088;
-        --line: #e6ded2;
-        --terra: #b65c3f;
-        --terra-soft: #f3e4dd;
-        --sage: #7e8f6e;
-        --sage-soft: #e9eee3;
-        --display: "Fraunces", Georgia, serif;
-        --body: "Inter", system-ui, sans-serif;
-        --shadow:
-          0 1px 2px rgba(46, 39, 34, 0.05), 0 8px 20px rgba(46, 39, 34, 0.045);
+        --bark: #1b140f;
+        --bark-2: #2a1d15;
+        --card: #5b2219;
+        --accent: #b8552e;
+        --gold: #e8b26a;
+        --cream: #f3e7d3;
+        --cream-2: #e3d2b8;
+        --muted: #c9b69a;
+        --paper: #efe3cc;
+        --kraft: #c9a878;
+        --rose: #d8b4a6;
+        --sage: #8f9a78;
+        --ink: #2a1a14;
+        --wine: #5b2219;
+        --hand: "Caveat", "Segoe Print", cursive;
+        --display: "Fraunces", "Noto Serif Devanagari", Georgia, serif;
+        --body: "Courier Prime", "Noto Serif Devanagari", "Courier New", ui-monospace, monospace;
+        --hi: "Noto Serif Devanagari", Georgia, serif;
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
       }
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
+      html { background: var(--bark); scroll-behavior: smooth; }
       body {
         margin: 0;
-        background: var(--paper);
-        color: var(--ink);
+        min-height: 100vh;
+        color: var(--cream);
         font-family: var(--body);
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
+        background-color: var(--bark);
+        background-image:
+          radial-gradient(ellipse 340px 170px at 8% 8%, rgba(150, 72, 36, 0.26), transparent 70%),
+          radial-gradient(ellipse 280px 220px at 92% 18%, rgba(120, 58, 30, 0.24), transparent 70%),
+          radial-gradient(ellipse 380px 180px at 22% 42%, rgba(92, 52, 30, 0.3), transparent 70%),
+          radial-gradient(ellipse 300px 260px at 86% 62%, rgba(140, 66, 32, 0.2), transparent 70%),
+          radial-gradient(ellipse 360px 170px at 14% 84%, rgba(110, 60, 34, 0.26), transparent 70%);
+        background-attachment: fixed;
       }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      ::selection {
-        background: var(--terra-soft);
-      }
-      :focus-visible {
-        outline: 2px solid var(--terra);
-        outline-offset: 2px;
-      }
-      .wrap {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 22px;
-      }
+      a { color: inherit; text-decoration: none; }
+      :focus-visible { outline: 2px dashed var(--gold); outline-offset: 3px; border-radius: 6px; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+      .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .skip { position: absolute; left: 12px; top: -60px; z-index: 50; padding: 10px 14px; background: var(--cream); color: var(--ink); border-radius: 8px; font-weight: 700; }
+      .skip:focus { top: 12px; }
 
-      /* ============ top strip ============ */
-      .strip {
-        background: var(--ink);
-        color: #e9e2d9;
-        font-size: 12.5px;
+      /* ---------- motion ---------- */
+      @keyframes twinkle { 0%, 100% { opacity: 0.35; scale: 0.85; } 50% { opacity: 1; scale: 1.1; } }
+      @keyframes bob { 0%, 100% { translate: 0 0; rotate: -6deg; } 50% { translate: 0 -5px; rotate: -2deg; } }
+      @keyframes rise { from { opacity: 0; translate: 0 16px; } to { opacity: 1; translate: 0 0; } }
+      @keyframes draw { from { stroke-dashoffset: 420; } to { stroke-dashoffset: 0; } }
+      @keyframes grow { from { scale: 0 1; } to { scale: 1 1; } }
+      @keyframes bookin { from { opacity: 0; rotate: y -38deg; } to { opacity: 1; rotate: y 0deg; } }
+      @keyframes shimmer { 0%, 72% { background-position: 110% 0; } 100% { background-position: -60% 0; } }
+      @keyframes halo { 0%, 100% { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(232, 178, 106, 0); } 50% { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 26px 6px rgba(232, 178, 106, 0.28); } }
+      @keyframes flicker { 0%, 100% { scale: 1 1; opacity: 0.95; } 30% { scale: 0.9 1.1; } 55% { scale: 1.06 0.94; opacity: 0.8; } 80% { scale: 0.96 1.05; } }
+      @keyframes swing { 0% { rotate: 0deg; } 30% { rotate: 9deg; } 60% { rotate: -6deg; } 100% { rotate: 0deg; } }
+      @keyframes wobble { 0%, 100% { rotate: -12deg; } 25% { rotate: -22deg; } 60% { rotate: -5deg; } }
+      @keyframes glow { 0%, 100% { opacity: 0; } 45%, 60% { opacity: 0.9; } }
+      @keyframes driftA { 0%, 100% { translate: 0 0; } 25% { translate: 18px -28px; } 50% { translate: -14px -58px; } 75% { translate: 12px -30px; } }
+      @keyframes driftB { 0%, 100% { translate: 0 0; } 33% { translate: -22px -18px; } 66% { translate: 10px -46px; } }
+      @keyframes fall {
+        0% { translate: 0 -40px; rotate: 0deg; opacity: 0; }
+        8% { opacity: 0.75; }
+        25% { translate: 34px 25vh; rotate: 90deg; }
+        50% { translate: -12px 50vh; rotate: 170deg; }
+        75% { translate: 30px 75vh; rotate: 260deg; }
+        92% { opacity: 0.75; }
+        100% { translate: -6px 105vh; rotate: 340deg; opacity: 0; }
       }
-      .strip .wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 38px;
-        gap: 14px;
-      }
-      .social {
-        display: flex;
-        gap: 14px;
-      }
-      .social a {
-        color: #c3b9ae;
-        transition: color 0.2s;
-      }
-      .nosocial {
-        color: #8c8177;
-        font-size: 12px;
-      }
-      .social a:hover {
-        color: #fff;
-      }
-      .sbox {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .sbox button {
-        background: none;
-        border: 0;
-        color: #c3b9ae;
-        font: inherit;
-        font-size: 12px;
-        cursor: pointer;
-      }
-      .sbox button:hover {
-        color: #fff;
-      }
-      .sbox input {
-        background: rgba(255, 255, 255, 0.08);
-        border: 0;
-        border-radius: 20px;
-        padding: 5px 12px;
-        color: #fff;
-        font: inherit;
-        font-size: 12.5px;
-        width: 170px;
-      }
-      .sbox input::placeholder {
-        color: #948a80;
-      }
-
-      /* ============ masthead ============ */
-      .mast {
-        text-align: center;
-        padding: 34px 0 26px;
-      }
-      .mast .name {
-        font-family: var(--display);
-        font-size: clamp(38px, 6vw, 60px);
-        font-weight: 600;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        margin: 0;
-      }
-      .mast .name:hover {
-        color: var(--terra);
-      }
-      .mast .tag {
-        font-size: 12px;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: var(--mid);
-        margin: 12px 0 0;
-      }
-      .sprig {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 14px;
-      }
-      .sprig i {
-        display: block;
-        width: 52px;
-        height: 1px;
-        background: var(--line);
-      }
-      .sprig svg {
-        width: 16px;
-        height: 16px;
-        color: var(--sage);
-      }
-
-      /* ============ nav ============ */
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-      .nav .wrap {
-        overflow-x: auto;
-        scrollbar-width: none;
-        justify-content: center;
-      }
-      .nav .wrap::-webkit-scrollbar {
-        display: none;
-      }
-      @media (max-width: 700px) {
-        .nav .wrap {
-          justify-content: flex-start;
-        }
-        .nav a {
-          padding: 13px 11px;
-          font-size: 11.5px;
-          letter-spacing: 0.07em;
+      .twinkle { animation: twinkle 3.2s ease-in-out infinite; }
+      .twinkle-slow { animation: twinkle 5s ease-in-out infinite; }
+      .bob { animation: bob 4s ease-in-out infinite; }
+      .rise { animation: rise 0.7s var(--ease) backwards; }
+      .reveal, .home > section, .pair > section { animation: rise 0.8s var(--ease) backwards; }
+      @supports (animation-timeline: view()) {
+        .reveal, .home > section, .pair > section {
+          animation-timeline: view();
+          animation-range: entry 0% entry 40%;
+          animation-duration: auto;
         }
       }
-      .nav .wrap {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2px;
+      .squig { display: block; overflow: visible; }
+      .squig path { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 420; animation: draw 1.4s 0.25s ease-out backwards; }
+      .shimmer {
+        color: transparent;
+        background: linear-gradient(100deg, var(--cream) 42%, #fff4dc 49%, #f6c98a 51%, var(--cream) 58%);
+        background-size: 260% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmer 7s ease-in-out 1s infinite;
       }
-      .nav a {
-        padding: 14px 16px;
-        font-size: 12.5px;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--mid);
-        position: relative;
-        transition: color 0.2s;
-      }
-      .nav a:hover {
-        color: var(--terra);
-      }
-      .nav a.on {
-        color: var(--ink);
-      }
-      .nav a.on::after {
-        content: "";
-        position: absolute;
-        left: 16px;
-        right: 16px;
-        bottom: -1px;
-        height: 2px;
-        background: var(--terra);
+      .flicker { transform-box: fill-box; transform-origin: center bottom; animation: flicker 2.2s ease-in-out infinite; }
+      .lift { transition: translate 0.25s ease, scale 0.15s ease, box-shadow 0.25s ease; }
+      .lift:hover { translate: 0 -4px; }
+      .lift:active, .btn:active, .chip:active { scale: 0.97; }
+
+      .sky { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 20; }
+      .firefly { position: absolute; width: 5px; height: 5px; border-radius: 999px; background: #ffdf9e; box-shadow: 0 0 8px 3px rgba(255, 196, 104, 0.55); opacity: 0; }
+      .ff1 { left: 12%; top: 22%; animation: driftA 15s ease-in-out infinite, glow 4s ease-in-out infinite; }
+      .ff2 { left: 84%; top: 36%; animation: driftB 12s ease-in-out infinite, glow 5s ease-in-out 1.3s infinite; }
+      .ff3 { left: 26%; top: 62%; animation: driftB 17s ease-in-out infinite, glow 4.4s ease-in-out 2.6s infinite; }
+      .ff4 { left: 70%; top: 78%; animation: driftA 13s ease-in-out infinite, glow 3.8s ease-in-out 0.7s infinite; }
+      .ff5 { left: 48%; top: 92%; animation: driftA 19s ease-in-out infinite, glow 5.5s ease-in-out 3.4s infinite; }
+      .leaf { position: absolute; top: 0; width: 16px; height: 24px; opacity: 0; }
+      .lf1 { left: 18%; animation: fall 24s linear 2s infinite; }
+      .lf2 { left: 76%; animation: fall 28s linear 14s infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+        .shimmer { color: var(--cream); background: none; }
+        .sky { display: none; }
       }
 
-      /* ============ layout ============ */
-      .grid {
+      /* ---------- hero ---------- */
+      .collage {
+        height: 176px;
+        overflow: hidden;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 316px;
-        gap: 44px;
-        padding: 36px 0 60px;
-        align-items: start;
-      }
-      .side {
-        position: sticky;
-        top: 64px;
-        max-height: calc(100vh - 84px);
-        overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: var(--line) transparent;
-      }
-      .side::-webkit-scrollbar {
-        width: 5px;
-      }
-      .side::-webkit-scrollbar-thumb {
-        background: var(--line);
-        border-radius: 3px;
-      }
-      @media (max-width: 780px) {
-        .side {
-          position: static;
-          max-height: none;
-          overflow: visible;
-        }
-      }
-      @media (max-width: 780px) {
-        .grid {
-          grid-template-columns: 1fr;
-          gap: 34px;
-        }
-      }
-
-      /* ============ post cards ============ */
-      .card {
-        display: block;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden;
-        margin-bottom: 30px;
-        box-shadow: var(--shadow);
-        transition:
-          box-shadow 0.2s,
-          transform 0.2s;
-      }
-      .card:hover {
-        box-shadow: 0 4px 18px rgba(46, 39, 34, 0.09);
-        transform: translateY(-1px);
-      }
-      .acard {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .eyebrow {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--terra);
-      }
-      /* featured graphic — the title set on colour, like the blogs you sent */
-      .fi {
-        aspect-ratio: 2/1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 28px 34px;
-        position: relative;
-      }
-      .fi .kicker {
-        font-size: 10.5px;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        opacity: 0.75;
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-      .fi-book {
-        font-family: var(--display);
-        font-weight: 600;
-        font-size: 13.5px;
-        letter-spacing: 0.01em;
-        opacity: 0.85;
-        margin: 0 0 6px;
-      }
-      .fi h3 {
-        font-family: var(--display);
-        font-weight: 600;
-        font-size: clamp(20px, 2.5vw, 30px);
-        line-height: 1.2;
-        margin: 0;
-        max-width: 16ch;
-      }
-      .card-book {
-        font-family: var(--display);
-        font-weight: 600;
-        font-size: 13.5px;
-        color: var(--terra);
-        margin: 0 0 5px;
-      }
-      .card-book span {
-        font-family: var(--body);
-        font-weight: 400;
-        color: var(--mid);
-        font-size: 12.5px;
-      }
-      .fi .curl {
-        position: absolute;
-        right: 22px;
-        bottom: 18px;
-        opacity: 0.3;
-        width: 44px;
-      }
-      .fi .ti {
-        position: absolute;
-        right: 6%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 42%;
-        max-width: 150px;
-        height: auto;
-        opacity: 0.16;
-        pointer-events: none;
-      }
-      .rel .fi .ti {
-        width: 48%;
-        max-width: 80px;
-        right: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .fi.c0 {
-        background: #f0e3d6;
-        color: #7a4a2e;
-      }
-      .fi.c1 {
-        background: #e4ebde;
-        color: #42553a;
-      }
-      .fi.c2 {
-        background: #efe2e4;
-        color: #77414a;
-      }
-      .fi.c3 {
-        background: #e6e6ef;
-        color: #454670;
-      }
-      .fi.c4 {
-        background: #f3ead6;
-        color: #77602c;
-      }
-
-      .card .in {
-        padding: 22px 26px 26px;
-      }
-      .meta {
-        font-size: 12px;
-        color: var(--soft);
-        display: flex;
-        flex-wrap: wrap;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(118px, 1fr);
         gap: 8px;
-        align-items: center;
-        margin-bottom: 12px;
+        padding: 14px 10px 22px;
+        background: var(--bark-2);
       }
-      .meta .cat {
-        color: var(--terra);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 11px;
-      }
-      .meta .dot {
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background: var(--line);
-      }
-      .card h2 {
-        font-family: var(--display);
-        font-size: clamp(21px, 2.3vw, 26px);
-        font-weight: 600;
-        line-height: 1.28;
-        margin: 0 0 10px;
-      }
-      .card:hover h2 {
-        color: var(--terra);
-      }
-      .card p.ex {
-        margin: 0;
-        color: var(--mid);
-        font-size: 15.3px;
-      }
-      .more {
-        display: inline-block;
-        margin-top: 16px;
-        font-size: 12.5px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--terra);
-      }
-      .card:hover .more {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+      .scrap { position: relative; overflow: hidden; padding: 12px 10px 10px; color: var(--ink); line-height: 1.1; }
+      .scrap .tape { top: -8px; width: 46px; height: 16px; }
+      .s-hand { font-family: var(--hand); font-size: 22px; line-height: 1; }
+      .s-serif { font-family: var(--display); font-style: italic; font-size: 15px; }
+      .s-small { font-size: 11px; letter-spacing: 0.06em; display: flex; align-items: flex-end; }
+      .scallop { display: block; width: 100%; height: 16px; margin-top: -1px; }
+      .brand { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: -66px; padding: 0 18px; text-align: center; }
+      .mono { position: relative; width: 112px; height: 112px; }
+      .mono .ring { width: 112px; height: 112px; border-radius: 999px; background: var(--card); border: 3px solid var(--cream); padding: 6px; animation: halo 4.5s ease-in-out infinite; }
+      .mono .ring span { width: 100%; height: 100%; border-radius: 999px; border: 1.5px dashed rgba(243, 231, 211, 0.6); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-style: italic; font-size: 56px; line-height: 1; padding-bottom: 8px; }
+      .mono svg { position: absolute; }
+      .wordmark { margin: 4px 0 0; font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(54px, 9vw, 88px); line-height: 1; }
+      .tagline { margin: 0; font-family: var(--hand); font-size: clamp(26px, 3vw, 30px); line-height: 1.1; rotate: -2deg; }
+      .icons { display: flex; gap: 6px; }
+      .icons a { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 999px; }
+      .icons a:hover { background: rgba(243, 231, 211, 0.08); }
+      .mini-brand { display: flex; justify-content: center; padding: 18px 18px 0; }
+      .mini-brand a { display: flex; align-items: center; gap: 10px; padding: 4px 8px; }
+      .mini-brand .m { width: 44px; height: 44px; border-radius: 999px; background: var(--card); border: 2px solid var(--cream); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-style: italic; font-size: 24px; line-height: 1; padding-bottom: 4px; }
+      .mini-brand .w { font-family: var(--display); font-style: italic; font-size: 34px; line-height: 1; }
 
-      /* log strip on home */
-      .logbox {
-        background: var(--sage-soft);
-        border: 1px solid #d8e0cf;
-        border-radius: 6px;
-        padding: 20px 24px;
-        margin-bottom: 30px;
-      }
-      .logbox h4 {
-        font-family: var(--display);
-        font-size: 18px;
-        margin: 0 0 4px;
-        font-weight: 600;
-      }
-      .logbox .sub {
-        font-size: 12.5px;
-        color: var(--mid);
-        margin: 0 0 14px;
-      }
-      .logbox li {
-        list-style: none;
-        padding: 9px 0;
-        border-bottom: 1px dashed #cbd6c0;
-        display: flex;
-        gap: 12px;
-        font-size: 14.5px;
-      }
-      .logbox li:last-child {
-        border: 0;
-        padding-bottom: 0;
-      }
-      .logbox ul {
-        margin: 0;
-        padding: 0;
-      }
-      .logbox time {
-        color: var(--sage);
-        font-weight: 600;
-        font-size: 12px;
-        min-width: 56px;
-        padding-top: 3px;
-      }
+      /* ---------- tabs ---------- */
+      .tabs { position: sticky; top: 0; z-index: 10; background: rgba(27, 20, 15, 0.92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+      .tabs ul { list-style: none; margin: 0 auto; padding: 10px 8px; display: flex; gap: 2px; justify-content: center; }
+      .tabs a { height: 44px; padding: 0 13px; display: flex; align-items: center; border-radius: 12px; border: 1.5px solid transparent; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: border-color 0.2s ease; }
+      .tabs a:hover { border-color: rgba(243, 231, 211, 0.35); }
+      .tabs a[aria-current="page"] { background: var(--card); border-color: var(--cream); }
 
-      /* ============ sidebar ============ */
-      .side section {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 20px 20px 22px;
-        margin-bottom: 22px;
-        box-shadow: var(--shadow);
-      }
-      .side h4 {
-        font-family: var(--display);
-        font-size: 17px;
-        font-weight: 600;
-        margin: 0 0 14px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--line);
-      }
-      .avatar {
-        width: 88px;
-        height: 88px;
-        border-radius: 50%;
-        margin: 0 auto 14px;
-        background: linear-gradient(140deg, #ebdcc9, #d8c4ac);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--display);
-        font-size: 30px;
-        color: #8a6a48;
-        font-weight: 600;
-      }
-      .side .bio {
-        font-size: 14.3px;
-        color: var(--mid);
-        margin: 0;
-      }
-      .side .bio + a {
-        display: inline-block;
-        margin-top: 12px;
-        color: var(--terra);
-        font-weight: 600;
-        font-size: 13px;
-      }
+      /* ---------- shared pieces ---------- */
+      main { padding-bottom: 8px; }
+      .box { position: relative; background: var(--card); border: 1.5px solid var(--cream); border-radius: 16px; }
+      .tape { position: absolute; display: block; height: 22px; width: 80px; top: -10px; rotate: -4deg; background: rgba(216, 180, 166, 0.82); }
+      .hd { display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .hand { margin: 0; font-family: var(--hand); font-weight: 700; font-size: 36px; line-height: 1; }
+      .hand.xl { font-size: 46px; }
+      .note { margin: 4px 0 0; font-family: var(--hand); font-size: 20px; line-height: 1.15; color: var(--gold); rotate: 2deg; }
+      .note.l { rotate: -2deg; }
+      .center { text-align: center; justify-content: center; }
+      .btn { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 14px; background: var(--card); border: 1.5px solid var(--cream); font-size: 13px; font-weight: 700; transition: scale 0.15s ease, background 0.2s ease; }
+      .btn:hover { background: #6a2a1f; }
+      .btn.cream { background: var(--cream); color: var(--ink); border-color: var(--cream); border-radius: 999px; font-size: 14px; }
+      .btn.cream:hover { background: #fff6e6; }
+      .seal { width: 50px; height: 50px; flex-shrink: 0; border-radius: 999px; background: var(--accent); box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-style: italic; font-size: 26px; padding-bottom: 4px; rotate: -12deg; }
+      .seal:hover { animation: wobble 0.8s ease-in-out; }
+      .dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; flex-shrink: 0; }
+      .empty { text-align: center; font-family: var(--hand); font-size: 24px; color: var(--cream-2); }
 
-      .reading {
-        display: flex;
-        gap: 14px;
-        align-items: flex-start;
-      }
-      .cover {
-        width: 70px;
-        flex: 0 0 70px;
-        aspect-ratio: 2/3;
-        border-radius: 3px;
-        background: linear-gradient(160deg, #3e4a5c, #26303e);
-        color: #e8e0d2;
-        padding: 10px 8px;
-        font-family: var(--display);
-        font-size: 11px;
-        line-height: 1.25;
-        box-shadow: 2px 2px 0 rgba(46, 39, 34, 0.12);
-      }
-      .reading .t {
-        font-family: var(--display);
-        font-size: 15.5px;
-        font-weight: 600;
-        line-height: 1.3;
-        margin: 0;
-      }
-      .reading .a {
-        font-size: 13px;
-        color: var(--mid);
-        margin: 3px 0 8px;
-      }
-      .bar {
-        height: 5px;
-        background: var(--line);
-        border-radius: 3px;
-        overflow: hidden;
-      }
-      .bar i {
-        display: block;
-        height: 100%;
-        background: var(--terra);
-        border-radius: 3px;
-      }
-      .reading .pct {
-        font-size: 11.5px;
-        color: var(--soft);
-        margin-top: 5px;
-      }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .chip { min-height: 44px; padding: 0 14px; display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: rgba(0, 0, 0, 0.22); border: 1.5px solid var(--c, var(--cream)); font-size: 13px; font-weight: 700; transition: scale 0.15s ease, background 0.2s ease; }
+      .chip:hover { background: rgba(0, 0, 0, 0.36); }
+      .chip .n { font-weight: 400; color: var(--cream-2); }
+      .chip[aria-current="true"] { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+      .chip[aria-current="true"] .n { color: #6b5a4c; }
+      .chip.small { min-height: 40px; padding: 0 12px; font-size: 12px; }
 
-      .emokey li {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        padding: 5px 0;
-        font-size: 13.6px;
-      }
-      .emokey ul {
-        margin: 0;
-        padding: 0;
-      }
-      .emokey .sw {
-        width: 11px;
-        height: 11px;
-        border-radius: 3px;
-        flex: 0 0 11px;
-      }
-      .emokey .note {
-        font-size: 12.5px;
-        color: var(--soft);
-        margin: 12px 0 0;
-        line-height: 1.5;
-      }
+      /* review cards */
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+      .rcard { display: flex; flex-direction: column; background: var(--card); border: 1.5px solid var(--cream); border-radius: 14px; overflow: hidden; rotate: var(--tilt, 0deg); }
+      .rcard:hover { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 18px rgba(232, 178, 106, 0.18); }
+      .cover { position: relative; display: flex; flex-direction: column; gap: 8px; height: 190px; padding: 10px; }
+      .frame { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; border: 1px solid rgba(243, 231, 211, 0.4); padding: 12px 14px 10px 10px; }
+      .ct { font-family: var(--display); font-weight: 600; font-size: 27px; line-height: 1.05; }
+      .ct.sm { font-size: 21px; }
+      .ca { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+      .band { display: flex; gap: 2px; height: 6px; border-radius: 999px; overflow: hidden; }
+      .band i { display: block; }
+      .ribbon { position: absolute; top: 0; right: 4px; width: 14px; height: 44px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%); transform-origin: top center; }
+      .rcard:hover .ribbon { animation: swing 1.1s ease-in-out; }
+      .rbody { display: flex; flex-direction: column; gap: 7px; padding: 12px 12px 14px; flex-grow: 1; }
+      .rt { font-size: 13px; font-weight: 700; line-height: 1.3; }
+      .rm { font-size: 11px; color: var(--cream-2); }
+      .minis { display: flex; flex-wrap: wrap; gap: 4px; }
+      .mini { display: inline-flex; align-items: center; gap: 4px; padding: 2px 7px; border: 1px solid rgba(243, 231, 211, 0.5); border-radius: 999px; font-size: 10px; }
+      .mini .dot { width: 7px; height: 7px; }
 
-      .cats li {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        padding: 7px 0;
-        border-bottom: 1px solid #f1eae0;
-        font-size: 14.3px;
-      }
-      .cats li:last-child {
-        border: 0;
-      }
-      .cats ul {
-        margin: 0;
-        padding: 0;
-      }
-      .cats a:hover {
-        color: var(--terra);
-      }
-      .cats .n {
-        color: var(--soft);
-        font-size: 12.5px;
-      }
+      /* notebook slips */
+      .slips { display: grid; gap: 24px; padding-top: 8px; }
+      .slip { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 18px 16px; border-radius: 3px; color: var(--ink); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); rotate: var(--tilt, 0deg); }
+      .slip:hover { box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45); }
+      .slip .tape { width: 64px; height: 20px; top: -9px; rotate: -5deg; }
+      .sf { font-family: var(--hand); font-size: 20px; line-height: 1; color: var(--wine); }
+      .st { font-family: var(--display); font-size: 20px; font-weight: 600; line-height: 1.2; }
+      .sx { font-size: 13px; line-height: 1.5; color: #4a3a30; }
 
-      .recent li {
-        list-style: none;
-        display: flex;
-        gap: 12px;
-        padding: 11px 0;
-        border-bottom: 1px solid #f1eae0;
-      }
-      .recent li:last-child {
-        border: 0;
-      }
-      .recent ul {
-        margin: 0;
-        padding: 0;
-      }
-      .thumb {
-        width: 52px;
-        height: 52px;
-        flex: 0 0 52px;
-        border-radius: 4px;
-      }
-      .recent .t {
-        font-size: 14px;
-        line-height: 1.35;
-        font-weight: 500;
-      }
-      .recent .d {
-        font-size: 11.5px;
-        color: var(--soft);
-        margin-top: 3px;
-      }
-      .recent a:hover .t {
-        color: var(--terra);
-      }
+      /* ---------- home ---------- */
+      .home { display: flex; flex-direction: column; gap: 40px; padding-top: 16px; }
+      .home > section, .pair > section { display: flex; flex-direction: column; gap: 16px; }
+      .letter { padding: 30px 22px 22px; rotate: -1deg; max-width: 640px; width: 100%; margin: 0 auto; text-align: center; gap: 12px; }
+      .letter .tape { left: 50%; margin-left: -46px; width: 92px; height: 24px; top: -11px; rotate: -3deg; }
+      .letter p { margin: 0; font-size: 14px; line-height: 1.65; }
+      .letter .row { display: flex; align-items: center; justify-content: center; gap: 16px; }
+      .handlink { min-height: 44px; display: inline-flex; align-items: center; font-family: var(--hand); font-size: 23px; color: var(--gold); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+      .pair { display: grid; gap: 40px; }
+      .night { display: flex; gap: 16px; align-items: center; padding: 18px 16px 16px; rotate: 1deg; }
+      .night .label { position: absolute; top: -16px; right: 14px; padding: 2px 10px; background: var(--paper); font-family: var(--hand); font-size: 19px; color: var(--ink); rotate: 4deg; }
+      .mini-cover { width: 76px; height: 114px; flex-shrink: 0; border-radius: 4px; padding: 6px; background: #2d3438; display: flex; }
+      .mini-cover span { flex-grow: 1; border: 1px solid rgba(243, 231, 211, 0.4); padding: 6px; font-family: var(--display); font-size: 12px; line-height: 1.15; }
+      .night .info { flex-grow: 1; display: flex; flex-direction: column; gap: 6px; }
+      .night .b { font-family: var(--display); font-size: 19px; line-height: 1.15; }
+      .night .a, .night .p { font-size: 12px; color: var(--cream-2); }
+      .bar { height: 8px; border-radius: 999px; background: rgba(0, 0, 0, 0.3); overflow: hidden; margin-top: 4px; }
+      .bar i { display: block; height: 100%; border-radius: 999px; background: var(--accent); transform-origin: left center; animation: grow 1.2s var(--ease) 0.4s backwards; }
+      .feelbox { padding: 18px 14px; justify-content: center; }
+      .rate { padding: 20px 18px; display: flex; flex-direction: column; gap: 16px; }
+      .rate p { margin: 0; font-size: 14px; line-height: 1.65; text-align: center; }
+      .key { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; }
+      .key li { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+      .key .sw { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+      .quote { position: relative; margin: 8px 4px 0; padding: 30px 22px 24px; background: var(--paper); color: var(--ink); border-radius: 4px; text-align: center; rotate: 1.5deg; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); justify-content: center; }
+      .quote .t1 { left: 24px; width: 70px; background: rgba(184, 85, 46, 0.7); rotate: -8deg; }
+      .quote .t2 { right: 24px; left: auto; width: 70px; background: rgba(143, 154, 120, 0.8); rotate: 7deg; }
+      .qm { font-family: var(--display); font-size: 64px; line-height: 0.6; color: var(--accent); }
+      .quote blockquote { margin: 0; font-family: var(--display); font-style: italic; font-size: 21px; line-height: 1.35; }
+      .quote cite { font-style: normal; font-family: var(--hand); font-size: 22px; color: var(--wine); }
+      .subscribe { padding: 26px 22px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; max-width: 560px; width: 100%; margin: 0 auto; }
+      .subscribe p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--cream-2); }
+      .subscribe .btn { width: 100%; margin-top: 4px; }
+      .subscribe .fine { font-size: 11px; color: var(--muted); }
 
-      .sub input {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1px solid var(--line);
-        border-radius: 4px;
-        font: inherit;
-        font-size: 14px;
-        background: var(--paper);
-        margin-bottom: 9px;
-      }
-      .btn {
-        width: 100%;
-        padding: 11px;
-        border: 0;
-        border-radius: 4px;
-        background: var(--terra);
-        color: #fff;
-        font: inherit;
-        font-weight: 600;
-        font-size: 13px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
-      .btn:hover {
-        background: #a04f35;
-      }
-      .sub .fine {
-        font-size: 12px;
-        color: var(--soft);
-        margin: 9px 0 0;
-      }
+      /* ---------- list pages ---------- */
+      .page { display: flex; flex-direction: column; gap: 20px; padding-top: 16px; }
+      .phead { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; max-width: 620px; margin: 0 auto; }
+      .phead p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--cream-2); }
+      .phead .hand { font-size: 46px; }
 
-      .arch li {
-        list-style: none;
-        font-size: 14px;
-        padding: 5px 0;
-        display: flex;
-        justify-content: space-between;
-      }
-      .arch ul {
-        margin: 0;
-        padding: 0;
-      }
-      .arch a:hover {
-        color: var(--terra);
-      }
-      .arch .n {
-        color: var(--soft);
-        font-size: 12.5px;
-      }
+      /* ---------- post ---------- */
+      .post { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; padding-top: 8px; perspective: 900px; }
+      .back { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; font-family: var(--hand); font-size: 24px; color: var(--gold); }
+      .bigcover { position: relative; display: flex; flex-direction: column; gap: 10px; height: 260px; max-width: 460px; width: 100%; padding: 14px; border: 1.5px solid var(--cream); border-radius: 14px; rotate: -1deg; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45); transform-origin: left center; animation: bookin 1s var(--ease) backwards; }
+      .bigcover .frame { padding: 20px 50px 16px 16px; }
+      .bigcover .ct { font-size: 40px; line-height: 1; }
+      .bigcover .ca { font-size: 12px; }
+      .bigcover .band { height: 8px; }
+      .bigcover .ribbon { right: 22px; width: 18px; height: 64px; background: var(--accent); }
+      .ptitle { display: flex; flex-direction: column; gap: 10px; }
+      .ptitle .note { margin: 0; rotate: 0deg; font-size: 21px; }
+      .ptitle h1 { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(30px, 5vw, 42px); line-height: 1.12; }
+      .byline { margin: 0; font-size: 13px; color: var(--cream-2); }
+      .dek { margin: 0; font-family: var(--display); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--cream-2); }
+      .meter { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+      .meter .hand { font-size: 24px; font-weight: 500; margin-bottom: 6px; }
+      .mrow { display: flex; align-items: center; gap: 10px; min-height: 36px; border-radius: 8px; }
+      .mrow:hover .mn { text-decoration: underline; text-underline-offset: 3px; }
+      .mn { width: 100px; font-size: 13px; font-weight: 700; }
+      .track { flex-grow: 1; height: 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.3); overflow: hidden; }
+      .track i { display: block; height: 100%; border-radius: 999px; transform-origin: left center; animation: grow 1.1s var(--ease) backwards; }
+      .mv { width: 30px; text-align: right; font-size: 12px; color: var(--cream-2); }
+      .prose { display: flex; flex-direction: column; gap: 18px; }
+      .prose > p { margin: 0; font-size: 16px; line-height: 1.8; max-width: 66ch; }
+      .pull { margin: 6px 0; padding: 8px 6px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+      .pull .qm { font-size: 52px; color: var(--tint); }
+      .pull blockquote { margin: 0; font-family: var(--display); font-style: italic; font-size: 24px; line-height: 1.35; }
+      .pull .squig path { stroke: var(--tint); }
+      .verse { position: relative; margin: 8px 4px; padding: 28px 22px 22px; background: var(--paper); color: var(--ink); border-radius: 3px; rotate: -0.8deg; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); }
+      .verse .tape { left: 36%; width: 70px; height: 20px; top: -9px; background: rgba(184, 85, 46, 0.7); }
+      .verse p { margin: 0; white-space: pre-line; font-family: var(--display); font-style: italic; font-size: 17px; line-height: 1.75; }
+      .verse.hi { rotate: 0.8deg; }
+      .verse.hi .tape { left: 28%; background: rgba(143, 154, 120, 0.8); rotate: 5deg; }
+      .verse.hi p { font-family: var(--hi); font-style: normal; line-height: 1.95; }
+      .verdict { position: relative; margin: 8px 6px 0; padding: 28px 22px 22px; background: var(--rose); color: var(--ink); border-radius: 3px; rotate: 1.2deg; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; gap: 6px; }
+      .verdict .tape { left: 20px; width: 70px; background: rgba(239, 227, 204, 0.85); rotate: -7deg; }
+      .verdict .hand { font-size: 28px; color: var(--wine); }
+      .verdict p { margin: 0; font-family: var(--display); font-style: italic; font-size: 19px; line-height: 1.45; }
+      .ask { padding: 18px; border: 1.5px dashed rgba(243, 231, 211, 0.6); border-radius: 14px; display: flex; flex-direction: column; gap: 8px; }
+      .ask .hand { font-size: 24px; font-weight: 500; color: var(--gold); }
+      .ask p { margin: 0; font-size: 15px; line-height: 1.6; }
+      .ask a { font-size: 13px; font-weight: 700; color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+      .ptags { display: flex; flex-wrap: wrap; gap: 6px; }
+      .ptag { min-height: 32px; display: inline-flex; align-items: center; padding: 0 10px; border: 1px dashed rgba(243, 231, 211, 0.6); border-radius: 999px; font-size: 12px; color: var(--cream-2); }
+      .ptag:hover { color: var(--cream); border-style: solid; }
+      .rel { display: flex; flex-direction: column; gap: 12px; }
+      .rel > .hand { font-size: 28px; font-weight: 500; }
+      .relcard { display: flex; gap: 12px; align-items: center; padding: 10px; background: var(--card); border: 1.5px solid var(--cream); border-radius: 12px; }
+      .relcard .rc { width: 44px; height: 64px; flex-shrink: 0; border-radius: 3px; display: flex; align-items: flex-end; padding: 4px; }
+      .relcard .rc i { display: block; width: 100%; height: 4px; border-radius: 999px; }
+      .relcard .k { display: block; font-size: 11px; color: var(--cream-2); }
+      .relcard .tt { display: block; font-family: var(--display); font-size: 16px; line-height: 1.2; }
+      .relcard .why { display: block; font-size: 11px; color: var(--gold); }
+      .pn { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .pn a { min-height: 64px; padding: 10px 12px; border: 1.5px solid rgba(243, 231, 211, 0.6); border-radius: 12px; display: flex; flex-direction: column; gap: 3px; }
+      .pn a:hover { border-color: var(--cream); }
+      .pn .older { grid-column: 2; text-align: right; align-items: flex-end; }
+      .pn small { font-size: 11px; color: var(--cream-2); }
+      .pn b { font-size: 13px; line-height: 1.25; }
 
-      /* ============ post page ============ */
+      /* ---------- about ---------- */
+      .about { max-width: 680px; margin: 0 auto; padding: 34px 22px 26px; display: flex; flex-direction: column; gap: 16px; }
+      .about .tape { left: 50%; margin-left: -46px; width: 92px; height: 24px; top: -11px; rotate: -3deg; }
+      .about p { margin: 0; font-size: 15px; line-height: 1.75; }
+      .about h1 { margin: 0; font-family: var(--display); font-size: 32px; font-weight: 600; line-height: 1.15; text-align: center; }
+      .about h2 { margin: 8px 0 0; }
+      .about .lede { font-family: var(--display); font-style: italic; font-size: 20px; line-height: 1.5; }
+      .about .pullq { text-align: center; font-family: var(--display); font-style: italic; font-size: 21px; line-height: 1.4; color: var(--gold); padding: 6px 0; }
+      .about a.inl { color: var(--gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+      .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .two a { display: flex; flex-direction: column; gap: 4px; padding: 14px; border-radius: 3px; color: var(--ink); }
+      .two a:nth-child(1) { background: var(--paper); rotate: -2deg; }
+      .two a:nth-child(2) { background: var(--rose); rotate: 2deg; }
+      .two .hand { font-size: 24px; }
+      .two span:last-child { font-size: 12px; line-height: 1.4; }
 
-      .timeline {
-        position: relative;
-        padding-left: 26px;
-        margin: 26px 0 0;
-      }
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 6px;
-        bottom: 6px;
-        width: 1px;
-        background: var(--line);
-      }
-      .tl-row {
-        position: relative;
-        padding-bottom: 22px;
-      }
-      .tl-row:last-child {
-        padding-bottom: 0;
-      }
-      .tl-dot {
-        position: absolute;
-        left: -26px;
-        top: 5px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background: var(--card);
-        border: 2px solid var(--sage);
-      }
-      .tl-row time {
-        display: block;
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--soft);
-        margin-bottom: 5px;
-        font-variant-numeric: tabular-nums;
-      }
-      .tl-row p {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.55;
-        color: var(--ink);
-        font-family: var(--display);
-      }
-      .tl-hide {
-        display: none;
-      }
-      .tl-more {
-        display: block;
-        width: 100%;
-        margin-top: 22px;
-        padding: 13px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        font: inherit;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        color: var(--terra);
-        cursor: pointer;
-      }
-      .tl-more:hover {
-        background: var(--terra-soft);
-      }
+      /* ---------- search + footer ---------- */
+      .searchbox { max-width: 460px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; gap: 6px; }
+      .searchbox label { font-family: var(--hand); font-size: 22px; color: var(--cream-2); text-align: center; }
+      .searchbox input { height: 46px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--cream-2); background: rgba(0, 0, 0, 0.22); color: var(--cream); font-family: inherit; font-size: 15px; }
+      .searchbox input::placeholder { color: var(--muted); }
+      .tagcloud { justify-content: center; }
+      footer { margin-top: 56px; padding: 0 18px 34px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      .sign { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+      .sign .w { font-family: var(--display); font-style: italic; font-size: 24px; }
+      .sign .c { font-family: var(--hand); font-size: 21px; color: var(--cream-2); }
 
-      .about-lede {
-        font-family: var(--display);
-        font-weight: 600;
-        font-size: 22px !important;
-        color: var(--ink) !important;
-      }
-      .about-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        margin: 30px 0;
-        color: var(--sage);
-      }
-      .about-divider i {
-        display: block;
-        width: 44px;
-        height: 1px;
-        background: var(--line);
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin: 26px 0;
-      }
-      .about-grid h3 {
-        font-family: var(--display);
-        font-size: 15px;
-        font-weight: 600;
-        margin: 0 0 4px;
-        color: var(--terra);
-      }
-      .about-grid p {
-        font-size: 12.5px;
-        color: var(--mid);
-        margin: 0;
-        line-height: 1.4;
-      }
-      .about-pull {
-        margin: 1.8em 0;
-        padding: 18px 20px;
-        background: var(--terra-soft);
-        border-radius: 8px;
-        border-left: 3px solid var(--terra);
-      }
-      .about-pull p {
-        margin: 0 !important;
-        font-family: var(--display) !important;
-        font-style: italic;
-        font-size: 19px !important;
-        line-height: 1.5 !important;
-        color: var(--ink) !important;
-      }
-      @media (max-width: 560px) {
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-        .about-grid > div {
-          padding: 12px 14px;
-          background: var(--paper);
-          border-radius: 8px;
-        }
-      }
-
-      .postback {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12.5px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: var(--mid);
-        margin-bottom: 16px;
-        transition: color 0.2s;
-      }
-      .postback:hover {
-        color: var(--terra);
-      }
-      .post .fi {
-        aspect-ratio: auto;
-        min-height: 220px;
-        border-radius: 6px;
-        margin-bottom: 26px;
-      }
-      .post .body {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 32px 38px 36px;
-        box-shadow: var(--shadow);
-      }
-      @media (max-width: 600px) {
-        .post .body {
-          padding: 24px 20px 28px;
-        }
-      }
-      .post h1 {
-        font-family: var(--display);
-        font-size: clamp(26px, 3.6vw, 38px);
-        font-weight: 600;
-        line-height: 1.2;
-        margin: 0 0 14px;
-      }
-      .post .body p {
-        font-size: 17px;
-        line-height: 1.85;
-        margin: 0 0 1.35em;
-        color: #3a322c;
-      }
-      .post blockquote {
-        margin: 1.7em 0;
-        padding: 18px 22px;
-        background: var(--terra-soft);
-        border-left: 3px solid var(--terra);
-        border-radius: 0 5px 5px 0;
-        font-family: var(--display);
-        font-size: 19px;
-        line-height: 1.55;
-        font-style: italic;
-      }
-      .post blockquote p {
-        margin: 0 !important;
-        font-size: 19px !important;
-      }
-      .post .verse {
-        font-family: var(--display);
-        font-style: italic;
-        white-space: pre-line;
-        font-size: 19px;
-        line-height: 1.8;
-      }
-      .post .verse-hi {
-        font-style: normal;
-        font-family: "Noto Serif Devanagari", var(--display), serif;
-        line-height: 2;
-      }
-
-      .emobox {
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 20px 22px;
-        margin: 30px 0 24px;
-        background: var(--paper);
-      }
-      .emobox h5 {
-        font-family: var(--display);
-        font-size: 16px;
-        margin: 0 0 4px;
-        font-weight: 600;
-      }
-      .emobox .lead {
-        font-size: 13px;
-        color: var(--soft);
-        margin: 0 0 16px;
-      }
-      .erow {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 10px;
-      }
-      .erow .lbl {
-        width: 112px;
-        flex: 0 0 112px;
-        font-size: 13.5px;
-        font-weight: 500;
-      }
-      .erow .track {
-        flex: 1;
-        height: 8px;
-        background: var(--line);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .erow .track i {
-        display: block;
-        height: 100%;
-        border-radius: 4px;
-      }
-      .erow .v {
-        font-size: 12px;
-        color: var(--soft);
-        width: 34px;
-        text-align: right;
-      }
-      .verdict {
-        margin: 16px 0 0;
-        font-size: 14.5px;
-        color: var(--mid);
-        font-style: italic;
-      }
-
-      .tagline {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px;
-        align-items: center;
-        margin: 26px 0 0;
-        padding-top: 20px;
-        border-top: 1px solid var(--line);
-      }
-      .tagline .lb {
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--soft);
-        margin-right: 4px;
-      }
-      .tg {
-        font-size: 12.5px;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 4px 12px;
-        color: var(--mid);
-      }
-      .tg:hover {
-        border-color: var(--terra);
-        color: var(--terra);
-      }
-
-      .ask {
-        background: var(--sage-soft);
-        border: 1px solid #d8e0cf;
-        border-radius: 6px;
-        padding: 20px 24px;
-        margin: 26px 0 0;
-      }
-      .ask .askmail {
-        margin: 11px 0 0;
-        font-family: var(--body);
-        font-size: 14px;
-        font-weight: 400;
-        color: var(--mid);
-        line-height: 1.6;
-      }
-      .ask .askmail a {
-        color: var(--terra);
-        font-weight: 600;
-        border-bottom: 1px solid rgba(182, 92, 63, 0.35);
-      }
-      .ask p {
-        margin: 0;
-        font-family: var(--display);
-        font-size: 17.5px;
-        font-weight: 500;
-        line-height: 1.45;
-      }
-
-      .related {
-        margin-top: 30px;
-      }
-      .related h4 {
-        font-family: var(--display);
-        font-size: 20px;
-        margin: 0 0 16px;
-        font-weight: 600;
-      }
-      .rel-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-      }
-      .rel {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .rel .fi {
-        aspect-ratio: 2/1;
-        padding: 16px 18px;
-      }
-      .rel .fi h3 {
-        font-size: 15px;
-      }
-      .rel .rin {
-        padding: 12px 16px 16px;
-      }
-      .rel .rt {
-        font-family: var(--display);
-        font-size: 15.5px;
-        font-weight: 600;
-        line-height: 1.3;
-      }
-      .rel:hover .rt {
-        color: var(--terra);
-      }
-      .rel .rd {
-        font-size: 11.5px;
-        color: var(--soft);
-        margin-top: 5px;
-      }
-
-      /* ============ page head + pagination ============ */
-      .phead {
-        margin-bottom: 26px;
-      }
-      .phead h1 {
-        font-family: var(--display);
-        font-size: 32px;
-        font-weight: 600;
-        margin: 0 0 6px;
-      }
-      .phead p {
-        margin: 0;
-        color: var(--mid);
-        font-size: 15px;
-        max-width: 52ch;
-      }
-      .filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 16px;
-      }
-      .filters .tg {
-        font-weight: 500;
-        padding: 6px 15px;
-        background: var(--card);
-      }
-      .filters .tg.on {
-        background: var(--terra);
-        border-color: var(--terra);
-        color: #fff;
-      }
-      .cats .sub2 {
-        padding-left: 16px;
-        font-size: 13.4px;
-        color: var(--mid);
-        position: relative;
-      }
-      .cats .sub2::before {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 16px;
-        width: 6px;
-        height: 1px;
-        background: var(--line);
-      }
-      .biblio {
-        background: linear-gradient(160deg, #fff8ef, #f7ede1) !important;
-        border-color: #e4d5c2 !important;
-      }
-      .biblio .bio a {
-        color: var(--terra);
-        font-weight: 600;
-        border-bottom: 1px solid rgba(182, 92, 63, 0.3);
-      }
-      .bpill {
-        display: inline-block;
-        margin-top: 14px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #fff !important;
-        background: var(--terra);
-        padding: 8px 14px;
-        border-radius: 4px;
-      }
-      .bpill:hover {
-        background: #a04f35;
-      }
-      .cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .onceRow {
-        font-size: 12.5px;
-        line-height: 1.9;
-        color: var(--soft);
-      }
-      .onceRow a {
-        color: var(--soft);
-        border-bottom: 1px solid var(--line);
-      }
-      .onceRow a:hover {
-        color: var(--terra);
-        border-color: var(--terra);
-      }
-      .tg.on {
-        background: var(--terra);
-        border-color: var(--terra);
-        color: #fff;
-      }
-      .pager {
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-        margin: 34px 0 0;
-      }
-      .pager a,
-      .pager span {
-        min-width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--line);
-        border-radius: 5px;
-        font-size: 14px;
-        background: var(--card);
-        color: var(--mid);
-      }
-      .pager .cur {
-        background: var(--terra);
-        color: #fff;
-        border-color: var(--terra);
-        font-weight: 600;
-      }
-      .pager .dis {
-        opacity: 0.35;
-        cursor: default;
-      }
-      .pager a:hover {
-        border-color: var(--terra);
-        color: var(--terra);
-      }
-      .side-close {
-        display: none;
-      }
-
-      /* ============ footer ============ */
-      footer {
-        background: var(--ink);
-        color: #cfc5ba;
-        margin-top: 20px;
-        padding: 44px 0 30px;
-      }
-      .fgrid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 24px;
-      }
-      footer h5 {
-        font-family: var(--display);
-        color: #f3ede4;
-        font-size: 16px;
-        margin: 0 0 12px;
-        font-weight: 600;
-      }
-      footer p,
-      footer li {
-        font-size: 14px;
-        color: #a79c91;
-        margin: 0 0 7px;
-        list-style: none;
-      }
-      footer ul {
-        margin: 0;
-        padding: 0;
-      }
-      footer a:hover {
-        color: #fff;
-      }
-      .fbot {
-        margin-top: 32px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 12.5px;
-        color: #8c8177;
-        text-align: center;
-      }
-
-      /* ================================================================
-   MOBILE — this is not "shrink everything," it's a different app.
-   Bottom tab navigation, top bar is identity + search only, the
-   sidebar becomes a horizontal strip of context cards instead of
-   a dead column, and every tap target grows to a thumb's width.
-   Breakpoint: 780px. Above it, none of this exists — desktop is
-   untouched.
-   ================================================================ */
-      .mtop,
-      .msheet,
-      .tabbar {
-        display: none;
-      }
-
-      @media (max-width: 780px) {
-        :root {
-          --tabh: 60px;
-        }
-        html {
-          scroll-padding-top: 54px;
-        }
-        body {
-          padding-bottom: calc(var(--tabh) + env(safe-area-inset-bottom));
-        }
-
-        /* desktop chrome gone: the giant masthead, the dark strip, the
-     horizontal nav row all cost vertical space a phone doesn't have */
-        .strip,
-        .mast,
-        .nav {
-          display: none;
-        }
-
-        /* -------- slim identity + search bar, replaces all three -------- */
-        .mtop {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 54px;
-          padding: 0 16px;
-          position: sticky;
-          top: 0;
-          z-index: 70;
-          background: rgba(250, 246, 239, 0.94);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          border-bottom: 1px solid var(--line);
-        }
-        .mtop-name {
-          font-family: var(--display);
-          font-size: 21px;
-          font-weight: 600;
-        }
-        .mtop-search {
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: var(--card);
-          border: 1px solid var(--line);
-          border-radius: 50%;
-          color: var(--mid);
-        }
-        .mtop-search:active {
-          background: var(--terra-soft);
-          color: var(--terra);
-        }
-
-        /* -------- full-screen search sheet, not a cramped input -------- */
-        .msheet {
-          display: flex;
-          flex-direction: column;
-          position: fixed;
-          inset: 0;
-          z-index: 200;
-          background: var(--paper);
-          transform: translateY(100%);
-          transition: transform 0.32s cubic-bezier(0.3, 0.7, 0.3, 1);
-          padding-top: env(safe-area-inset-top);
-        }
-        .msheet.open {
-          transform: none;
-        }
-        .msheet-bar {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          padding: 14px 16px;
-          border-bottom: 1px solid var(--line);
-        }
-        .msheet-bar input {
-          flex: 1;
-          font: inherit;
-          font-size: 16px;
-          font-family: var(--display);
-          border: 0;
-          border-bottom: 2px solid var(--terra);
-          padding: 8px 2px;
-          background: none;
-          color: var(--ink);
-        }
-        .msheet-bar input:focus {
-          outline: 0;
-        }
-        .msheet-bar button {
-          background: none;
-          border: 0;
-          font: inherit;
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--terra);
-          padding: 8px 4px;
-        }
-        .msheet-hint {
-          padding: 14px 16px;
-          font-size: 12.5px;
-          color: var(--soft);
-        }
-
-        /* -------- bottom tab bar: the real navigation on a phone -------- */
-        .tabbar {
-          display: flex;
-          position: fixed;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 90;
-          height: calc(var(--tabh) + env(safe-area-inset-bottom));
-          padding-bottom: env(safe-area-inset-bottom);
-          background: rgba(255, 255, 255, 0.97);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-          border-top: 1px solid var(--line);
-          box-shadow: 0 -2px 14px rgba(46, 39, 34, 0.06);
-        }
-        .tabbar a {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 3px;
-          font-size: 10.5px;
-          font-weight: 600;
-          letter-spacing: 0.02em;
-          color: var(--soft);
-        }
-        .tabbar a svg {
-          width: 21px;
-          height: 21px;
-          stroke: currentColor;
-          fill: none;
-          stroke-width: 1.7;
-        }
-        .tabbar a.on {
-          color: var(--terra);
-        }
-        .tabbar a:active {
-          opacity: 0.6;
-        }
-
-        /* -------- layout: single column. sidebar is gone from the
-     feed entirely — it lives in a drawer now, see below -------- */
-        .wrap {
-          padding: 0 16px;
-        }
-        .grid {
-          display: block;
-          padding: 18px 0 30px;
-          gap: 0;
-        }
-        .grid main {
-          order: 1;
-        }
-
-        /* -------- sidebar = an actual drawer, not inline content.
-     hidden off-screen, slides in over the page on demand,
-     closes on backdrop tap, X, or navigating anywhere. -------- */
-        .side {
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 150;
-          width: 86vw;
-          max-width: 340px;
-          background: var(--paper);
-          box-shadow: -8px 0 30px rgba(46, 39, 34, 0.18);
-          padding: calc(env(safe-area-inset-top) + 60px) 18px 24px;
-          overflow-y: auto;
-          -webkit-overflow-scrolling: touch;
-          transform: translateX(105%);
-          transition: transform 0.3s cubic-bezier(0.3, 0.7, 0.3, 1);
-          max-height: none;
-        }
-        .side.open {
-          transform: none;
-        }
-        .side section {
-          margin-bottom: 16px;
-        }
-
-        .side-backdrop {
-          display: none;
-          position: fixed;
-          inset: 0;
-          z-index: 140;
-          background: rgba(23, 19, 16, 0.4);
-        }
-        .side-backdrop.open {
-          display: block;
-        }
-
-        .side-close {
-          position: fixed;
-          z-index: 151;
-          top: calc(env(safe-area-inset-top) + 14px);
-          right: 18px;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background: var(--card);
-          border: 1px solid var(--line);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          color: var(--mid);
-        }
-        .side-close.open {
-          display: flex;
-        }
-
-        /* -------- cards: full-bleed, thumb-sized tap targets -------- */
-        .card {
-          border-radius: 10px;
-          margin-bottom: 20px;
-        }
-        .card .in {
-          padding: 18px 18px 20px;
-        }
-        .fi {
-          padding: 22px 22px;
-          min-height: 150px;
-        }
-        .fi h3 {
-          font-size: clamp(19px, 5.5vw, 24px);
-        }
-        .card h2 {
-          font-size: 20px;
-          line-height: 1.3;
-        }
-        .card p.ex {
-          font-size: 14.8px;
-        }
-        .more {
-          margin-top: 14px;
-          font-size: 12px;
-          padding: 4px 0;
-        }
-        .meta {
-          font-size: 11.5px;
-        }
-
-        /* -------- compact list rows: real apps don't repeat a full poster
-     per row in a scroll feed. small colour swatch, title, one line
-     of excerpt, done. full treatment stays on the post page itself. -------- */
-        .card {
-          display: flex;
-          align-items: stretch;
-          gap: 0;
-          border-radius: 10px;
-          margin-bottom: 10px;
-        }
-        .card .fi {
-          flex: 0 0 64px;
-          width: 64px;
-          aspect-ratio: auto;
-          padding: 0;
-        }
-        .card .fi .kicker,
-        .card .fi .curl,
-        .card .fi h3,
-        .card .fi .fi-book,
-        .card .fi .ti {
-          display: none;
-        }
-        .card .in {
-          padding: 12px 14px;
-          flex: 1;
-          min-width: 0;
-        }
-        .card .meta {
-          margin-bottom: 5px;
-          gap: 6px;
-        }
-        .card h2 {
-          font-size: 15.5px;
-          line-height: 1.32;
-          margin-bottom: 4px;
-        }
-        .card p.ex {
-          font-size: 13px;
-          line-height: 1.45;
-          color: var(--soft);
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        .card .more {
-          display: none;
-        }
-        .card:active {
-          background: #fbf7f0;
-        }
-
-        /* the reading-log strip card and hero-ish widgets keep full-height
-     art since they're one-offs, not a repeated list — untouched */
-
-        .logbox {
-          padding: 16px 18px;
-          margin-bottom: 16px;
-          border-radius: 10px;
-        }
-        .logbox h4 {
-          font-size: 16px;
-        }
-        .logbox li {
-          padding: 8px 0;
-          font-size: 13.8px;
-        }
-        .logbox time {
-          font-size: 11px;
-          min-width: 44px;
-        }
-
-        /* -------- filter chips: horizontal, snap, thumb-height -------- */
-        .filters {
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 4px;
-          margin: 14px -16px 0;
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-        .filters::-webkit-scrollbar {
-          display: none;
-        }
-        .filters .tg {
-          flex: 0 0 auto;
-          scroll-snap-align: start;
-          padding: 9px 16px;
-          font-size: 12px;
-        }
-        .tagline {
-          gap: 8px;
-        }
-        .tg {
-          padding: 7px 13px;
-          font-size: 12px;
-        }
-
-        /* -------- post page: readable, not letterboxed -------- */
-        .post .fi {
-          min-height: 170px;
-          border-radius: 10px;
-          margin-bottom: 18px;
-        }
-        .post .body {
-          padding: 22px 18px 26px;
-          border-radius: 10px;
-        }
-        .post h1 {
-          font-size: 26px;
-        }
-        .post .body p {
-          font-size: 16.5px;
-          line-height: 1.78;
-        }
-        .post blockquote {
-          padding: 15px 17px;
-          margin: 1.5em 0;
-        }
-        .post blockquote p {
-          font-size: 17px !important;
-        }
-        .emobox {
-          padding: 16px 17px;
-        }
-        .erow .lbl {
-          width: 88px;
-          flex: 0 0 88px;
-          font-size: 12.5px;
-        }
-        .ask {
-          padding: 17px 18px;
-        }
-        .ask p {
-          font-size: 16px;
-        }
-
-        .timeline {
-          padding-left: 22px;
-        }
-        .timeline::before {
-          left: 4px;
-        }
-        .tl-dot {
-          left: -22px;
-          width: 9px;
-          height: 9px;
-        }
-        .tl-row {
-          padding-bottom: 18px;
-        }
-        .tl-row p {
-          font-size: 15px;
-        }
-
-        /* -------- index rows, tag cloud, log — comfortable touch rows -------- */
-        .idxrow {
-          padding: 16px 0;
-        }
-        .idxrow .bk {
-          font-size: 16px;
-        }
-        .logbox li {
-          padding: 11px 0;
-        }
-        .cloud .tg {
-          padding: 8px 13px;
-        }
-        .phead h1 {
-          font-size: 27px;
-        }
-        .phead p {
-          font-size: 14.5px;
-        }
-
-        /* -------- footer: single column, real spacing -------- */
-        .fgrid {
-          grid-template-columns: 1fr;
-          gap: 26px;
-        }
-        footer {
-          padding: 36px 0 26px;
-        }
-
-        /* -------- footer: was a wall of stacked grey text with no
-     structure. group each cluster into a card, make the internal
-     links read as tappable rows with a chevron, like settings. -------- */
-        footer {
-          background: transparent;
-          color: var(--ink);
-          padding: 8px 0 90px;
-        }
-        .fgrid {
-          gap: 14px;
-        }
-        footer > .wrap {
-          padding: 0 16px;
-        }
-        footer .fgrid > div {
-          background: var(--ink);
-          border-radius: 12px;
-          padding: 18px 18px 16px;
-        }
-        footer h5 {
-          color: #f3ede4;
-          font-size: 14px;
-          letter-spacing: 0.02em;
-          margin-bottom: 10px;
-        }
-        footer p {
-          color: #b7aca1;
-          font-size: 13.5px;
-          line-height: 1.6;
-        }
-        footer ul li {
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        footer ul li:first-child {
-          border-top: 0;
-        }
-        footer ul li a {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 11px 0;
-          color: #efe7dc;
-          font-size: 14.5px;
-        }
-        footer ul li a::after {
-          content: "›";
-          color: #7a6f65;
-          font-size: 17px;
-          margin-left: 8px;
-        }
-        footer .fbot {
-          margin-top: 6px;
-          padding: 14px 0 0;
-          border-top: 0;
-          color: var(--soft);
-          font-size: 12px;
-        }
-
-        /* -------- kill hover-only affordances, nothing hovers on a phone -------- */
-        .card:active h2 {
-          color: var(--terra);
-        }
-      }
-
-      @media (max-width: 400px) {
-        .side section {
-          flex-basis: 86vw;
-        }
-        .mtop-name {
-          font-size: 19px;
-        }
+      /* ---------- wider screens ---------- */
+      @media (min-width: 640px) {
+        .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 18px; }
+        .slips { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
+        .collage { height: 210px; padding: 18px 14px 26px; grid-auto-columns: minmax(150px, 1fr); }
+        .s-hand { font-size: 26px; }
+        .s-serif { font-size: 18px; }
+        .brand { margin-top: -78px; }
+        .mono, .mono .ring { width: 132px; height: 132px; }
+        .mono .ring span { font-size: 68px; }
+        .cover { height: 230px; }
+        .ct { font-size: 30px; }
+        .ct.sm { font-size: 24px; }
+        .tabs a { padding: 0 18px; font-size: 13px; }
+      }
+      @media (min-width: 900px) {
+        body { font-size: 16px; }
+        .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .slips { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 34px; }
+        .home { gap: 64px; padding-top: 28px; }
+        .hand { font-size: 42px; }
+        .phead .hand { font-size: 56px; }
+        .bigcover { height: 300px; }
       }
     </style>
   </head>
   <body>
-    <div class="mtop">
-      <a class="mtop-name" href="#/">Aftertaste</a>
-      <div style="display: flex; gap: 8px">
-        <button class="mtop-search" id="mSideOpen" aria-label="More">
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <circle cx="5" cy="12" r="1.4" />
-            <circle cx="12" cy="12" r="1.4" />
-            <circle cx="19" cy="12" r="1.4" />
-          </svg>
-        </button>
-        <button class="mtop-search" id="mSearchOpen" aria-label="Search">
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <circle cx="11" cy="11" r="7" />
-            <path d="M21 21l-4.3-4.3" />
-          </svg>
-        </button>
-      </div>
+    <a class="skip" href="#app">Skip to the writing</a>
+    <div class="sky" aria-hidden="true">
+      <span class="firefly ff1"></span><span class="firefly ff2"></span><span class="firefly ff3"></span><span class="firefly ff4"></span><span class="firefly ff5"></span>
+      <svg class="leaf lf1" viewBox="0 0 40 60"><path d="M20 2 C4 18 4 42 20 58 C36 42 36 18 20 2 Z" fill="#a0522d" /><path d="M20 6 V56" stroke="#4a2410" stroke-width="1.5" /></svg>
+      <svg class="leaf lf2" viewBox="0 0 40 60"><path d="M20 2 C4 18 4 42 20 58 C36 42 36 18 20 2 Z" fill="#c07a3a" /><path d="M20 6 V56" stroke="#4a2410" stroke-width="1.5" /></svg>
     </div>
 
-    <div class="msheet" id="mSheet">
-      <div class="msheet-bar">
-        <input
-          id="mq"
-          type="search"
-          placeholder="Search the whole blog…"
-          autocomplete="off"
-        />
-        <button id="mSearchClose" aria-label="Close">Cancel</button>
-      </div>
-      <div class="msheet-hint">
-        Titles, tags, book names, even a phrase from the body. Try one.
-      </div>
-    </div>
-
-    <nav class="tabbar" id="tabbar"></nav>
-
-    <div class="strip">
-      <div class="wrap">
-        <div class="social">
-          <span class="nosocial"
-            >No socials. You got here the hard way. Respect.</span
-          >
-        </div>
-        <div class="sbox">
-          <input
-            id="q"
-            type="search"
-            placeholder="Search. Good luck."
-            autocomplete="off"
-          /><button id="qgo">Go</button>
-        </div>
-      </div>
-    </div>
-
-    <header class="mast">
-      <a class="name" href="#/">Aftertaste</a>
-      <p class="tag">opinions nobody asked for</p>
-      <div class="sprig">
-        <i></i>
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.3"
-          stroke-linecap="round"
-        >
-          <path d="M12 22V6" />
-          <path d="M12 14c-5 0-6-4-5-7 3 0 6 3 5 7z" />
-          <path d="M12 11c5-1 6-5 5-8-3 0-6 4-5 8z" />
-        </svg>
-        <i></i>
-      </div>
-    </header>
-
-    <nav class="nav"><div class="wrap" id="nav"></div></nav>
-
-    <div class="wrap">
-      <div class="grid">
-        <main id="main"></main>
-        <aside class="side" id="side"></aside>
-      </div>
-    </div>
-    <div class="side-backdrop" id="sideBackdrop"></div>
-    <button class="side-close" id="sideClose" aria-label="Close panel">
-      ✕
-    </button>
+    <header id="top"></header>
+    <nav class="tabs" aria-label="Sections"><ul id="tabs"></ul></nav>
+    <main id="app" class="wrap" tabindex="-1">
+      <noscript><p style="text-align:center;padding:40px 0">Aftertaste needs JavaScript switched on to show the reviews.</p></noscript>
+    </main>
 
     <footer>
-      <div class="wrap">
-        <div class="fgrid">
-          <div>
-            <h5>Aftertaste</h5>
-            <p>
-              Books are where I go. What's here is one person having reactions
-              out of all proportion, in public, on purpose.
-            </p>
-          </div>
-          <div>
-            <h5>Go look at</h5>
-            <ul>
-              <li><a href="#/reviews">Reviews</a></li>
-              <li><a href="#/notebook">Notebook</a></li>
-              <li><a href="#/notebook/poem">Poems</a></li>
-              <li><a href="#/notebook/story">Short stories</a></li>
-              <li><a href="#/log">Reading Log</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>How I rate</h5>
-            <p>
-              Not in stars. In feelings, and how long they hung around
-              afterwards.
-            </p>
-            <p><a href="#/about">The whole key &rarr;</a></p>
-          </div>
-          <div>
-            <h5>Argue</h5>
-            <p>
-              <a href="mailto:shrutipandey1505@gmail.com"
-                >shrutipandey1505@gmail.com</a
-              >
-            </p>
-            <p>
-              No comments. If a post makes you want to fight me, do it by email
-              like an adult.
-            </p>
-          </div>
-          <div>
-            <h5>The thing I built</h5>
-            <p>
-              <a href="https://bibliome.app" rel="noopener noreferrer"
-                >bibliome.app</a
-              >
-              &mdash; where all this ends up eventually.
-            </p>
-          </div>
-        </div>
-        <div class="fbot">© 2026 Aftertaste &middot; I said what I said</div>
+      <div class="searchbox">
+        <label for="q">looking for something?</label>
+        <input id="q" type="search" placeholder="A book, an author, a feeling" autocomplete="off" enterkeyhint="search" />
+      </div>
+      <div class="sign">
+        <svg aria-hidden="true" width="28" height="44" viewBox="0 0 28 44" fill="none"><path class="flicker" d="M14 2 C18 8 18 12 14 15 C10 12 10 8 14 2 Z" fill="#e8b26a" /><rect x="8" y="17" width="12" height="20" rx="2" fill="#efe3cc" /><path d="M3 38 H25 Q25 42 21 42 H7 Q3 42 3 38 Z" fill="#b8552e" /></svg>
+        <span class="w">aftertaste</span>
+        <span class="c">© 2026 · I said what I said</span>
       </div>
     </footer>
 
     <script>
-      /* ================= data ================= */
+      addEventListener("error", (e) => {
+        const app = document.getElementById("app");
+        if (app && !app.dataset.ok) {
+          app.innerHTML = '<div style="max-width:620px;margin:60px auto;text-align:center"><h1 style="font-family:Caveat,cursive;font-size:40px;margin:0">This page could not be built</h1><p></p><p>Almost always a missing comma or an unclosed quote in the block you last edited. Undo that commit and try again.</p></div>';
+          app.querySelector("p").textContent = e.message + (e.lineno ? " (line " + e.lineno + ")" : "");
+        }
+      });
+    </script>
+    <script>
+      /* ==========================================================
+         ▼▼▼  EDIT EVERYTHING BETWEEN HERE AND "STOP EDITING"  ▼▼▼
+         New post: copy a block in POSTS, paste it at the top, rewrite, commit.
+         Add  draft: true,  to hide a post without deleting it.
+         ========================================================== */
+
+      // What you're reading now. Set to null to hide the nightstand.
+      const CURRENT = {
+        book: "The Last House on Needless Street",
+        cover: "The Last House on Needless St.",
+        author: "Catriona Ward",
+        pct: 34,
+        note: "sleeping with a light on",
+      };
+
+      // The feelings, and their colours. A post's first feeling colours its cover.
       const EMO = {
         ache: "#B65C3F",
         grief: "#6A7DA3",
@@ -2779,1147 +1280,451 @@
         },
       ];
 
-      const LOG = [
-        [
-          "5 Aug",
-          "if ghosts kill people, and the people they kill become ghosts too, that's just reproduction. need to stop thinking at 1am.",
-        ],
-        ["4 Aug", "Bought another book. Didn't read it."],
-        [
-          "3 Aug",
-          "what if I just leaned in and kissed them right now. instead I refreshed my email four times.",
-        ],
-        ["3 Aug", "Read twenty pages. Highlighted nineteen."],
-        ["1 Aug", "Closed it because I wasn't ready to admit it was right."],
-        [
-          "29 Jul",
-          "Reread the same paragraph four times. Not because it was hard.",
-        ],
-        [
-          "27 Jul",
-          "I really hope grass tastes like cheesecake to horses and goats. That's the whole thought. There's no more to it.",
-        ],
-        ["26 Jul", "Finished at 2 a.m. Sat in the dark. No notes."],
-        [
-          "23 Jul",
-          "what if we're in a video game and god is just playing us, badly, on a delay",
-        ],
-        [
-          "22 Jul",
-          "Started it. Stopped. Not the book's fault. Not entirely mine either.",
-        ],
-        ["19 Jul", "Lent it out. Regretted it before the door closed."],
-        ["16 Jul", "I want to go home. I am already home."],
-        [
-          "14 Jul",
-          "Bought it twice. Forgot I owned it. Found the first copy under the bed.",
-        ],
-        [
-          "9 Jul",
-          "Argued with a stranger on the internet about a book neither of us finished.",
-        ],
-      ];
-      const M = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ];
-      const MM = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const dl = (iso) => {
-        const d = new Date(iso + "T00:00:00");
-        return MM[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-      };
+      /* ▲▲▲  STOP EDITING. Design and logic below.  ▲▲▲ */
+
+      const SITE = "https://shrutipandey15.github.io/blog";
+      const MAIL = "shrutipandey1505@gmail.com";
+      const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const TILT = [-1.4, 1.1, 0.9, -1, 1.3, -0.8];
+      const NTILT = [-1.2, 1, -0.6, 1.4, -1.6, 0.7];
+      const TAPES = ["rgba(184,85,46,.7)", "rgba(143,154,120,.8)", "rgba(239,227,204,.85)"];
+      const PAPER = { Thought: "var(--paper)", Poem: "var(--rose)", Story: "var(--kraft)" };
+      const STAR = '<path d="M12 1 C13 8 16 11 23 12 C16 13 13 16 12 23 C11 16 8 13 1 12 C8 11 11 8 12 1 Z"/>';
+
       const esc = (s) =>
-        String(s).replace(
-          /[&<>"]/g,
-          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
-        );
-      const ci = (id) => POSTS.findIndex((p) => p.id === id) % 5;
-      const rtime = (p) =>
-        Math.max(
-          1,
-          Math.round(
-            p.body.reduce((n, b) => n + b[1].split(/\s+/).length, 0) / 190,
-          ),
-        );
-      const CURL =
-        '<svg class="curl" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M2 26C14 26 18 6 30 6s16 20 28 20"/><path d="M30 6c-4-4-4 0 0 0z"/></svg>';
-
-      // large, faint, single-stroke — one per post type, filling the empty
-      // colour panel instead of leaving it blank. currentColor so it always
-      // matches each card's own text colour.
-      const TYPE_ICON = {
-        Reviews:
-          '<svg class="ti" viewBox="0 0 100 70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12c12-6 30-6 40 2v44c-10-8-28-8-40-2z"/><path d="M92 12c-12-6-30-6-40 2v44c10-8 28-8 40-2z"/></svg>',
-        Thought:
-          '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="52" cy="34" rx="36" ry="25"/><circle cx="22" cy="66" r="5.5"/><circle cx="12" cy="80" r="3"/></svg>',
-        Poem: '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M15 12L82 12M15 29L48 29M15 46L70 46M15 63L38 63M15 80L58 80"/></svg>',
-        Story:
-          '<svg class="ti" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="64" height="70" rx="3"/><path d="M50 10v70"/><path d="M62 10v20l-7-6-7 6V10"/></svg>',
+        String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+      const enc = encodeURIComponent;
+      const fmt = (d) => { const [, m, dd] = d.split("-"); return +dd + " " + MON[+m - 1]; };
+      const fmtFull = (d) => fmt(d) + " " + d.slice(0, 4);
+      const words = (p) => p.body.reduce((n, b) => n + String(b[1]).split(/\s+/).length, 0);
+      const rtime = (p) => Math.max(1, Math.round(words(p) / 190));
+      const darken = (hex, t) => {
+        const n = parseInt(hex.slice(1), 16);
+        const base = [27, 20, 15];
+        return "rgb(" + [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v, i) => Math.round(v * (1 - t) + base[i] * t)).join(",") + ")";
       };
+      const dom = (p) => (p.emo && p.emo.length && EMO[p.emo[0][0]] ? p.emo[0][0] : null);
+      const coverBg = (p) => (dom(p) ? darken(EMO[dom(p)], 0.45) : "#2d3438");
+      const tint = (p) => (dom(p) ? EMO[dom(p)] : "var(--accent)");
+      const squig = (w) => {
+        let d = "M3 7 Q 13 1 23 7";
+        for (let x = 43; x <= w - 3; x += 20) d += " T " + x + " 7";
+        return '<svg class="squig" aria-hidden="true" width="' + w + '" height="12" viewBox="0 0 ' + w + ' 12"><path d="' + d + '"/></svg>';
+      };
+      const heading = (text, note, tag) =>
+        '<div class="hd"><' + (tag || "h2") + ' class="hand">' + esc(text) + "</" + (tag || "h2") + ">" + squig(150) +
+        (note ? '<p class="note">' + esc(note) + "</p>" : "") + "</div>";
 
-      function fi(p, cls) {
+      const LIVE = POSTS.filter((p) => !p.draft).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+      const REVIEWS = LIVE.filter((p) => p.cat === "Reviews");
+      const NOTES = LIVE.filter((p) => p.cat === "Notebook");
+      const COUNTS = {};
+      REVIEWS.forEach((p) => p.emo.forEach(([e]) => (COUNTS[e] = (COUNTS[e] || 0) + 1)));
+      const FEELS = Object.keys(COUNTS).filter((e) => EMO[e]).sort((a, b) => COUNTS[b] - COUNTS[a]);
+      const FORMS = [...new Set(NOTES.map((p) => p.form))];
+
+      /* ---------- pieces ---------- */
+      const band = (p) =>
+        '<span class="band" aria-hidden="true">' +
+        p.emo.filter(([e]) => EMO[e]).map(([e, n]) => '<i style="flex-grow:' + n + ";background:" + EMO[e] + '"></i>').join("") +
+        "</span>";
+
+      function rcard(p, i) {
+        const ribbon = i % 3 !== 2 ? '<span class="ribbon" style="background:' + (i % 2 ? "var(--gold)" : "var(--accent)") + '"></span>' : "";
         return (
-          '<div class="fi c' +
-          ci(p.id) +
-          (cls ? " " + cls : "") +
-          '">' +
-          '<span class="kicker">' +
-          esc(p.form || p.cat) +
-          "</span>" +
-          (p.book ? '<p class="fi-book">' + esc(p.book) + "</p>" : "") +
-          "<h3>" +
-          esc(p.t) +
-          "</h3>" +
-          (TYPE_ICON[p.form || p.cat] || CURL) +
-          "</div>"
+          '<a class="rcard lift rise" href="#/post/' + enc(p.id) + '" style="--tilt:' + TILT[i % TILT.length] + "deg;animation-delay:" + Math.min(i, 8) * 90 + 'ms">' +
+          '<span class="cover" style="background:' + coverBg(p) + '">' + ribbon +
+          '<span class="frame"><span class="ct' + ((p.book || "").length > 14 ? " sm" : "") + '">' + esc(p.book) + '</span><span class="ca">' + esc(p.author) + "</span></span>" +
+          band(p) + "</span>" +
+          '<span class="rbody"><span class="rt">' + esc(p.t) + '</span><span class="rm">' + fmt(p.date) + " · " + rtime(p) + " min read</span>" +
+          '<span class="minis">' + p.emo.slice(0, 2).filter(([e]) => EMO[e]).map(([e]) => '<span class="mini"><i class="dot" style="background:' + EMO[e] + '"></i>' + esc(e) + "</span>").join("") + "</span></span></a>"
         );
       }
-      function card(p) {
+
+      function slip(p, i, animate) {
         return (
-          '<a class="card" href="#/post/' +
-          p.id +
-          '">' +
-          fi(p) +
-          '<div class="in">' +
-          '<div class="meta"><span class="cat">' +
-          esc(p.form || p.cat) +
-          '</span><span class="dot"></span>' +
-          "<span>" +
-          dl(p.date) +
-          "</span></div>" +
-          (p.book
-            ? '<p class="card-book">' +
-              esc(p.book) +
-              " <span>&mdash; " +
-              esc(p.author) +
-              "</span></p>"
-            : "") +
-          "<h2>" +
-          esc(p.t) +
-          "</h2>" +
-          '<p class="ex">' +
-          esc(p.ex) +
-          "</p>" +
-          '<span class="more">Continue reading →</span></div></a>'
+          '<a class="slip lift' + (animate ? " rise" : "") + '" href="#/post/' + enc(p.id) + '" style="--tilt:' + NTILT[i % NTILT.length] + "deg;background:" + (PAPER[p.form] || "var(--paper)") + ";animation-delay:" + Math.min(i, 8) * 110 + 'ms">' +
+          '<span class="tape" style="left:' + (12 + ((i * 29) % 60)) + "%;background:" + TAPES[i % TAPES.length] + '"></span>' +
+          '<span class="sf">' + esc(p.form) + " · " + fmt(p.date) + "</span>" +
+          '<span class="st">' + esc(p.t) + "</span>" +
+          '<span class="sx">' + esc(p.ex) + "</span></a>"
         );
       }
 
-      const ym = (i) => i.slice(0, 7);
-      const ymLabel = (k) => {
-        const m = /^(\d{4})-(\d{2})$/.exec(k || "");
-        return m && +m[2] >= 1 && +m[2] <= 12
-          ? MM[+m[2] - 1] + " " + m[1]
-          : null;
-      };
-      const tslug = (t) => encodeURIComponent(t);
-      const PAGE_SIZE = 8;
-      function paginate(list, page) {
-        const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
-        const p = Math.min(Math.max(1, page || 1), totalPages);
-        return {
-          items: list.slice((p - 1) * PAGE_SIZE, p * PAGE_SIZE),
-          page: p,
-          totalPages,
-        };
-      }
-      function pager(base, page, totalPages) {
-        if (totalPages <= 1) return "";
-        const link = (n) => base + (n > 1 ? "/page/" + n : "");
-        let out = '<div class="pager">';
-        out +=
-          page > 1
-            ? '<a href="' + link(page - 1) + '">Prev</a>'
-            : '<span class="dis">Prev</span>';
-        const nums = [];
-        for (let i = 1; i <= totalPages; i++) {
-          if (i === 1 || i === totalPages || Math.abs(i - page) <= 1)
-            nums.push(i);
-          else if (nums[nums.length - 1] !== "…") nums.push("…");
-        }
-        nums.forEach((n) => {
-          out +=
-            n === "…"
-              ? '<span class="dis">&hellip;</span>'
-              : n === page
-                ? '<span class="cur">' + n + "</span>"
-                : '<a href="' + link(n) + '">' + n + "</a>";
-        });
-        out +=
-          page < totalPages
-            ? '<a href="' + link(page + 1) + '">Next</a>'
-            : '<span class="dis">Next</span>';
-        return out + "</div>";
-      }
-      const sortDate = (arr) =>
-        [...arr].sort((a, b) => b.date.localeCompare(a.date));
-      const plural = (w) =>
-        w.endsWith("y") ? w.slice(0, -1) + "ies" : w + "s";
-      const allTags = () => {
-        const m = {};
-        POSTS.forEach((p) => p.tags.forEach((t) => (m[t] = (m[t] || 0) + 1)));
-        return m;
-      };
-      const TABS = [
-        ["#/", "Home", '<path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/>'],
-        [
-          "#/reviews",
-          "Reviews",
-          '<path d="M5 4h11a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 3-2z"/>',
-        ],
-        [
-          "#/notebook",
-          "Notebook",
-          '<path d="M4 19V6a2 2 0 0 1 2-2h13v14H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h13"/>',
-        ],
-        [
-          "#/log",
-          "Log",
-          '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-        ],
-        [
-          "#/about",
-          "About",
-          '<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/>',
-        ],
-      ];
-      function tabHTML(active) {
-        return TABS.map(
-          ([h, l, icon]) =>
-            '<a href="' +
-            h +
-            '"' +
-            (h === active ? ' class="on"' : "") +
-            '><svg viewBox="0 0 24 24">' +
-            icon +
-            "</svg>" +
-            l +
-            "</a>",
-        ).join("");
-      }
-
-      const NAV = [
-        ["#/", "Home"],
-        ["#/reviews", "Reviews"],
-        ["#/notebook", "Notebook"],
-        ["#/log", "Reading Log"],
-        ["#/index", "The Index"],
-        ["#/tags", "Tags"],
-        ["#/about", "About"],
-      ];
-
-      /* ================= sidebar ================= */
-      const W = {};
-      W.me = (
-        here,
-      ) => `<section><h4>Hi, I'm Shruti</h4><div class="avatar">S</div>
- <p class="bio">I read a lot, mostly to get out of the room. Most of this started as something I was too annoyed to say out loud at work. No star ratings. I've tried. I can't.</p>
- ${here === "about" ? "" : '<a href="#/about">The longer version &rarr;</a>'}</section>`;
-
-      W.reading =
-        () => `<section><h4>Currently Reading</h4><div class="reading">
- <div class="cover">The Last<br>House on<br>Needless St.</div>
- <div><p class="t">The Last House on Needless Street</p><p class="a">Catriona Ward</p>
- <div class="bar"><i style="width:34%"></i></div><p class="pct">34% &middot; sleeping with a light on</p></div></div></section>`;
-
-      W.key = () => `<section class="emokey"><h4>How I Rate</h4>
- <ul>${Object.entries(EMO)
-   .map(
-     ([k, v]) =>
-       '<li><span class="sw" style="background:' +
-       v +
-       '"></span>' +
-       k +
-       "</li>",
-   )
-   .join("")}</ul>
- <p class="note">No stars. I can't rate a book out of five. I can't rate a Tuesday out of five. So: what showed up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p></section>`;
-
-      W.cats = () => {
-        const c = {};
-        POSTS.forEach((p) => (c[p.cat] = (c[p.cat] || 0) + 1));
-        const forms = [
-          ...new Set(
-            POSTS.filter((p) => p.cat === "Notebook").map((p) => p.form),
-          ),
-        ];
-        return `<section class="cats"><h4>Categories</h4><ul>
-  <li><a href="#/reviews">Reviews</a><span class="n">${c.Reviews || 0}</span></li>
-  <li><a href="#/notebook">Notebook</a><span class="n">${c.Notebook || 0}</span></li>
-  ${forms.map((fm) => '<li class="sub2"><a href="#/notebook/' + fm.toLowerCase() + '">' + plural(fm) + '</a><span class="n">' + POSTS.filter((p) => p.form === fm).length + "</span></li>").join("")}
-  <li><a href="#/log">Reading Log</a><span class="n">${LOG.length}</span></li></ul></section>`;
-      };
-
-      W.recent = (ex) => {
-        const l = POSTS.filter((p) => p.id !== ex).slice(0, 4);
-        return `<section class="recent"><h4>Recent Posts</h4><ul>${l
-          .map(
-            (p) =>
-              '<li><a href="#/post/' +
-              p.id +
-              '" style="display:flex;gap:12px;padding:11px 0"><span class="thumb fi c' +
-              ci(p.id) +
-              '" style="padding:0;aspect-ratio:1"></span>' +
-              '<span><span class="t">' +
-              esc(p.t) +
-              '</span><span class="d">' +
-              dl(p.date) +
-              "</span></span></a></li>",
-          )
-          .join("")}</ul></section>`;
-      };
-
-      W.sub = () => `<section class="sub"><h4>Subscribe</h4>
- <input type="email" placeholder="your@email.com"><button class="btn">Email me the posts</button>
- <p class="fine">An email when I post &mdash; that's the whole offer. No newsletter voice, no hey friends, no funnel. I'm not building anything.</p></section>`;
-
-      W.arch = () => {
-        const m = {};
-        POSTS.forEach((p) => (m[ym(p.date)] = (m[ym(p.date)] || 0) + 1));
-        return `<section class="arch"><h4>Archives</h4><ul>${Object.keys(m)
-          .sort()
-          .reverse()
-          .map(
-            (k) =>
-              '<li><a href="#/archive/' +
-              k +
-              '">' +
-              ymLabel(k) +
-              '</a><span class="n">' +
-              m[k] +
-              "</span></li>",
-          )
-          .join("")}</ul></section>`;
-      };
-
-      W.here = (p) =>
-        `<section><h4>Tagged here</h4><div class="cloud">${p.tags
-          .map(
-            (t) =>
-              '<a class="tg" href="#/tag/' + tslug(t) + '">' + esc(t) + "</a>",
-          )
-          .join("")}</div></section>`;
-
-      W.moreIn = (p) => {
-        const sib = POSTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(
-          0,
-          3,
-        );
-        if (!sib.length) return "";
-        return `<section class="recent"><h4>More ${p.cat === "Reviews" ? "reviews" : "from the notebook"}</h4><ul>${sib
-          .map(
-            (x) =>
-              '<li><a href="#/post/' +
-              x.id +
-              '" style="display:flex;gap:12px;padding:11px 0"><span class="thumb fi c' +
-              ci(x.id) +
-              '" style="padding:0;aspect-ratio:1"></span>' +
-              '<span><span class="t">' +
-              esc(x.t) +
-              '</span><span class="d">' +
-              dl(x.date) +
-              "</span></span></a></li>",
-          )
-          .join("")}</ul></section>`;
-      };
-
-      W.biblio = () => `<section class="biblio"><h4>I built a thing</h4>
- <p class="bio">The numbers on these reviews aren't decoration. They come out of <a href="https://bibliome.app" rel="noopener noreferrer">Bibliome</a>, which I built because I could not make five stars mean anything.</p>
- <p class="bio" style="margin-top:10px">Yes, I built software about my feelings. It was that or therapy and this one has a changelog.</p>
- <a class="bpill" href="https://bibliome.app" rel="noopener noreferrer">bibliome.app &rarr;</a></section>`;
-
-      W.cloud = () => {
-        const m = allTags();
-        return `<section><h4>Every tag</h4><div class="cloud">${Object.keys(m)
-          .sort()
-          .map(
-            (t) =>
-              '<a class="tg" href="#/tag/' +
-              tslug(t) +
-              '">' +
-              esc(t) +
-              ' <span style="opacity:.5">' +
-              m[t] +
-              "</span></a>",
-          )
-          .join("")}</div></section>`;
-      };
-
-      /* the sidebar changes with the route — that was the whole complaint */
-      function sidebar(route, ctx) {
-        if (route === "post")
+      function chips(active, withCounts, small) {
+        return FEELS.map((e) => {
+          const on = e === active;
           return (
-            W.here(ctx) +
-            (ctx.cat === "Reviews" ? W.key() + W.biblio() : "") +
-            W.moreIn(ctx) +
-            W.reading() +
-            W.sub()
+            '<a class="chip' + (small ? " small" : "") + '" style="--c:' + EMO[e] + '" href="' + (on ? "#/reviews" : "#/reviews/feel/" + enc(e)) + '"' +
+            (on ? ' aria-current="true"' : "") + '><i class="dot" style="background:' + EMO[e] + '"></i>' + esc(e) +
+            (withCounts ? ' <span class="n">' + COUNTS[e] + "</span>" : "") + "</a>"
           );
-        if (route === "tags" || route === "tag" || route === "search")
-          return W.cloud() + W.cats() + W.recent() + W.sub();
-        if (route === "about") return W.reading() + W.sub();
-        if (route === "reviews" || route === "index")
-          return W.key() + W.biblio() + W.reading() + W.cats() + W.sub();
-        if (route === "log") return W.reading() + W.me() + W.recent() + W.sub();
-        return (
-          W.reading() +
-          W.key() +
-          W.me() +
-          W.cats() +
-          W.recent() +
-          W.biblio() +
-          W.sub() +
-          W.arch()
-        );
+        }).join("");
       }
 
-      /* ================= views ================= */
-      function home(page) {
-        const { items, page: p, totalPages } = paginate(sortDate(POSTS), page);
-        return (
-          `<div class="logbox">
-    <h4>The Reading Log</h4>
-    <p class="sub">The parts too small to be a post and too honest to say out loud.</p>
-    <ul>${LOG.slice(0, 5)
-      .map(
-        (l) =>
-          "<li><time>" + l[0] + "</time><span>" + esc(l[1]) + "</span></li>",
-      )
-      .join("")}</ul>
-  </div>` +
-          items.map(card).join("") +
-          pager("#/", p, totalPages)
-        );
-      }
+      /* ---------- header + tabs ---------- */
+      const SCRAPS = [
+        ["s-hand", "var(--paper)", -3, "opinions nobody asked for", "left:14px;background:rgba(184,85,46,.7);rotate:-8deg"],
+        ["s-small", "var(--kraft)", 2, "I said what I said", "right:10px;background:rgba(143,154,120,.8);rotate:10deg"],
+        ["s-serif", "var(--rose)", -1, "no stars. I've tried. I can't.", ""],
+        ["s-hand", "var(--sage)", 1.5, "sleeping with a light on", ""],
+        ["s-serif", "var(--paper)", -2, "clever is easy", "left:30%;background:rgba(216,180,166,.85);rotate:4deg"],
+        ["s-hand", "var(--kraft)", 3, "a five on rage, still the best", ""],
+        ["s-serif", "var(--rose)", -2.5, "books are just where I go", "right:18px;background:rgba(184,85,46,.7);rotate:6deg"],
+        ["s-hand", "var(--paper)", 1, "no comment box. deliberate.", ""],
+        ["s-small", "var(--sage)", -1.5, "rereads, regrettably", ""],
+      ];
 
-      function cat(name, blurb, page) {
-        const full = sortDate(POSTS.filter((p) => p.cat === name));
-        const { items, page: p, totalPages } = paginate(full, page);
-        const base = name === "Reviews" ? "#/reviews" : "#/notebook";
+      function heroBig() {
+        const scallop = (() => {
+          let d = "M0 0 H1200 V4";
+          for (let x = 1190; x >= 0; x -= 10) d += " Q" + (x + 5) + " 16 " + x + " 4";
+          return '<svg class="scallop" aria-hidden="true" viewBox="0 0 1200 16" preserveAspectRatio="none"><path d="' + d + ' Z" fill="#2a1d15"/></svg>';
+        })();
         return (
-          '<div class="phead"><h1>' +
-          name +
-          "</h1><p>" +
-          blurb +
-          "</p></div>" +
-          (full.length
-            ? items.map(card).join("") + pager(base, p, totalPages)
-            : '<div class="card"><div class="in"><p class="ex">Nothing here yet. I\'m still deciding whether the book deserved me.</p></div></div>')
-        );
-      }
-
-      function notebook(form, page) {
-        const all = sortDate(POSTS.filter((p) => p.cat === "Notebook"));
-        const forms = [...new Set(all.map((p) => p.form))];
-        const list = form
-          ? all.filter((p) => p.form.toLowerCase() === form)
-          : all;
-        const { items, page: p, totalPages } = paginate(list, page);
-        const base = form ? "#/notebook/" + form : "#/notebook";
-        const chip = (lbl, href, on) =>
-          '<a class="tg' +
-          (on ? " on" : "") +
-          '" href="' +
-          href +
-          '">' +
-          lbl +
-          "</a>";
-        return (
-          '<div class="phead"><h1>Notebook</h1>' +
-          "<p>Everything that isn't about someone else's book. Arguments I lost with nobody at eleven at night, poems I should have deleted, the occasional short story. It's a drawer. I open it and things fall out.</p>" +
-          '<div class="filters">' +
-          chip("All " + all.length, "#/notebook", !form) +
-          forms
-            .map((fm) =>
-              chip(
-                plural(fm) + " " + all.filter((p) => p.form === fm).length,
-                "#/notebook/" + fm.toLowerCase(),
-                form === fm.toLowerCase(),
-              ),
-            )
-            .join("") +
-          "</div></div>" +
-          (list.length
-            ? items.map(card).join("") + pager(base, p, totalPages)
-            : '<div class="card"><div class="in"><p class="ex">Nothing in this drawer yet.</p></div></div>')
-        );
-      }
-
-      const FULL_LOG = LOG; // single source of truth — scripts append only to LOG
-
-      function logPage() {
-        return (
-          '<div class="phead"><h1>Reading Log</h1><p>Kept mostly so I can\'t lie to myself later about how the year actually went.</p></div>' +
-          '<div class="timeline" id="timeline">' +
-          FULL_LOG.map(
-            (l, i) =>
-              '<div class="tl-row' +
-              (i >= 6 ? " tl-hide" : "") +
-              '"><div class="tl-dot"></div><time>' +
-              l[0] +
-              "</time><p>" +
-              esc(l[1]) +
-              "</p></div>",
+          '<div class="collage" aria-hidden="true">' +
+          SCRAPS.map(([cls, bg, rot, text, tape]) =>
+            '<div class="scrap ' + cls + '" style="background:' + bg + ";rotate:" + rot + 'deg">' + esc(text) +
+            (tape ? '<span class="tape" style="' + tape + '"></span>' : "") + "</div>"
           ).join("") +
-          "</div>" +
-          (FULL_LOG.length > 6
-            ? '<button class="tl-more" id="tlMore">Show ' +
-              (FULL_LOG.length - 6) +
-              " earlier entries &darr;</button>"
-            : "")
-        );
-      }
-
-      function indexPage() {
-        const rows = sortDate(POSTS.filter((p) => p.cat === "Reviews"));
-        return (
-          '<div class="phead"><h1>The Index</h1><p>Every book, with what it did. Height is how loud, colour is which feeling. It is, unfortunately, also a chart of the year I was having.</p></div>' +
-          '<div class="card"><div class="in">' +
-          rows
-            .map(
-              (p) =>
-                '<a href="#/post/' +
-                p.id +
-                '" style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #F1EAE0">' +
-                '<div><span style="font-family:var(--display);font-size:17px;font-weight:600">' +
-                esc(p.book || p.t) +
-                "</span>" +
-                '<div style="font-size:13px;color:var(--mid)">' +
-                esc(p.author || "") +
-                "</div></div>" +
-                '<div style="display:flex;gap:5px;align-items:flex-start;padding-top:5px">' +
-                p.emo
-                  .map(
-                    ([e, v]) =>
-                      '<span title="' +
-                      e +
-                      " " +
-                      v +
-                      '/5" style="width:9px;height:' +
-                      v * 5 +
-                      "px;border-radius:2px;background:" +
-                      EMO[e] +
-                      '"></span>',
-                  )
-                  .join("") +
-                "</div></a>",
-            )
-            .join("") +
+          "</div>" + scallop +
+          '<div class="brand">' +
+          '<div class="mono">' +
+          '<svg class="bob" viewBox="0 0 24 24" style="left:-34px;top:18px;width:26px;height:26px" aria-hidden="true"><path d="M15 3a9 9 0 1 0 6 13A7 7 0 0 1 15 3z" fill="#e8b26a"/></svg>' +
+          '<svg class="twinkle" viewBox="0 0 24 24" style="right:-26px;top:6px;width:16px;height:16px;fill:#f3e7d3" aria-hidden="true">' + STAR + "</svg>" +
+          '<svg class="twinkle-slow" viewBox="0 0 24 24" style="right:-36px;top:40px;width:10px;height:10px;fill:#e8b26a" aria-hidden="true">' + STAR + "</svg>" +
+          '<div class="ring"><span aria-hidden="true">a</span></div></div>' +
+          '<div><h1 class="wordmark shimmer">aftertaste</h1>' + '<svg class="squig" aria-hidden="true" width="200" height="14" viewBox="0 0 200 14" style="margin:2px auto 0"><path d="M4 8 Q 16 2 28 8 T 52 8 T 76 8 T 100 8 T 124 8 T 148 8 T 172 8 T 196 7"/></svg></div>' +
+          '<p class="tagline">opinions nobody asked for</p>' +
+          '<div class="icons">' +
+          '<a href="mailto:' + MAIL + '" aria-label="Email Shruti"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3e7d3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>' +
+          '<a href="https://bibliome.app" rel="noopener noreferrer" aria-label="Bibliome, the reading app I built"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3e7d3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-0.5V19c-2.5-1-5.5-1-8 0.5-2.5-1.5-5.5-1.5-8-0.5z"/><path d="M12 6v13.5"/></svg></a>' +
           "</div></div>"
         );
       }
 
-      function about() {
-        return `<div class="acard"><div class="in" style="padding:32px 34px">
-  <p class="eyebrow" style="margin-bottom:10px">About, briefly</p>
-  <h1 style="font-family:var(--display);font-size:32px;font-weight:600;margin:0 0 20px;line-height:1.15">Books are just where I go.</h1>
-
-  <p class="ex about-lede" style="font-size:19px;line-height:1.65;color:#3A322C">This isn't a book review blog.</p>
-
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">I read the way other people drink, or run, or reorganise a cupboard at two in the morning. Something in the day is unbearable, and there's a book, and for a while I'm not here.</p>
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">Then something in the book says a thing, and I have a reaction completely out of proportion to what just happened, and it turns out the reaction was already in the room. It had been waiting. The book only opened a door.</p>
-
-  <div class="about-divider"><i></i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M12 22V6"/><path d="M12 14c-5 0-6-4-5-7 3 0 6 3 5 7z"/></svg><i></i></div>
-
-  <div class="about-grid">
-   <div><h3>Reviews</h3><p>No plot section, no pros and cons.</p></div>
-   <div><h3>Notebook</h3><p>Thoughts, poems, the odd story.</p></div>
-   <div><h3>The Log</h3><p>Too small and too honest for a post.</p></div>
-  </div>
-
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">I'm going to be wrong about books you love, and I'm not doing it to be difficult. I just don't have any diplomacy left over for fiction at the end of a day.</p>
-  <blockquote class="about-pull"><p>If a post is only clever, it doesn't go up. Clever is easy. Clever is what I do all day.</p></blockquote>
-
-  <h2 style="font-family:var(--display);font-size:22px;font-weight:600;margin:32px 0 10px">The rating thing</h2>
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C">Stars don't work and I've stopped pretending. Three stars can mean bored, or it can mean wrecked and annoyed about being wrecked, and those are not the same afternoon.</p>
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">So every review gets scored on what actually turned up and how loud it was. A book can be a five on rage and still be the best thing that happened that month. The <a href="#/index" style="color:var(--terra);font-weight:600">Index</a> plots all of them together, which is useful and also a bit much to look at.</p>
-
-  <h2 style="font-family:var(--display);font-size:22px;font-weight:600;margin:32px 0 10px">The thing I built</h2>
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C">At some point I got annoyed enough at star ratings to go and build an alternative, which is an unhinged response to a small problem and I stand by it. It's called <a href="https://bibliome.app" rel="noopener noreferrer" style="color:var(--terra);font-weight:600">Bibliome</a>. You log what a book did to you instead of scoring it, and after a while it draws you a picture of your own reading that you may not enjoy.</p>
-  <p class="ex" style="font-size:17px;line-height:1.85;color:#3A322C;margin-top:1.2em">You don't have to use it. I'd notice. I wouldn't say anything.</p>
-
-  <div class="ask" style="margin-top:28px"><p>No comment box. That's deliberate.</p>
-  <p class="askmail">If you want to argue, <a href="mailto:shrutipandey1505@gmail.com">email me</a>. One person who actually types something out beats fifty who don't. I read all of them. I answer most.</p></div>
- </div></div>`;
+      function heroSmall() {
+        return (
+          '<div class="mini-brand"><a href="#/" aria-label="Aftertaste home"><span class="m" aria-hidden="true">a</span><span class="w" aria-hidden="true">aftertaste</span>' +
+          '<svg class="twinkle" viewBox="0 0 24 24" style="width:12px;height:12px;fill:#e8b26a" aria-hidden="true">' + STAR + "</svg></a></div>"
+        );
       }
 
-      function post(id) {
-        const p = POSTS.find((x) => x.id === id);
-        if (!p) return home();
-        const i = POSTS.indexOf(p);
-        const rel = [
-          POSTS[(i + 1) % POSTS.length],
-          POSTS[(i + 2) % POSTS.length],
-          POSTS[(i + 3) % POSTS.length],
-        ];
-        const body = p.body
-          .map(([t, v]) =>
-            t === "q"
-              ? "<blockquote><p>" + esc(v) + "</p></blockquote>"
-              : t === "v"
-                ? '<p class="verse">' + esc(v) + "</p>"
-                : t === "vh"
-                  ? '<p class="verse verse-hi">' + esc(v) + "</p>"
-                  : "<p>" + esc(v) + "</p>",
-          )
-          .join("");
+      const TABS = [["#/", "Home", "home"], ["#/reviews", "Reviews", "reviews"], ["#/notebook", "Notebook", "notebook"], ["#/about", "About", "about"]];
+      const tabs = (section) =>
+        TABS.map(([h, l, k]) => '<li><a href="' + h + '"' + (k === section ? ' aria-current="page"' : "") + ">" + l + "</a></li>").join("");
 
+      /* ---------- pages ---------- */
+      function home() {
+        const night = CURRENT
+          ? "<section>" + heading("On the nightstand") +
+            '<div class="box night"><span class="label">shh, still reading</span>' +
+            '<div class="mini-cover" aria-hidden="true"><span>' + esc(CURRENT.cover || CURRENT.book) + "</span></div>" +
+            '<div class="info"><span class="b">' + esc(CURRENT.book) + '</span><span class="a">' + esc(CURRENT.author) + "</span>" +
+            '<div class="bar" role="img" aria-label="' + (+CURRENT.pct || 0) + ' percent read"><i style="width:' + (+CURRENT.pct || 0) + '%"></i></div>' +
+            '<span class="p">' + (+CURRENT.pct || 0) + "% · " + esc(CURRENT.note) + "</span></div></div></section>"
+          : "";
+        return (
+          '<div class="home">' +
+          '<section class="box letter"><span class="tape" aria-hidden="true"></span>' +
+          '<h2 class="hand">Hi, I\'m Shruti</h2>' +
+          "<p>I read a lot, mostly to get out of the room. Most of this started as something I was too annoyed to say out loud at work. No star ratings. I've tried. I can't.</p>" +
+          '<div class="row"><a class="handlink" href="#/about">the longer version</a><span class="seal" aria-hidden="true">a</span></div></section>' +
+
+          "<section>" + heading("Freshly reviewed", "tap one. it won't be gentle.") +
+          '<div class="grid">' + REVIEWS.slice(0, 4).map(rcard).join("") + "</div>" +
+          '<a class="btn" href="#/reviews">All ' + REVIEWS.length + " reviews</a></section>" +
+
+          (NOTES.length
+            ? "<section>" + heading("From the notebook", "(written too late at night)") +
+              '<div class="slips">' + NOTES.slice(0, 3).map((p, i) => slip(p, i, false)).join("") + "</div>" +
+              '<a class="btn" href="#/notebook">Open the notebook</a></section>'
+            : "") +
+
+          '<div class="pair">' + night +
+          "<section>" + heading("Pick a feeling", "what do you want to be left with?") +
+          '<div class="box chips feelbox">' + chips(null, true) + "</div></section></div>" +
+
+          '<div class="pair">' +
+          "<section>" + heading("How I rate") +
+          '<div class="box rate"><p>No stars. I can\'t rate a book out of five. I can\'t rate a Tuesday out of five. So: what showed up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p>' +
+          '<ul class="key">' + Object.keys(EMO).map((k) => '<li><span class="sw" style="background:' + EMO[k] + '"></span>' + esc(k) + "</li>").join("") + "</ul></div></section>" +
+          '<section class="quote"><span class="tape t1" aria-hidden="true"></span><span class="tape t2" aria-hidden="true"></span>' +
+          '<span class="qm" aria-hidden="true">“</span><blockquote>If a post is only clever, it doesn\'t go up. Clever is easy. Clever is what I do all day.</blockquote><cite>house rule</cite></section></div>' +
+
+          '<section class="box subscribe">' +
+          '<svg class="bob" aria-hidden="true" width="52" height="40" viewBox="0 0 52 40" fill="none"><rect x="2" y="4" width="48" height="32" rx="3" fill="#efe3cc"/><path d="M2 7 L26 24 L50 7" stroke="#5b2219" stroke-width="1.8" stroke-linejoin="round"/><circle cx="26" cy="24" r="6" fill="#b8552e"/></svg>' +
+          '<h2 class="hand">Subscribe</h2>' +
+          "<p>An email when I post — that's the whole offer. No newsletter voice, no hey friends, no funnel. I'm not building anything.</p>" +
+          '<a class="btn cream" href="mailto:' + MAIL + "?subject=" + enc("Email me the posts") + "&body=" + enc("Add me to the list, please.") + '">Email me the posts</a>' +
+          '<p class="fine">Opens your email app with the note already written.</p></section>' +
+          "</div>"
+        );
+      }
+
+      function reviewsPage(feel) {
+        const list = feel ? REVIEWS.filter((p) => p.emo.some(([e]) => e === feel)) : REVIEWS;
+        return (
+          '<div class="page rise">' +
+          '<div class="phead">' + heading("Reviews", null, "h1") +
+          "<p>No pros and cons. No plot section. I'm not here to tell you whether to buy it, I'm here because something happened and the book was holding the door.</p></div>" +
+          '<div class="chips center" role="group" aria-label="Filter by feeling">' +
+          '<a class="chip small" href="#/reviews"' + (feel ? "" : ' aria-current="true"') + ">all</a>" + chips(feel, false, true) + "</div>" +
+          (feel ? '<p class="note l center" style="margin:0">' + list.length + (list.length === 1 ? " book" : " books") + " that left behind " + esc(feel) + "</p>" : "") +
+          (list.length ? '<div class="grid">' + list.map(rcard).join("") + "</div>" : '<p class="empty">Nothing has left that behind yet.</p>') +
+          "</div>"
+        );
+      }
+
+      function notebookPage(form) {
+        const f = FORMS.find((x) => x.toLowerCase() === form) || null;
+        const list = f ? NOTES.filter((p) => p.form === f) : NOTES;
+        const pill = (label, href, on, n) =>
+          '<a class="chip small" href="' + href + '"' + (on ? ' aria-current="true"' : "") + ">" + label + ' <span class="n">' + n + "</span></a>";
+        return (
+          '<div class="page rise">' +
+          '<div class="phead">' + heading("Notebook", null, "h1") +
+          "<p>Arguments about books, poems written too late at night, and the occasional short story.</p></div>" +
+          '<div class="chips center" role="group" aria-label="Filter by kind">' +
+          pill("all", "#/notebook", !f, NOTES.length) +
+          FORMS.map((x) => pill(x.toLowerCase() + "s", "#/notebook/" + enc(x.toLowerCase()), x === f, NOTES.filter((p) => p.form === x).length)).join("") +
+          "</div>" +
+          '<div class="slips">' + list.map((p, i) => slip(p, i, true)).join("") + "</div></div>"
+        );
+      }
+
+      function block([t, x]) {
+        if (t === "q") return '<figure class="pull reveal"><span class="qm" aria-hidden="true">“</span><blockquote>' + esc(x) + "</blockquote>" + squig(90) + "</figure>";
+        if (t === "v") return '<div class="verse reveal"><span class="tape" aria-hidden="true"></span><p>' + esc(x) + "</p></div>";
+        if (t === "vh") return '<div class="verse hi reveal"><span class="tape" aria-hidden="true"></span><p lang="hi">' + esc(x) + "</p></div>";
+        return '<p class="reveal">' + esc(x) + "</p>";
+      }
+
+      function related(p) {
+        const isR = p.cat === "Reviews";
+        const pool = (isR ? REVIEWS : NOTES).filter((x) => x !== p);
+        const mine = isR ? p.emo.map(([e]) => e) : p.tags;
+        return pool
+          .map((x, i) => ({ x, i, shared: (isR ? x.emo.map(([e]) => e) : x.tags).filter((v) => mine.includes(v)) }))
+          .sort((a, b) => b.shared.length - a.shared.length || a.i - b.i)
+          .slice(0, 2)
+          .map(({ x, shared }) => {
+            const why = shared.length ? (isR ? "also left behind: " : "also about: ") + shared.slice(0, 2).join(", ") : "from the same notebook";
+            return (
+              '<a class="relcard lift" href="#/post/' + enc(x.id) + '">' +
+              '<span class="rc" aria-hidden="true" style="background:' + (isR ? coverBg(x) : PAPER[x.form] || "var(--paper)") + '"><i style="background:' + tint(x) + '"></i></span>' +
+              '<span><span class="k">' + esc(isR ? x.author : x.form) + '</span><span class="tt">' + esc(isR ? x.book : x.t) + '</span><span class="why">' + esc(why) + "</span></span></a>"
+            );
+          })
+          .join("");
+      }
+
+      function postPage(p) {
+        const isR = p.cat === "Reviews";
+        const list = isR ? REVIEWS : NOTES;
+        const i = list.indexOf(p);
+        const newer = list[i - 1];
+        const older = list[i + 1];
+        const title = (x) => (x.cat === "Reviews" ? x.book : x.t);
+        const kind = isR ? "review" : String(p.form || "").toLowerCase();
         return (
           '<article class="post">' +
-          '<a class="postback" href="#/' +
-          (p.cat === "Reviews" ? "reviews" : "notebook") +
-          '">&larr; ' +
-          (p.cat === "Reviews" ? "Reviews" : "Notebook") +
-          "</a>" +
-          fi(p) +
-          '<div class="body">' +
-          '<div class="meta"><span class="cat">' +
-          esc(p.form || p.cat) +
-          '</span><span class="dot"></span><span>' +
-          dl(p.date) +
-          "</span>" +
-          '<span class="dot"></span><span>' +
-          rtime(p) +
-          " min read</span></div>" +
-          "<h1>" +
-          esc(p.t) +
-          "</h1>" +
-          (p.book
-            ? '<p style="font-size:14.5px;color:var(--mid);margin:0 0 22px"><strong>' +
-              esc(p.book) +
-              "</strong> by " +
-              esc(p.author) +
-              "</p>"
+          '<a class="back" href="' + (isR ? "#/reviews" : "#/notebook") + '">back to ' + (isR ? "reviews" : "the notebook") + "</a>" +
+          (isR
+            ? '<div class="bigcover" style="background:' + coverBg(p) + '" aria-hidden="true"><span class="ribbon"></span>' +
+              '<span class="frame"><span class="ct">' + esc(p.book) + '</span><span class="ca">' + esc(p.author) + "</span></span>" + band(p) + "</div>"
             : "") +
-          body +
-          (p.cat === "Reviews" && p.emo.length
-            ? '<div class="emobox"><h5>What it did to me</h5><p class="lead">Not out of five. Out of whatever this is.</p>' +
-              p.emo
-                .map(
-                  ([e, v]) =>
-                    '<div class="erow"><span class="lbl">' +
-                    e +
-                    '</span><span class="track"><i style="width:' +
-                    v * 20 +
-                    "%;background:" +
-                    EMO[e] +
-                    '"></i></span><span class="v">' +
-                    v +
-                    "/5</span></div>",
-                )
-                .join("") +
-              (p.verdict
-                ? '<p class="verdict">' + esc(p.verdict) + "</p>"
-                : "") +
-              "</div>"
+          '<header class="ptitle rise" style="animation-delay:250ms">' +
+          '<p class="note">' + esc(kind) + " · " + fmtFull(p.date) + " · " + rtime(p) + " min read</p>" +
+          "<h1>" + esc(p.t) + "</h1>" +
+          (isR ? '<p class="byline">' + esc(p.book) + " by " + esc(p.author) + "</p>" : "") +
+          (p.ex ? '<p class="dek">' + esc(p.ex) + "</p>" : "") +
+          "</header>" +
+          (isR && p.emo.length
+            ? '<div class="box meter"><h2 class="hand">what showed up, and how loud</h2>' +
+              p.emo.filter(([e]) => EMO[e]).map(([e, n], k) =>
+                '<a class="mrow" href="#/reviews/feel/' + enc(e) + '" aria-label="' + esc(e) + ", " + n + " out of 5. More books that left " + esc(e) + '">' +
+                '<span class="mn">' + esc(e) + '</span><span class="track"><i style="width:' + n * 20 + "%;background:" + EMO[e] + ";animation-delay:" + (450 + k * 150) + 'ms"></i></span>' +
+                '<span class="mv">' + n + "/5</span></a>"
+              ).join("") + "</div>"
             : "") +
-          '<div class="tagline"><span class="lb">Tagged</span>' +
-          p.tags
-            .map(
-              (t) =>
-                '<a class="tg" href="#/tag/' +
-                encodeURIComponent(t) +
-                '">' +
-                esc(t) +
-                "</a>",
-            )
-            .join("") +
-          "</div>" +
-          (p.cat === "Reviews" && p.ask
-            ? '<div class="ask"><p>' +
-              esc(p.ask) +
-              "</p>" +
-              '<p class="askmail">Tell me if you like &mdash; <a href="mailto:shrutipandey1505@gmail.com?subject=' +
-              encodeURIComponent("Re: " + p.t) +
-              "\">shrutipandey1505@gmail.com</a>. Or don't, it's fine either way.</p></div>"
+          '<div class="prose" style="--tint:' + tint(p) + '">' + p.body.map(block).join("") + "</div>" +
+          (p.verdict ? '<div class="verdict reveal"><span class="tape" aria-hidden="true"></span><h2 class="hand">the aftertaste</h2><p>' + esc(p.verdict) + "</p></div>" : "") +
+          (p.ask
+            ? '<div class="ask reveal"><h2 class="hand">over to you</h2><p>' + esc(p.ask) + '</p><a href="mailto:' + MAIL + "?subject=" + enc("Re: " + title(p)) + '">No comment box. Email me.</a></div>'
             : "") +
-          "</div>" +
-          '<div class="related"><h4>You might also like</h4><div class="rel-grid">' +
-          rel
-            .map(
-              (r) =>
-                '<a class="rel" href="#/post/' +
-                r.id +
-                '">' +
-                fi(r) +
-                '<div class="rin"><div class="rt">' +
-                esc(r.t) +
-                '</div><div class="rd">' +
-                dl(r.date) +
-                "</div></div></a>",
-            )
-            .join("") +
-          "</div></div></article>"
+          (p.tags && p.tags.length ? '<div class="ptags">' + p.tags.map((t) => '<a class="ptag" href="#/tag/' + enc(t) + '">#' + esc(t) + "</a>").join("") + "</div>" : "") +
+          '<div class="rel"><h2 class="hand">' + (isR ? "if this one did it for you" : "more from the notebook") + "</h2>" + related(p) + "</div>" +
+          '<nav class="pn" aria-label="More posts">' +
+          (newer ? '<a href="#/post/' + enc(newer.id) + '"><small>newer</small><b>' + esc(title(newer)) + "</b></a>" : "") +
+          (older ? '<a class="older" href="#/post/' + enc(older.id) + '"><small>older</small><b>' + esc(title(older)) + "</b></a>" : "") +
+          "</nav></article>"
+        );
+      }
+
+      function aboutPage() {
+        return (
+          '<div class="rise" style="padding-top:28px"><article class="box about"><span class="tape" aria-hidden="true"></span>' +
+          '<p class="note center" style="rotate:0deg;margin:0">about, briefly</p>' +
+          "<h1>Books are just where I go.</h1>" +
+          '<p class="lede">This isn\'t a book review blog.</p>' +
+          "<p>I read the way other people drink, or run, or reorganise a cupboard at two in the morning. Something in the day is unbearable, and there's a book, and for a while I'm not here.</p>" +
+          "<p>Then something in the book says a thing, and I have a reaction completely out of proportion to what just happened, and it turns out the reaction was already in the room. It had been waiting. The book only opened a door.</p>" +
+          '<div class="two"><a class="lift" href="#/reviews"><span class="hand">Reviews</span><span>No plot section, no pros and cons.</span></a>' +
+          '<a class="lift" href="#/notebook"><span class="hand">Notebook</span><span>Thoughts, poems, the odd story.</span></a></div>' +
+          "<p>I'm going to be wrong about books you love, and I'm not doing it to be difficult. I just don't have any diplomacy left over for fiction at the end of a day.</p>" +
+          '<p class="pullq">If a post is only clever, it doesn\'t go up. Clever is easy. Clever is what I do all day.</p>' +
+          '<h2 class="hand">The rating thing</h2>' +
+          "<p>Stars don't work and I've stopped pretending. Three stars can mean bored, or it can mean wrecked and annoyed about being wrecked, and those are not the same afternoon.</p>" +
+          "<p>So every review gets scored on what actually turned up and how loud it was. A book can be a five on rage and still be the best thing that happened that month.</p>" +
+          '<h2 class="hand">The thing I built</h2>' +
+          '<p>At some point I got annoyed enough at star ratings to go and build an alternative, which is an unhinged response to a small problem and I stand by it. It\'s called <a class="inl" href="https://bibliome.app" rel="noopener noreferrer">Bibliome</a>. You log what a book did to you instead of scoring it, and after a while it draws you a picture of your own reading that you may not enjoy.</p>' +
+          "<p>You don't have to use it. I'd notice. I wouldn't say anything.</p>" +
+          '<div class="ask"><h2 class="hand">No comment box. That\'s deliberate.</h2>' +
+          '<p style="font-size:14px">If you want to argue, <a class="inl" href="mailto:' + MAIL + '">email me</a>. One person who actually types something out beats fifty who don\'t. I read all of them. I answer most.</p></div>' +
+          "</article></div>"
+        );
+      }
+
+      function tagPage(tag) {
+        const list = LIVE.filter((p) => p.tags.includes(tag));
+        return (
+          '<div class="page rise"><div class="phead">' + heading("#" + tag, list.length + (list.length === 1 ? " post" : " posts"), "h1") + "</div>" +
+          listMixed(list) + '<a class="btn" href="#/tags" style="align-self:center">All tags</a></div>'
         );
       }
 
       function tagsPage() {
-        const m = allTags();
-        const entries = Object.entries(m).sort((a, b) => b[1] - a[1]);
-        const themes = entries.filter(([, n]) => n >= 2);
-        const singles = entries.filter(([, n]) => n === 1);
+        const m = {};
+        LIVE.forEach((p) => p.tags.forEach((t) => (m[t] = (m[t] || 0) + 1)));
+        const tags = Object.keys(m).sort((a, b) => m[b] - m[a] || a.localeCompare(b));
         return (
-          '<div class="phead"><h1>Tags</h1><p>' +
-          themes.length +
-          " actually connect more than one post. " +
-          singles.length +
-          " are a second name for a single post \u2014 those still work if you click through from a post itself, they just aren't worth a whole cloud.</p></div>" +
-          '<div class="card"><div class="in"><div class="cloud">' +
-          themes
-            .map(
-              ([t, n]) =>
-                '<a class="tg" href="#/tag/' +
-                tslug(t) +
-                '" style="font-size:' +
-                (12 + n * 1.6) +
-                'px">' +
-                esc(t) +
-                ' <span style="opacity:.5">' +
-                n +
-                "</span></a>",
-            )
-            .join("") +
-          "</div>" +
-          (singles.length
-            ? '<p class="eyebrow" style="margin-top:24px">Used once</p><p class="onceRow">' +
-              singles
-                .map(
-                  ([t]) =>
-                    '<a href="#/tag/' + tslug(t) + '">' + esc(t) + "</a>",
-                )
-                .join(", ") +
-              "</p>"
-            : "") +
-          "</div></div>"
+          '<div class="page rise"><div class="phead">' + heading("Tags", "authors, moods, themes and the occasional grudge", "h1") + "</div>" +
+          '<div class="chips tagcloud">' + tags.map((t) => '<a class="chip small" href="#/tag/' + enc(t) + '">#' + esc(t) + ' <span class="n">' + m[t] + "</span></a>").join("") + "</div></div>"
         );
       }
-      function tagPage(t, page) {
-        const tag = decodeURIComponent(t || "");
-        const list = sortDate(POSTS.filter((p) => p.tags.includes(tag)));
-        const { items, page: p, totalPages } = paginate(list, page);
+
+      function listMixed(list) {
+        const r = list.filter((p) => p.cat === "Reviews");
+        const n = list.filter((p) => p.cat !== "Reviews");
         return (
-          '<div class="phead"><h1>' +
-          esc(tag) +
-          "</h1><p>" +
-          list.length +
-          (list.length === 1 ? " post" : " posts") +
-          ' tagged this. <a href="#/tags" style="color:var(--terra)">All tags &rarr;</a></p></div>' +
-          (list.length
-            ? items.map(card).join("") + pager("#/tag/" + t, p, totalPages)
-            : empty(
-                "Nothing tagged that. Which either means I haven't got round to it or I'm avoiding it.",
-              ))
+          (r.length ? '<div class="grid">' + r.map(rcard).join("") + "</div>" : "") +
+          (n.length ? '<div class="slips">' + n.map((p, i) => slip(p, i, true)).join("") + "</div>" : "") +
+          (list.length ? "" : '<p class="empty">Nothing here yet.</p>')
         );
       }
-      function archivePage(k, page) {
-        const label = ymLabel(k);
-        if (!label) return notFound();
-        const list = sortDate(POSTS.filter((p) => ym(p.date) === k));
-        const { items, page: p, totalPages } = paginate(list, page);
+
+      function searchPage(term) {
+        const q = term.toLowerCase().trim();
+        const hay = (p) => [p.t, p.ex, p.book, p.author, p.verdict, p.tags.join(" "), p.emo.map(([e]) => e).join(" "), p.body.map((b) => b[1]).join(" ")].join(" ").toLowerCase();
+        const list = q ? LIVE.filter((p) => hay(p).includes(q)) : [];
         return (
-          '<div class="phead"><h1>' +
-          esc(label) +
-          "</h1><p>" +
-          list.length +
-          (list.length === 1 ? " post" : " posts") +
-          " that month.</p></div>" +
-          (list.length
-            ? items.map(card).join("") + pager("#/archive/" + k, p, totalPages)
-            : empty("Nothing that month. Some months you just get through."))
+          '<div class="page rise"><div class="phead">' + heading("Search", q ? list.length + (list.length === 1 ? " match" : " matches") + " for " + term : "type something below", "h1") + "</div>" +
+          (q ? listMixed(list) : "") + "</div>"
         );
       }
-      function searchPage(term, page) {
-        const q = decodeURIComponent(term || "")
-          .toLowerCase()
-          .trim();
-        const list = q
-          ? sortDate(
-              POSTS.filter((p) =>
-                (
-                  p.t +
-                  " " +
-                  p.ex +
-                  " " +
-                  p.tags.join(" ") +
-                  " " +
-                  (p.book || "") +
-                  " " +
-                  (p.author || "") +
-                  " " +
-                  p.body.map((b) => b[1]).join(" ")
-                )
-                  .toLowerCase()
-                  .includes(q),
-              ),
-            )
-          : [];
-        const { items, page: p, totalPages } = paginate(list, page);
-        return (
-          '<div class="phead"><h1>' +
-          (q ? "&ldquo;" + esc(q) + "&rdquo;" : "Search") +
-          "</h1><p>" +
-          (q
-            ? list.length + (list.length === 1 ? " match" : " matches")
-            : "Type something in the box up top.") +
-          "</p></div>" +
-          (q
-            ? list.length
-              ? items.map(card).join("") +
-                pager("#/search/" + term, p, totalPages)
-              : empty(
-                  "Nothing. Either I haven't written it or I wrote it and came to my senses.",
-                )
-            : "")
-        );
-      }
+
       function notFound() {
         return (
-          '<div class="phead"><h1>Not here</h1><p>Wrong link, or I deleted it, or I never wrote it. All three have happened and I\'m not going to tell you which.</p></div>' +
-          empty(
-            'Try <a href="#/" style="color:var(--terra)">the front page</a> or <a href="#/tags" style="color:var(--terra)">the tags</a>.',
-          )
-        );
-      }
-      function empty(msg) {
-        return (
-          '<div class="card"><div class="in"><p class="ex">' +
-          msg +
-          "</p></div></div>"
+          '<div class="page rise"><div class="phead">' + heading("Not here", null, "h1") +
+          "<p>Wrong link, or I deleted it, or I never wrote it. All three have happened and I'm not going to tell you which.</p></div>" +
+          '<a class="btn" href="#/" style="align-self:center">Go to the front page</a></div>'
         );
       }
 
-      function navHTML(active, cls) {
-        return NAV.map(
-          ([h, l]) =>
-            '<a href="' +
-            h +
-            '"' +
-            (h === active ? ' class="' + cls + '"' : "") +
-            ">" +
-            l +
-            "</a>",
-        ).join("");
+      /* ---------- head tags ---------- */
+      function setHead(title, desc, path) {
+        document.title = title;
+        const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+        set('meta[name="description"]', "content", desc);
+        set('meta[property="og:title"]', "content", title);
+        set('meta[property="og:description"]', "content", desc);
+        set('meta[property="og:url"]', "content", SITE + "/" + path);
+        set('meta[property="og:type"]', "content", path.startsWith("#/post/") ? "article" : "website");
       }
 
-      const SITE = "https://shrutipandey15.github.io/blog";
-      function setHead(o) {
-        document.title = o.title;
-        const set = (sel, attr, val) => {
-          const el = document.head.querySelector(sel);
-          if (el) el.setAttribute(attr, val);
-        };
-        set('meta[name="description"]', "content", o.desc);
-        set('link[rel="canonical"]', "href", o.url);
-        set('meta[property="og:title"]', "content", o.title);
-        set('meta[property="og:description"]', "content", o.desc);
-        set('meta[property="og:url"]', "href", o.url);
-        set('meta[property="og:type"]', "content", o.type || "website");
-        let ld = document.getElementById("ld");
-        if (!ld) {
-          ld = document.createElement("script");
-          ld.type = "application/ld+json";
-          ld.id = "ld";
-          document.head.appendChild(ld);
-        }
-        ld.textContent = JSON.stringify(o.ld);
-      }
-      const clip = (t, n = 52) =>
-        t.length <= n ? t : t.slice(0, t.lastIndexOf(" ", n)) + "\u2026";
-      const PERSON = {
-        "@type": "Person",
-        name: "Shruti Pandey",
-        url: SITE + "/#/about",
-      };
-      function ldPost(p) {
-        return {
-          "@context": "https://schema.org",
-          "@type": p.cat === "Reviews" ? "Review" : "BlogPosting",
-          headline: p.t,
-          description: p.ex,
-          datePublished: p.date,
-          dateModified: p.date,
-          author: PERSON,
-          publisher: { "@type": "Organization", name: "Aftertaste" },
-          keywords: p.tags.join(", "),
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": SITE + "/#/post/" + p.id,
-          },
-          ...(p.cat === "Reviews" && p.book
-            ? {
-                itemReviewed: {
-                  "@type": "Book",
-                  name: p.book,
-                  author: { "@type": "Person", name: p.author },
-                },
-              }
-            : {}),
-        };
-      }
-      const ldBlog = {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        name: "Aftertaste",
-        description: "Book reviews scored on feeling instead of stars.",
-        url: SITE + "/",
-        author: PERSON,
-        blogPost: POSTS.slice(0, 10).map((p) => ({
-          "@type": "BlogPosting",
-          headline: p.t,
-          datePublished: p.date,
-          url: SITE + "/#/post/" + p.id,
-        })),
-      };
+      /* ---------- router ---------- */
+      const scrollMemory = {};
+      let lastHash = null;
 
-      /* ================= router ================= */
       function render() {
-        let h = (location.hash.replace(/^#/, "") || "/")
-          .split("/")
-          .filter(Boolean);
-        let page = 1;
-        if (
-          h.length >= 2 &&
-          h[h.length - 2] === "page" &&
-          /^\d+$/.test(h[h.length - 1])
-        ) {
-          page = +h[h.length - 1];
-          h = h.slice(0, -2);
-        }
-        let out,
-          key = "#/",
-          route = "home",
-          ctx = null;
+        const raw = location.hash.replace(/^#/, "") || "/";
+        let h = raw.split("/").filter(Boolean).map((s) => { try { return decodeURIComponent(s); } catch (e) { return s; } });
+        if (h.length >= 2 && h[h.length - 2] === "page") h = h.slice(0, -2); // old paginated links
 
-        if (!h.length) {
-          out = home(page);
-        } else if (h[0] === "reviews") {
-          out = cat(
-            "Reviews",
-            "No pros and cons. No plot section. I'm not here to tell you whether to buy it, I'm here because something happened and the book was holding the door.",
-            page,
-          );
-          key = "#/reviews";
-          route = "reviews";
+        // retired pages from the old site
+        if (h[0] === "log") { location.replace("#/"); return; }
+        if (h[0] === "index" || h[0] === "archive") { location.replace("#/reviews"); return; }
+
+        let out, section = null, big = false;
+        let head = ["Aftertaste — a book blog about what books do to you", "Book reviews scored on feeling instead of stars, plus thoughts, poems and short stories."];
+
+        if (!h.length) { out = home(); section = "home"; big = true; }
+        else if (h[0] === "reviews") {
+          const feel = h[1] === "feel" && EMO[h[2]] ? h[2] : null;
+          out = reviewsPage(feel); section = "reviews";
+          head = [(feel ? "Books that left " + feel + " — " : "Book reviews without star ratings — ") + "Aftertaste", "Reviews that record what a book actually did to you: recognition, rage, grief, comfort. No pros and cons, no plot summary."];
         } else if (h[0] === "notebook") {
-          out = notebook(h[1] || null, page);
-          key = "#/notebook";
-          route = "notebook";
-        } else if (h[0] === "log") {
-          out = logPage();
-          key = "#/log";
-          route = "log";
-        } else if (h[0] === "index") {
-          out = indexPage();
-          key = "#/index";
-          route = "index";
+          out = notebookPage(h[1] || null); section = "notebook";
+          head = ["Notebook — essays, poems and short stories about reading", "Arguments about books, poems written too late at night, and the occasional short story."];
+        } else if (h[0] === "about") {
+          out = aboutPage(); section = "about";
+          head = ["About — Aftertaste", "Books are just where I go. Why this blog scores feelings instead of stars."];
+        } else if (h[0] === "post") {
+          const p = LIVE.find((x) => x.id === h[1]);
+          if (p) {
+            out = postPage(p); section = p.cat === "Reviews" ? "reviews" : "notebook";
+            head = [(p.cat === "Reviews" ? p.book + " by " + p.author + " — " + p.t : p.t) + " — Aftertaste", p.ex || p.t];
+          } else out = notFound();
+        } else if (h[0] === "tag" && h[1]) {
+          out = tagPage(h[1]);
+          head = ["#" + h[1] + " — Aftertaste", "Everything on Aftertaste tagged " + h[1] + "."];
         } else if (h[0] === "tags") {
           out = tagsPage();
-          key = "#/tags";
-          route = "tags";
-        } else if (h[0] === "tag") {
-          out = tagPage(h[1], page);
-          key = "#/tags";
-          route = "tag";
-        } else if (h[0] === "archive") {
-          out = archivePage(h[1], page);
-          route = "archive";
+          head = ["Tags — Aftertaste", "Every tag across the blog: authors, moods, themes and the occasional grudge."];
         } else if (h[0] === "search") {
-          out = searchPage(h[1], page);
-          route = "search";
-        } else if (h[0] === "about") {
-          out = about();
-          key = "#/about";
-          route = "about";
-        } else if (h[0] === "post") {
-          const p = POSTS.find((x) => x.id === h[1]);
-          if (p) {
-            out = post(h[1]);
-            route = "post";
-            ctx = p;
-            key = p.cat === "Reviews" ? "#/reviews" : "#/notebook";
-          } else out = notFound();
+          const term = h.slice(1).join("/");
+          out = searchPage(term);
+          document.getElementById("q").value = term;
+          head = ["Search — Aftertaste", "Search the reviews and the notebook."];
         } else out = notFound();
 
-        const HEADS = {
-          home: {
-            title: "Aftertaste — a book blog about what books do to you",
-            desc: "Book reviews scored on feeling instead of stars, plus thoughts, poems and short stories.",
-            url: SITE + "/",
-            ld: ldBlog,
-          },
-          reviews: {
-            title: "Book reviews without star ratings — Aftertaste",
-            desc: "Reviews that record what a book actually did to you: recognition, rage, grief, comfort. No pros and cons, no plot summary.",
-            url: SITE + "/#/reviews",
-            ld: ldBlog,
-          },
-          notebook: {
-            title: "Notebook — essays, poems and short stories about reading",
-            desc: "Arguments about books, poems written too late at night, and the occasional short story.",
-            url: SITE + "/#/notebook",
-            ld: ldBlog,
-          },
-          log: {
-            title: "Reading log — Aftertaste",
-            desc: "Short, honest daily entries about what I'm reading and failing to read.",
-            url: SITE + "/#/log",
-            ld: ldBlog,
-          },
-          index: {
-            title: "Every book, scored by feeling — Aftertaste",
-            desc: "The full index of reviewed books plotted by emotional response rather than star rating.",
-            url: SITE + "/#/index",
-            ld: ldBlog,
-          },
-          tags: {
-            title: "Browse by tag — Aftertaste",
-            desc: "Every tag across the blog: authors, moods, themes and the occasional grudge.",
-            url: SITE + "/#/tags",
-            ld: ldBlog,
-          },
-          about: {
-            title: "About — Aftertaste",
-            desc: "Why this blog exists, how the emotion-based rating works, and how to argue with me.",
-            url: SITE + "/#/about",
-            ld: {
-              "@context": "https://schema.org",
-              "@type": "AboutPage",
-              mainEntity: PERSON,
-            },
-          },
-        };
-        if (route === "post" && ctx)
-          setHead({
-            title: clip(ctx.t) + " — Aftertaste",
-            desc: ctx.ex,
-            url: SITE + "/#/post/" + ctx.id,
-            type: "article",
-            ld: ldPost(ctx),
-          });
-        else if (route === "tag")
-          setHead({
-            title:
-              'Books tagged "' +
-              decodeURIComponent(h[1] || "") +
-              '" — Aftertaste',
-            desc:
-              "Every post tagged " +
-              decodeURIComponent(h[1] || "") +
-              " on Aftertaste.",
-            url: SITE + "/#/tag/" + (h[1] || ""),
-            ld: ldBlog,
-          });
-        else setHead(HEADS[route] || HEADS.home);
+        document.getElementById("top").innerHTML = big ? heroBig() : heroSmall();
+        document.getElementById("tabs").innerHTML = tabs(section);
+        document.getElementById("app").innerHTML = out;
+        document.getElementById("app").dataset.ok = "1";
+        setHead(head[0], head[1], "#/" + h.map(enc).join("/"));
 
-        document.getElementById("main").innerHTML = out;
-        document.getElementById("side").innerHTML = sidebar(route, ctx);
-        document.getElementById("nav").innerHTML = navHTML(key, "on");
-        const tb = document.getElementById("tabbar");
-        if (tb)
-          tb.innerHTML = tabHTML(
-            TABS.some((t) => t[0] === key)
-              ? key
-              : route === "post"
-                ? ctx && ctx.cat === "Reviews"
-                  ? "#/reviews"
-                  : "#/notebook"
-                : "#/",
-          );
-        const tlm = document.getElementById("tlMore");
-        if (tlm)
-          tlm.addEventListener("click", () => {
-            document
-              .querySelectorAll(".tl-hide")
-              .forEach((r) => r.classList.remove("tl-hide"));
-            tlm.remove();
-          });
-        window.scrollTo(0, 0);
+        // scroll: new posts start at the top; lists remember where you were
+        const cameFromPost = lastHash && lastHash.startsWith("#/post/");
+        const key = location.hash || "#/";
+        if (cameFromPost && scrollMemory[key] != null && h[0] !== "post") window.scrollTo(0, scrollMemory[key]);
+        else if (lastHash !== null) window.scrollTo(0, 0);
+        lastHash = key;
       }
 
-      function runSearch() {
-        const v = document.getElementById("q").value.trim();
-        location.hash = v ? "#/search/" + encodeURIComponent(v) : "#/tags";
-      }
-      document.getElementById("qgo").addEventListener("click", runSearch);
+      addEventListener("hashchange", (e) => {
+        const old = new URL(e.oldURL).hash || "#/";
+        scrollMemory[old] = window.scrollY;
+        render();
+        if (location.hash.startsWith("#/post/")) document.getElementById("app").focus({ preventScroll: true });
+      });
+
       document.getElementById("q").addEventListener("keydown", (e) => {
-        if (e.key === "Enter") runSearch();
-      });
-
-      /* mobile search sheet */
-      const mSheet = document.getElementById("mSheet");
-      const mq = document.getElementById("mq");
-      document.getElementById("mSearchOpen").addEventListener("click", () => {
-        mSheet.classList.add("open");
-        document.body.style.overflow = "hidden";
-        setTimeout(() => mq.focus(), 280);
-      });
-      function closeMSheet() {
-        mSheet.classList.remove("open");
-        document.body.style.overflow = "";
-      }
-      document
-        .getElementById("mSearchClose")
-        .addEventListener("click", closeMSheet);
-      mq.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-          const v = mq.value.trim();
-          closeMSheet();
-          location.hash = v ? "#/search/" + encodeURIComponent(v) : "#/tags";
+          const v = e.target.value.trim();
+          location.hash = v ? "#/search/" + enc(v) : "#/";
         }
-        if (e.key === "Escape") closeMSheet();
-      });
-      addEventListener("hashchange", closeMSheet);
-
-      /* mobile sidebar drawer */
-      const sideEl = document.getElementById("side");
-      const sideBackdrop = document.getElementById("sideBackdrop");
-      const sideCloseBtn = document.getElementById("sideClose");
-      function openDrawer() {
-        sideEl.classList.add("open");
-        sideBackdrop.classList.add("open");
-        sideCloseBtn.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-      function closeDrawer() {
-        sideEl.classList.remove("open");
-        sideBackdrop.classList.remove("open");
-        sideCloseBtn.classList.remove("open");
-        document.body.style.overflow = "";
-      }
-      document
-        .getElementById("mSideOpen")
-        .addEventListener("click", openDrawer);
-      sideBackdrop.addEventListener("click", closeDrawer);
-      sideCloseBtn.addEventListener("click", closeDrawer);
-      addEventListener("hashchange", closeDrawer);
-      addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeDrawer();
       });
 
-      addEventListener("hashchange", render);
-      render();
+      try {
+        render();
+      } catch (err) {
+        document.getElementById("app").innerHTML =
+          '<div class="page"><div class="phead"><h1 class="hand">This page could not be built</h1><p>' + esc(err.message) +
+          "</p><p>Almost always a missing comma or an unclosed quote in the block you last edited. Undo that commit and try again.</p></div></div>";
+        console.error(err);
+      }
     </script>
   </body>
 </html>
