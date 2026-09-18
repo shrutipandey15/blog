@@ -1,5 +1,6 @@
 ---
 import Band from "./Band.astro";
+import Motif from "./Motif.astro";
 import { EMO, coverBg } from "../lib/posts";
 import { TILT, fmt } from "../lib/site";
 
@@ -13,7 +14,10 @@ const minis = post.emo.slice(0, 2).filter((e: any) => EMO[e.feeling]);
   href={post.href}
   style={`--tilt:${TILT[i % TILT.length]}deg;animation-delay:${Math.min(i, 8) * 90}ms`}
 >
-  <span class="cover" style={`background:${coverBg(post)}`}>
+  <span class="cover" style={`background-color:${coverBg(post)}`}>
+    <span class="spine" aria-hidden="true"></span>
+    <span class="pages" aria-hidden="true"></span>
+    <Motif id={post.id} />
     {ribbon && <span class="ribbon" style={`background:${ribbon}`}></span>}
     <span class="frame">
       <span class:list={["ct", { sm: (post.book || "").length > 14 }]}>{post.book}</span>

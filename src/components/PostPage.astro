@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Band from "./Band.astro";
+import Motif from "./Motif.astro";
 import EmotionMeter from "./EmotionMeter.astro";
 import PostBody from "./PostBody.astro";
 import Verdict from "./Verdict.astro";
@@ -59,7 +60,10 @@ const jsonLd = isR
     </a>
 
     {isR && (
-      <div class="bigcover" style={`background:${coverBg(post)}`} aria-hidden="true">
+      <div class="bigcover" style={`background-color:${coverBg(post)}`} aria-hidden="true">
+        <span class="spine"></span>
+        <span class="pages"></span>
+        <Motif id={post.id} />
         <span class="ribbon"></span>
         <span class="frame">
           <span class="ct">{post.book}</span>

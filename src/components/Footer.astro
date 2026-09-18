@@ -3,20 +3,47 @@ import { u } from "../lib/site";
 const { hideSearch = false } = Astro.props;
 ---
 <footer>
+  <svg class="endflourish" aria-hidden="true" viewBox="0 0 320 30" fill="none">
+    <path d="M6 18 Q 40 6 74 18 T 142 18" stroke="#b8552e" stroke-width="2" stroke-linecap="round" />
+    <path d="M178 18 Q 212 6 246 18 T 314 18" stroke="#b8552e" stroke-width="2" stroke-linecap="round" />
+    <g class="moth">
+      <ellipse cx="160" cy="16" rx="2.6" ry="6" fill="#e8b26a" />
+      <path d="M158 12c-8-9-16-8-15 1 1 7 9 9 15 4z" fill="#efe3cc" opacity=".85" />
+      <path d="M162 12c8-9 16-8 15 1-1 7-9 9-15 4z" fill="#efe3cc" opacity=".85" />
+      <path d="M159 10l-3-4M161 10l3-4" stroke="#e8b26a" stroke-width="1.2" stroke-linecap="round" />
+    </g>
+  </svg>
+
   {!hideSearch && (
     <form class="searchbox" role="search" action={u("search")} method="get">
+      <span class="tape" aria-hidden="true"></span>
       <label for="q">looking for something?</label>
-      <input id="q" name="q" type="search" placeholder="A book, an author, a feeling" autocomplete="off" enterkeyhint="search" />
+      <input id="q" name="q" type="search" placeholder="a book, an author, a feeling" autocomplete="off" enterkeyhint="search" />
+      <span class="hint">press enter. it searches every word I've written.</span>
       <button class="sr-btn" type="submit">Search</button>
     </form>
   )}
+
+  <nav class="fnav" aria-label="Footer">
+    <a href={u("reviews")}>Reviews</a><i aria-hidden="true">·</i>
+    <a href={u("notebook")}>Notebook</a><i aria-hidden="true">·</i>
+    <a href={u("tags")}>Tags</a><i aria-hidden="true">·</i>
+    <a href={u("about")}>About</a>
+  </nav>
+
   <div class="sign">
-    <svg aria-hidden="true" width="28" height="44" viewBox="0 0 28 44" fill="none">
-      <path class="flicker" d="M14 2 C18 8 18 12 14 15 C10 12 10 8 14 2 Z" fill="#e8b26a" />
-      <rect x="8" y="17" width="12" height="20" rx="2" fill="#efe3cc" />
-      <path d="M3 38 H25 Q25 42 21 42 H7 Q3 42 3 38 Z" fill="#b8552e" />
+    <svg aria-hidden="true" width="44" height="62" viewBox="0 0 44 62" fill="none">
+      <ellipse cx="22" cy="10" rx="13" ry="14" fill="#e8b26a" opacity=".16" />
+      <path class="flicker" d="M22 4 C26.5 10 26.5 14 22 17 C17.5 14 17.5 10 22 4 Z" fill="#e8b26a" />
+      <path d="M22 17v5" stroke="#5b2219" stroke-width="1.4" stroke-linecap="round" />
+      <rect x="15" y="22" width="14" height="26" rx="2.5" fill="#efe3cc" />
+      <path d="M15 24q4 3 7 0t7 0" stroke="#d8cdb6" stroke-width="1.2" fill="none" />
+      <path d="M29 28c3 5 2 9 0 11V28z" fill="#e0d4bc" />
+      <path d="M9 50h26q0 6-6 6H15q-6 0-6-6z" fill="#b8552e" />
+      <ellipse cx="22" cy="58" rx="17" ry="3" fill="#000" opacity=".35" />
     </svg>
     <span class="w">aftertaste</span>
     <span class="c">© 2026 · I said what I said</span>
+    <a class="totop" href="#top">back to the top, then</a>
   </div>
 </footer>
