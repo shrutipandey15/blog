@@ -12,6 +12,8 @@ const FONTS = [
   { name: "Fraunces", data: font("Fraunces-SemiBold.ttf"), weight: 600 as const, style: "normal" as const },
   { name: "Fraunces", data: font("Fraunces-Italic.ttf"), weight: 400 as const, style: "italic" as const },
   { name: "Courier Prime", data: font("CourierPrime-Regular.ttf"), weight: 400 as const, style: "normal" as const },
+  // Hindi titles, so the share image is the poem rather than a row of boxes.
+  { name: "Noto Serif Devanagari", data: font("NotoSerifDevanagari-600.ttf"), weight: 600 as const, style: "normal" as const },
 ];
 
 const CREAM = "#f3e7d3";
